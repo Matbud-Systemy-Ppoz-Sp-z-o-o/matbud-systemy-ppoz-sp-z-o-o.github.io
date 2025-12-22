@@ -20,6 +20,9 @@ interface PageProps {
   params: Promise<{ locale: string; city: string }>;
 }
 
+// Disable dynamic params - only allow pre-generated routes
+export const dynamicParams = false;
+
 // Generates static paths for all city pages during the build
 export async function generateStaticParams(): Promise<CityParams[]> {
   const cities = await getCities();
