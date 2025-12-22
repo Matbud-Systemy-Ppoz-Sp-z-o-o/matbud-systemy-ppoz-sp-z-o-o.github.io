@@ -70,14 +70,14 @@ export function Footer({
                 {dictionary.navigation.about}
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link
                 href={`/${locale}#certificates`}
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
                 {dictionary.navigation.certificates}
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link href={`/${locale}#clients`} className="text-muted-foreground hover:text-primary transition-colors">
                 {dictionary.navigation.clients}
