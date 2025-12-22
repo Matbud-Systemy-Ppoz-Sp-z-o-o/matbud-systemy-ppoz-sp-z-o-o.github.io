@@ -64,11 +64,11 @@
   },
   "aboutUs": {
     "title": "O Nas",
-    "subtitle": "Ponad 25 lat łącznego doświadczenia w bezpieczeństwie przeciwpożarowym",
+    "subtitle": "Ponad 30 lat doświadczenia w bezpieczeństwie przeciwpożarowym",
     "historyTitle": "Nasza Historia",
-    "historyContent": "Założona w 2008 roku firma Matbud Systemy Ppoż. sp. z o.o. z małej lokalnej firmy przekształciła się w wiodącego dostawcę rozwiązań z zakresu bezpieczeństwa przeciwpożarowego w całej Polsce. Dzięki zaangażowaniu w doskonałość i satysfakcję klienta, zbudowaliśmy reputację firmy niezawodnej i posiadającej fachową wiedzę w branży.",
+    "historyContent": "Matbud Systemy Ppoż. sp. z o.o. została założona w 1993 roku. Jako pierwsi w Polsce wprowadziliśmy kompleksową ofertę serwisową systemów przeciwpożarowych, rozszerzając działalność o montaż i serwis wszystkich urządzeń ppoż.: systemów oddymiania, grodzi pożarowych, SSP/SAP, oświetlenia awaryjnego, DSO, tryskaczy, hydrantów i pompowni pożarowych.\n\nNasze kompetencje potwierdzamy certyfikacją w Ośrodku Certyfikacji Usług Przeciwpożarowych - jesteśmy pierwszą firmą certyfikowaną w zakresie wentylacji pożarowej i drugą w zakresie przegród pożarowych w Polsce. Dziś oferujemy pełen zakres usług: projektowanie systemów ppoż., montaż, serwis i konserwację, zapewniając zgodność z normami PN-EN i przepisami prawa budowlanego.",
     "missionTitle": "Nasza Misja",
-    "missionContent": "Naszą misją jest ochrona życia i mienia poprzez dostarczanie najwyższej jakości systemów detekcji, alarmów, oddymiania i oświetlenia awaryjnego. Dążymy do pozostawania na czele technologii bezpieczeństwa przeciwpożarowego i dostarczania rozwiązań spełniających unikalne potrzeby każdego klienta w całej Polsce.",
+    "missionContent": "Naszą misją jest ochrona życia i mienia poprzez dostarczanie najwyższej jakości rozwiązań z zakresu bezpieczeństwa przeciwpożarowego. Dążymy do zapewnienia najwyższych standardów bezpieczeństwa, budując zaufanie klientów poprzez rzetelność, profesjonalizm i ciągłe doskonalenie naszych usług.",
     "valuesTitle": "Nasze Wartości",
     "values": [
       "Bezpieczeństwo jako nasz priorytet",
@@ -80,7 +80,7 @@
     ],
     "stats": [
       {
-        "value": "25+",
+        "value": "30+",
         "label": "Lat doświadczenia"
       },
       {

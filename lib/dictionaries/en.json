@@ -64,11 +64,11 @@
     },
     "aboutUs": {
      "title": "About Us",
-     "subtitle": "Over 25 years of experience in fire safety",
+     "subtitle": "Over 30 years of experience in fire safety",
      "historyTitle": "Our History",
-     "historyContent": "Founded in 1998, Matbud Systemy Ppoż. sp. z o.o. has grown from a small local business into a leading provider of fire safety solutions. With a commitment to excellence and client satisfaction, we have built a reputation for reliability and expertise in the industry.",
+     "historyContent": "Matbud Systemy Ppoż. sp. z o.o. was founded in 1993. We were the first in Poland to introduce a comprehensive fire protection systems service offer, expanding our activities to include installation and service of all fire protection equipment: smoke extraction systems, fire barriers, FAS/SAP, emergency lighting, DSO, sprinklers, hydrants, and fire pump stations.\n\nWe confirm our competencies through certification at the Fire Protection Services Certification Center - we are the first company certified in fire ventilation and the second in fire barriers in Poland. Today, we offer the full range of services: fire protection system design, installation, service, and maintenance, ensuring compliance with PN-EN standards and building regulations.",
      "missionTitle": "Our Mission",
-     "missionContent": "Our mission is to protect lives and property by delivering the highest quality fire safety systems and services. We strive to stay at the forefront of fire safety technology and to provide solutions that meet the unique needs of each client.",
+     "missionContent": "Our mission is to protect lives and property by delivering the highest quality fire safety solutions. We strive to ensure the highest safety standards, building client trust through reliability, professionalism, and continuous improvement of our services.",
      "valuesTitle": "Our Values",
      "values": [
       "Safety as our priority",
@@ -79,7 +79,7 @@
      ],
      "stats": [
       {
-       "value": "25+",
+       "value": "30+",
        "label": "Years of Experience"
       },
       {
