@@ -1,7 +1,7 @@
 "use client"
 
 import { MapPin, Phone, Mail } from "lucide-react"
-import ContactForm from "@/components/contact-form"
+import GoogleMaps from "@/components/google-maps"
 
 interface Dictionary {
   title: string;
@@ -54,8 +54,8 @@ export default function Contact({ dictionary }: { dictionary: Dictionary }) {
         </div>
 
         <div className="grid md:grid-cols-2 gap-12">
-          <div>
-            <div className="bg-card rounded-lg p-6 shadow-sm border border-border">
+          <div className="h-full">
+            <div className="bg-card rounded-lg p-6 shadow-sm border border-border h-full flex flex-col">
               <h3 className="text-2xl font-bold mb-6">{dictionary.contactInfo.title}</h3>
 
               <div className="space-y-6">
@@ -110,8 +110,8 @@ export default function Contact({ dictionary }: { dictionary: Dictionary }) {
             </div>
           </div>
 
-          <div>
-            <ContactForm dictionary={dictionary.form} />
+          <div className="h-full">
+            <GoogleMaps className="h-full" />
           </div>
         </div>
       </div>

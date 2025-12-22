@@ -7,7 +7,7 @@ import { getCities } from "@/lib/cities";
 import { Shield, Bell, Droplets, FileCheck, Wrench, Building, MapPin, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import ContactForm from "@/components/contact-form";
+import GoogleMaps from "@/components/google-maps";
 
 // Type definition for the specific route parameters
 type CityParams = {
@@ -239,7 +239,7 @@ export default async function CityPage({ params }: PageProps) {
 
             <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
               {/* Contact Info Side */}
-              <div className="bg-card p-6 md:p-8 rounded-lg shadow-md border">
+              <div className="bg-card p-6 md:p-8 rounded-lg shadow-md border h-full flex flex-col">
                 <h3 className="text-xl font-semibold mb-6">{dict.contact?.contactInfo?.title ?? 'Informacje Kontaktowe'}</h3>
 
                 <div className="space-y-6">
@@ -301,30 +301,10 @@ export default async function CityPage({ params }: PageProps) {
                 </div>
               </div>
 
-              {/* Contact Form Side */}
-              <ContactForm 
-                dictionary={dict.contact?.form || {
-                  title: dict.cityPage?.formTitle || 'Wyślij nam wiadomość',
-                  nameLabel: 'Imię i Nazwisko',
-                  namePlaceholder: 'Jan Kowalski',
-                  emailLabel: 'Adres Email',
-                  emailPlaceholder: 'jan.kowalski@example.com',
-                  phoneLabel: 'Numer Telefonu',
-                  phonePlaceholder: '+48 123 456 789',
-                  messageLabel: 'Twoja Wiadomość',
-                  messagePlaceholder: 'Opisz czego potrzebujesz...',
-                  submit: 'Wyślij Zapytanie',
-                  submitting: 'Wysyłanie...',
-                  successTitle: 'Wiadomość wysłana',
-                  successMessage: 'Dziękujemy za skontaktowanie się z nami. Odpowiemy wkrótce.',
-                  validation: {
-                    nameMin: 'Imię musi mieć co najmniej 2 znaki.',
-                    emailInvalid: 'Proszę podać prawidłowy adres e-mail.',
-                    phoneMin: 'Proszę podać prawidłowy numer telefonu.',
-                    messageMin: 'Wiadomość musi mieć co najmniej 10 znaków.'
-                  }
-                }}
-              />
+              {/* Google Maps Side */}
+              <div className="h-full">
+                <GoogleMaps className="h-full" />
+              </div>
             </div>
           </div>
         </div>
