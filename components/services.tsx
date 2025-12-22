@@ -1,4 +1,4 @@
-import { Shield, Bell, Droplets, FileCheck, Wrench, Building } from "lucide-react"
+import { FileCheck, Wrench, Building, Bell } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 interface ServiceItem {
@@ -16,12 +16,10 @@ interface DictionaryType {
 
 export default function Services({ dictionary }: { dictionary: DictionaryType }) {
   const serviceIcons = [
-    { icon: <Shield className="h-10 w-10 text-primary" />, name: "Fire Alarm Systems" },
-    { icon: <Droplets className="h-10 w-10 text-primary" />, name: "Sprinkler Systems" },
-    { icon: <Bell className="h-10 w-10 text-primary" />, name: "Emergency Lighting" },
-    { icon: <FileCheck className="h-10 w-10 text-primary" />, name: "Fire Safety Inspections" },
     { icon: <Wrench className="h-10 w-10 text-primary" />, name: "Maintenance Services" },
-    { icon: <Building className="h-10 w-10 text-primary" />, name: "Building Compliance" },
+    { icon: <Building className="h-10 w-10 text-primary" />, name: "Installation Services" },
+    { icon: <FileCheck className="h-10 w-10 text-primary" />, name: "Design Services" },
+    { icon: <Bell className="h-10 w-10 text-primary" />, name: "Emergency Lighting" },
   ]
 
   return (

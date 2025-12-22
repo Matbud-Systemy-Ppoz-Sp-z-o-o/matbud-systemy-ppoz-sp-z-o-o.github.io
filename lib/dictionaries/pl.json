@@ -27,10 +27,7 @@
           "drzwi ppoż.",
           "klapy ppoż.",
           "kurtyny dymowe",
-          "wentylatory oddymiające",
-          "SSP (System Sygnalizacji Pożaru)",
-          "czujki, przyciski ROP, sygnalizatory",
-          "gaśnice, hydranty wewnętrzne i zewnętrzne"
+          "SSP (System Sygnalizacji Pożaru)"
         ]
       },
       {
@@ -39,13 +36,7 @@
         "features": [
           "systemów oddymiania",
           "grodzi ppoż.",
-          "SSP (System Sygnalizacji Pożaru)",
-          "systemów wentylacji pożarowej",
-          "oświetlenia awaryjnego",
-          "systemów kontroli dostępu",
-          "instalacji hydrantowych",
-          "systemów gaśniczych",
-          "monitoringu i nadzoru"
+          "SSP"
         ]
       },
       {

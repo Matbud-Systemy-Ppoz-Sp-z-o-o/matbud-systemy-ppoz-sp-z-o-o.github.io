@@ -27,10 +27,7 @@
         "fire doors",
         "fire dampers",
         "smoke curtains",
-        "smoke extraction fans",
-        "FAS (Fire Alarm System)",
-        "detectors, manual call points, sounders",
-        "fire extinguishers, internal and external hydrants"
+        "FAS (Fire Alarm System)"
        ]
       },
       {
@@ -39,13 +36,7 @@
        "features": [
         "smoke extraction systems",
         "fire barriers",
-        "FAS (Fire Alarm System)",
-        "fire ventilation systems",
-        "emergency lighting",
-        "access control systems",
-        "hydrant installations",
-        "fire suppression systems",
-        "monitoring and supervision"
+        "FAS (Fire Alarm System)"
        ]
       },
       {
