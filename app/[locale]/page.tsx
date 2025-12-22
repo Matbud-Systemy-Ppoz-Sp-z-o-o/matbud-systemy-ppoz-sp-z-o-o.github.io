@@ -3,7 +3,7 @@ import { getDictionary } from "@/lib/dictionaries"
 import Hero from "@/components/hero"
 import Services from "@/components/services"
 import AboutUs from "@/components/about-us"
-import Certificates from "@/components/certificates"
+// import Certificates from "@/components/certificates"
 // import Clients from "@/components/clients"
 import Gallery from "@/components/gallery"
 // import LatestBlogs from "@/components/latest-blogs"
@@ -37,7 +37,7 @@ export default async function Home({
       <Services dictionary={dict.services} />
       <AboutUs dictionary={dict.aboutUs} />
       <Gallery dictionary={dict.gallery} />
-      <Certificates dictionary={dict.certificates} />
+      {/* <Certificates dictionary={dict.certificates} /> */}
       {/* <Clients dictionary={dict.clients} /> */}
       <Contact dictionary={dict.contact} />
       {/* <LatestBlogs locale={locale} dictionary={dict.latestBlogs} /> */}
