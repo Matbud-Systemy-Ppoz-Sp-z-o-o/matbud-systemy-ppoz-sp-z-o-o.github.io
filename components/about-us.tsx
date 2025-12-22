@@ -60,7 +60,7 @@ export default function AboutUs({ dictionary }: { dictionary: Dictionary }) {
           </div>
         </div>
 
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center max-w-3xl mx-auto">
           {dictionary.stats.map((stat: StatItem, index: number) => (
             <div key={index} className="space-y-2">
               <p className="text-4xl font-bold text-primary">{stat.value}</p>
