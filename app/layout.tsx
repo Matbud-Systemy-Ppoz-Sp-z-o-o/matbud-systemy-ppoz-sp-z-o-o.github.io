@@ -21,9 +21,9 @@ export async function generateMetadata(): Promise<Metadata> {
     authors: [{ name: dict.common.companyName }],
     creator: dict.common.companyName,
     icons: {
-      icon: "/matbud/favicon.ico",
-      shortcut: "/matbud/favicon-16x16.png",
-      apple: "/matbud/apple-touch-icon.png",
+      icon: "/favicon.ico",
+      shortcut: "/favicon-16x16.png",
+      apple: "/apple-touch-icon.png",
     },
     openGraph: {
       type: "website",

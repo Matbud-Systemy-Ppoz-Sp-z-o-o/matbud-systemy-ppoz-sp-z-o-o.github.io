@@ -1,21 +1,17 @@
 import type { NextConfig } from "next";
 
-const repoName = process.env.REPOSITORY_NAME || 'matbud';
-
 const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
   output: 'export',
-  basePath: `/${repoName}`,
-  assetPrefix: `/${repoName}/`,
   trailingSlash: true,
   images: {
     unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'neloduka-sobe.github.io',
+        hostname: 'matbud-systemy-ppoz-sp-z-o-o.github.io',
         pathname: '/**',
       },
     ],

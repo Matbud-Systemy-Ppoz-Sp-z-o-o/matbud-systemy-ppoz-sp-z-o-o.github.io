@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "next lint"
   },
-  "homepage": "https://neloduka-sobe.github.io/matbud",
+  "homepage": "https://matbud-systemy-ppoz-sp-z-o-o.github.io",
   "dependencies": {
     "@hookform/resolvers": "^4.1.3",
     "@radix-ui/react-dialog": "^1.1.6",

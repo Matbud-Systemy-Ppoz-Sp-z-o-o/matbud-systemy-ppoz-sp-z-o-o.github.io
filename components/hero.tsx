@@ -17,7 +17,7 @@ export default function Hero({ dictionary }: { dictionary: HeroDictionary }) {
           {/* Logo */}
           <div className="flex justify-center mb-0">
             <Image
-              src="/matbud/logo_pelne_tlo_w_tarczy.svg"
+              src="/logo_pelne_tlo_w_tarczy.svg"
               alt="Logo"
               width={400}
               height={400}

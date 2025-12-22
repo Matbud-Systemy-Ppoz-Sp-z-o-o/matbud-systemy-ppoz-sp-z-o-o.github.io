@@ -26,37 +26,37 @@ export default function Gallery({ dictionary }: { dictionary: DictionaryType }) 
 
   const galleryImages = [
     {
-      src: "/matbud/gallery/SSP.jpeg",
+      src: "/gallery/SSP.jpeg",
       alt: "Fire Alarm System Installation",
       title: dictionary.images[0].title,
       description: dictionary.images[0].description,
     },
     {
-      src: "/matbud/gallery/smokedamper.jpeg",
+      src: "/gallery/smokedamper.jpeg",
       alt: "Natural Smoke Extraction Systems",
       title: dictionary.images[1].title,
       description: dictionary.images[1].description,
     },
     {
-      src: "/matbud/gallery/smokedetector.jpeg",
+      src: "/gallery/smokedetector.jpeg",
       alt: "Mechanical Smoke Extraction Systems",
       title: dictionary.images[2].title,
       description: dictionary.images[2].description,
     },
     {
-      src: "/matbud/gallery/EvacuationLights.jpeg",
+      src: "/gallery/EvacuationLights.jpeg",
       alt: "Emergency Evacuation Lighting",
       title: dictionary.images[3].title,
       description: dictionary.images[3].description,
     },
     {
-      src: "/matbud/gallery/firedoors.jpeg",
+      src: "/gallery/firedoors.jpeg",
       alt: "Fire Doors Installation",
       title: dictionary.images[4].title,
       description: dictionary.images[4].description,
     },
     {
-      src: "/matbud/gallery/sound.jpeg",
+      src: "/gallery/sound.jpeg",
       alt: "Sound Warning Systems DSO",
       title: dictionary.images[5].title,
       description: dictionary.images[5].description,

@@ -31,7 +31,7 @@ export default function AboutUs({ dictionary }: { dictionary: Dictionary }) {
         <div className="grid md:grid-cols-2 gap-12 items-stretch">
           <div className="relative min-h-[500px] md:min-h-[600px]">
             <Image
-              src="/matbud/gallery/ONas.jpeg"
+              src="/gallery/ONas.jpeg"
               alt={dictionary.aboutImageAlt}
               fill
               className="object-cover rounded-lg"

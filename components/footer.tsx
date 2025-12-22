@@ -51,7 +51,7 @@ export function Footer({
       <div className="container grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         <div>
           <Link href={`/${locale}`} className="flex items-center gap-2 mb-4">
-            <Image src="/matbud/logo.svg" alt={dictionary.footer.companyLogoAlt} width={40} height={40} className="h-10 w-auto" />
+            <Image src="/logo.svg" alt={dictionary.footer.companyLogoAlt} width={40} height={40} className="h-10 w-auto" />
             <span className="font-bold text-xl">{dictionary.common.companyNameShort}</span>
           </Link>
           <p className="text-muted-foreground">{dictionary.footer.description}</p>

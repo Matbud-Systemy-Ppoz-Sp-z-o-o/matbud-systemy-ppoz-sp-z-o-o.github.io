@@ -9,5 +9,5 @@
 
 ```node
 npm run build
-npm run delpoy
+npm run deploy
 ```
