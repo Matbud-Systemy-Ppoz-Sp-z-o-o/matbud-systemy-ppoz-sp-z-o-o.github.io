@@ -74,4 +74,7 @@ export async function getCities(locale?: string): Promise<City[]> {
     //...city,
     //conjugation: city.name
   //}));
+
+  // Return empty array if cities are commented out
+  return [];
 }

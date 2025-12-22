@@ -28,6 +28,13 @@ export async function generateStaticParams(): Promise<CityParams[]> {
   const cities = await getCities();
   const locales = ["pl", "en"];
 
+  // Handle case where cities might be undefined or empty
+  // Return at least one placeholder to satisfy Next.js static export requirements
+  if (!cities || cities.length === 0) {
+    // Return a placeholder that will trigger 404 (cities are disabled)
+    return [{ locale: "pl", city: "placeholder" }];
+  }
+
   // Create paths for each locale and city combination
   return locales.flatMap(locale =>
     cities.map(city => ({
