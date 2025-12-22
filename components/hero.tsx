@@ -13,7 +13,7 @@ export default function Hero({ dictionary }: { dictionary: HeroDictionary }) {
   return (
     <section className="hero-image relative">
       <div className="container hero-content text-white flex flex-col items-center justify-center min-h-[600px] py-12">
-        <div className="flex flex-col items-center space-y-8 w-full max-w-4xl">
+        <div className="flex flex-col items-center w-full max-w-4xl">
           {/* Logo */}
           <div className="flex justify-center mb-0">
             <Image
@@ -27,8 +27,8 @@ export default function Hero({ dictionary }: { dictionary: HeroDictionary }) {
           </div>
           
           {/* Content */}
-          <div className="flex flex-col items-center space-y-8 text-center -mt-2">
-            <p className="text-xl sm:text-2xl max-w-[700px] leading-relaxed text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">{dictionary.subtitle}</p>
+          <div className="flex flex-col items-center space-y-8 text-center -mt-6">
+            <p className="text-xl sm:text-2xl max-w-[700px] leading-relaxed text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)] -mt-8">{dictionary.subtitle}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center w-full max-w-md">
               <Button asChild size="lg" className="bg-primary hover:bg-primary-dark text-white px-6 py-3">
                 <Link href="#contact">{dictionary.primaryCta}</Link>
