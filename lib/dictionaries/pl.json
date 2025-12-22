@@ -352,7 +352,7 @@
       },
       "cookies": {
         "title": "Pliki cookie",
-        "content": "Nasza strona internetowa używa plików cookie w celu poprawy funkcjonalności i doświadczeń użytkownika. Pliki cookie to małe pliki tekstowe przechowywane na Twoim urządzeniu. Możesz kontrolować ustawienia plików cookie w swojej przeglądarce."
+        "content": "Nie zbieramy żadnych plików cookie na tej stronie internetowej."
       },
       "contact": {
         "title": "Kontakt w sprawie prywatności",
@@ -370,8 +370,8 @@
     }
   },
   "cookieConsent": {
-    "title": "Zgoda na pliki cookie",
-    "description": "Używamy plików cookie, aby poprawić Twoje doświadczenie przeglądania, wyświetlać spersonalizowane reklamy lub treści oraz analizować nasz ruch. Klikając \"Akceptuj wszystkie\", wyrażasz zgodę na używanie przez nas plików cookie.",
+    "title": "Informacja o plikach cookie",
+    "description": "Nie zbieramy żadnych plików cookie na tej stronie internetowej.",
     "acceptAll": "Akceptuj wszystkie",
     "necessaryOnly": "Tylko niezbędne",
     "close": "Zamknij"

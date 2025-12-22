@@ -487,7 +487,7 @@
       },
       "cookies": {
        "title": "Cookies",
-       "content": "Our website uses cookies to improve functionality and user experience. Cookies are small text files stored on your device. You can control cookie settings in your browser."
+       "content": "We do not collect any cookies on this website."
       },
       "contact": {
        "title": "Contact Regarding Privacy",
@@ -505,8 +505,8 @@
      }
     },
     "cookieConsent": {
-     "title": "Cookie Consent",
-     "description": "We use cookies to improve your Browse experience, display personalized ads or content, and analyze our traffic. By clicking \"Accept all\", you consent to our use of cookies.",
+     "title": "Cookie Notice",
+     "description": "We do not collect any cookies on this website.",
      "acceptAll": "Accept all",
      "necessaryOnly": "Necessary only",
      "close": "Close"

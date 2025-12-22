@@ -46,13 +46,6 @@ export function CookieConsent({ dictionary }: { dictionary: Dictionary }) {
           <p className="text-muted-foreground">{dictionary.description}</p>
         </div>
 
-        <div className="flex flex-wrap gap-2">
-          <Button variant="outline" onClick={acceptNecessary}>
-            {dictionary.necessaryOnly}
-          </Button>
-          <Button onClick={acceptAll}>{dictionary.acceptAll}</Button>
-        </div>
-
         <Button
           variant="ghost"
           size="icon"
