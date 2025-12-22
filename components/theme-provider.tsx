@@ -15,7 +15,7 @@ const initialState: {
   theme: Theme
   setTheme: (theme: Theme) => void
 } = {
-  theme: "system",
+  theme: "dark",
   setTheme: () => null,
 }
 
@@ -23,7 +23,7 @@ const ThemeProviderContext = createContext(initialState)
 
 export function ThemeProvider({
   children,
-  defaultTheme = "system",
+  defaultTheme = "dark",
   attribute = "class",
   ...props
 }: ThemeProviderProps) {
@@ -35,6 +35,9 @@ export function ThemeProvider({
     const storedTheme = localStorage.getItem("theme") as Theme
     if (storedTheme && ["light", "dark", "system"].includes(storedTheme)) {
       setTheme(storedTheme)
+    } else {
+      // Default to dark if no stored theme
+      setTheme("dark")
     }
     setMounted(true)
   }, [])

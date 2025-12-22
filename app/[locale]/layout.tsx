@@ -31,7 +31,7 @@ export default async function LocaleLayout({
   const cities = await getCities(locale)
 
   return (
-    <ThemeProvider attribute="class" defaultTheme="light">
+    <ThemeProvider attribute="class" defaultTheme="dark">
       <Header locale={locale} dictionary={dict} />
       <main>{children}</main>
       <Footer locale={locale} dictionary={dict} cities={cities} />
