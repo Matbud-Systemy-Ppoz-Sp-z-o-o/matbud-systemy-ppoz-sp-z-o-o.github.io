@@ -41,14 +41,14 @@ export function Footer({
 }: {
   locale: string
   dictionary: Dictionary
-  cities: City[]
+  cities?: City[]
 }) {
   // Limit to 8 cities for the footer
-  const footerCities = cities.slice(0, 8)
+  // const footerCities = cities?.slice(0, 8) || []
 
   return (
     <footer className="bg-muted py-12 border-t">
-      <div className="container grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+      <div className="container grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         <div>
           <Link href={`/${locale}`} className="flex items-center gap-2 mb-4">
             <Image src="/matbud/logo.svg" alt={dictionary.footer.companyLogoAlt} width={40} height={40} className="h-10 w-auto" />
@@ -101,7 +101,7 @@ export function Footer({
           </ul>
         </div>
 
-        <div>
+        {/* <div>
           <h3 className="font-semibold text-lg mb-4">{dictionary.footer.locations}</h3>
           <ul className="space-y-2">
             {footerCities.map((city) => (
@@ -115,7 +115,7 @@ export function Footer({
               </li>
             ))}
           </ul>
-        </div>
+        </div> */}
 
         <div>
           <h3 className="font-semibold text-lg mb-4">{dictionary.footer.contact}</h3>

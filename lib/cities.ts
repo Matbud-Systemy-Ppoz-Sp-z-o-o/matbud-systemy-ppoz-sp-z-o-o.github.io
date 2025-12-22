@@ -5,12 +5,12 @@ export type City = {
 }
 
 export async function getCities(locale?: string): Promise<City[]> {
-  const polishCities = [
+  //const polishCities = [
     //{"name": "Warszawa", "slug": "systemy-ppoz-warszawa", "conjugation": "w Warszawie"},
     //{"name": "Kraków", "slug": "systemy-ppoz-krakow", "conjugation": "w Krakowie"},
     //{"name": "Łódź", "slug": "systemy-ppoz-lodz", "conjugation": "w Łodzi"},
     //{"name": "Wrocław", "slug": "systemy-ppoz-wroclaw", "conjugation": "we Wrocławiu"},
-    {"name": "Poznań", "slug": "systemy-ppoz-poznan", "conjugation": "w Poznaniu"},
+    //{"name": "Poznań", "slug": "systemy-ppoz-poznan", "conjugation": "w Poznaniu"},
     //{"name": "Gdańsk", "slug": "systemy-ppoz-gdansk", "conjugation": "w Gdańsku"},
     //{"name": "Szczecin", "slug": "systemy-ppoz-szczecin", "conjugation": "w Szczecinie"},
     //{"name": "Bydgoszcz", "slug": "systemy-ppoz-bydgoszcz", "conjugation": "w Bydgoszczy"},
@@ -28,8 +28,8 @@ export async function getCities(locale?: string): Promise<City[]> {
     //{"name": "Opole", "slug": "systemy-ppoz-opole", "conjugation": "w Opolu"},
     //{"name": "Elbląg", "slug": "systemy-ppoz-elblag", "conjugation": "w Elblągu"},
     //{"name": "Płock", "slug": "systemy-ppoz-plock", "conjugation": "w Płocku"},
-    {"name": "Gorzów Wielkopolski", "slug": "systemy-ppoz-gorzow-wielkopolski", "conjugation": "w Gorzowie Wielkopolskim"},
-    {"name": "Zielona Góra", "slug": "systemy-ppoz-zielona-gora", "conjugation": "w Zielonej Górze"},
+    //{"name": "Gorzów Wielkopolski", "slug": "systemy-ppoz-gorzow-wielkopolski", "conjugation": "w Gorzowie Wielkopolskim"},
+    //{"name": "Zielona Góra", "slug": "systemy-ppoz-zielona-gora", "conjugation": "w Zielonej Górze"},
     //{"name": "Kalisz", "slug": "systemy-ppoz-kalisz", "conjugation": "w Kaliszu"},
     //{"name": "Legnica", "slug": "systemy-ppoz-legnica", "conjugation": "w Legnicy"},
     //{"name": "Koszalin", "slug": "systemy-ppoz-koszalin", "conjugation": "w Koszalinie"},
@@ -56,22 +56,22 @@ export async function getCities(locale?: string): Promise<City[]> {
     //{"name": "Biała Podlaska", "slug": "systemy-ppoz-biala-podlaska", "conjugation": "w Białej Podlaskiej"},
     //{"name": "Głogów", "slug": "systemy-ppoz-glogow", "conjugation": "w Głogowie"},
     //{"name": "Konin", "slug": "systemy-ppoz-konin", "conjugation": "w Koninie"},
-    {"name": "Leszno", "slug": "systemy-ppoz-leszno", "conjugation": "w Lesznie"},
+    //{"name": "Leszno", "slug": "systemy-ppoz-leszno", "conjugation": "w Lesznie"},
     //{"name": "Zamość", "slug": "systemy-ppoz-zamosc", "conjugation": "w Zamościu"},
     //{"name": "Przemyśl", "slug": "systemy-ppoz-przemysl", "conjugation": "w Przemyślu"},
     //{"name": "Kędzierzyn-Koźle", "slug": "systemy-ppoz-kedzierzyn-kozle", "conjugation": "w Kędzierzynie-Koźlu"},
     //{"name": "Piotrków Trybunalski", "slug": "systemy-ppoz-piotrkow-trybunalski", "conjugation": "w Piotrkowie Trybunalskim"}
-  ];
+  //];
 
   // For Polish locale, return cities with conjugation
-  if (locale === "pl") {
-    return polishCities;
-  }
+  //if (locale === "pl") {
+    //return polishCities;
+  //}
 
   // For other locales (English, etc.), return cities without conjugation
   // Just use the city name since the dictionary already includes "in"
-  return polishCities.map(city => ({
-    ...city,
-    conjugation: city.name
-  }));
+  //return polishCities.map(city => ({
+    //...city,
+    //conjugation: city.name
+  //}));
 }
