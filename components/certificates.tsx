@@ -77,7 +77,7 @@ export default function Certificates({ dictionary }: { dictionary: DictionaryTyp
               {selectedImage !== null && (
                 <div className="relative h-[80vh] max-h-[600px]">
                   <Image
-                    src={certificates[selectedImage] || "/placeholder.svg"}
+                    src={certificates[selectedImage] || "https://matbud.net/placeholder.svg"}
                     alt={`Certificate ${selectedImage + 1}`}
                     fill
                     className="object-contain"

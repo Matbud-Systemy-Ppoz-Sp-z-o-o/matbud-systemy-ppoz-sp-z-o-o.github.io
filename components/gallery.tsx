@@ -114,7 +114,7 @@ export default function Gallery({ dictionary }: { dictionary: DictionaryType }) 
                 <>
                   <div className="relative h-[80vh] max-h-[600px]">
                     <Image
-                      src={galleryImages[selectedImage].src || "/placeholder.svg"}
+                      src={galleryImages[selectedImage].src || "https://matbud.net/placeholder.svg"}
                       alt={galleryImages[selectedImage].alt}
                       fill
                       className="object-contain"
