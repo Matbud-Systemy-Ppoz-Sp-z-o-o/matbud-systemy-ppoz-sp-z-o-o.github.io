@@ -20,12 +20,12 @@ export default function Certificates({ dictionary }: { dictionary: DictionaryTyp
   const [selectedImage, setSelectedImage] = useState<number | null>(null)
 
   const certificates = [
-    "/placeholder.svg?height=300&width=200",
-    "/placeholder.svg?height=300&width=200",
-    "/placeholder.svg?height=300&width=200",
-    "/placeholder.svg?height=300&width=200",
-    "/placeholder.svg?height=300&width=200",
-    "/placeholder.svg?height=300&width=200",
+    "https://matbud.net/placeholder.svg?height=300&width=200",
+    "https://matbud.net/placeholder.svg?height=300&width=200",
+    "https://matbud.net/placeholder.svg?height=300&width=200",
+    "https://matbud.net/placeholder.svg?height=300&width=200",
+    "https://matbud.net/placeholder.svg?height=300&width=200",
+    "https://matbud.net/placeholder.svg?height=300&width=200",
   ]
 
   const handlePrevious = () => {
@@ -56,7 +56,7 @@ export default function Certificates({ dictionary }: { dictionary: DictionaryTyp
               onClick={() => setSelectedImage(index)}
             >
               <Image
-                src={certificate || "/placeholder.svg"}
+                src={certificate || "https://matbud.net/placeholder.svg"}
                 alt={`Certificate ${index + 1}`}
                 fill
                 className="object-cover rounded-md border-2 border-muted hover:border-primary/50 transition-colors"

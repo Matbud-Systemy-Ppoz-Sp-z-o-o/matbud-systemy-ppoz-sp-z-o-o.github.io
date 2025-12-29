@@ -91,7 +91,7 @@ export default function Gallery({ dictionary }: { dictionary: DictionaryType }) 
               onClick={() => setSelectedImage(index)}
             >
               <Image
-                src={image.src || "/placeholder.svg"}
+                src={image.src || "https://matbud.net/placeholder.svg"}
                 alt={image.alt}
                 fill
                 className="object-cover transition-transform duration-300 group-hover:scale-110"

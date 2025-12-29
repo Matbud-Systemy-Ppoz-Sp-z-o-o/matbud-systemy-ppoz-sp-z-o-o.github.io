@@ -74,7 +74,7 @@ export default function Clients({ dictionary }: { dictionary: Dictionary }) {
               <div key={index} className="w-full flex-shrink-0 px-4 md:px-12">
                 <div className="bg-muted/50 rounded-lg p-6 md:p-8 flex flex-col items-center text-center">
                   <div className="relative w-24 h-24 mb-6">
-                    <Image src={client.logo || "/placeholder.svg"} alt={dictionary.clientLogoAlt} fill className="object-contain" />
+                    <Image src={client.logo || "https://matbud.net/placeholder.svg"} alt={dictionary.clientLogoAlt} fill className="object-contain" />
                   </div>
                   <blockquote className="mb-4 text-lg italic">&quot;{client.testimonial.quote}&quot;</blockquote>
                   <div>
@@ -123,7 +123,7 @@ export default function Clients({ dictionary }: { dictionary: Dictionary }) {
             <div key={index} className="flex justify-center">
               <div className="relative w-24 h-24">
                 <Image
-                  src={client.logo || "/placeholder.svg"}
+                  src={client.logo || "https://matbud.net/placeholder.svg"}
                   alt={dictionary.companyLogoAlt}
                   fill
                   className="object-contain grayscale hover:grayscale-0 transition-all"

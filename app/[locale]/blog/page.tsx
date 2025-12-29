@@ -40,7 +40,7 @@ export default async function BlogPage({ params }: PageProps) {
           <Card key={post.slug} className="overflow-hidden flex flex-col h-full">
             <div className="relative h-48 w-full">
               <Image
-                src={post.coverImage || "/placeholder.svg?height=200&width=400"}
+                src={post.coverImage || "https://matbud.net/placeholder.svg?height=200&width=400"}
                 alt={post.title}
                 fill
                 className="object-cover"

@@ -88,7 +88,7 @@ export default async function PostPage({
         {post.coverImage && (
           <div className="relative h-[400px] w-full mb-8">
             <Image
-              src={post.coverImage || "/placeholder.svg"}
+              src={post.coverImage || "https://matbud.net/placeholder.svg"}
               alt={post.title}
               fill
               className="object-cover rounded-lg"

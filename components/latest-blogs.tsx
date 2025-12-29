@@ -43,7 +43,7 @@ export default async function LatestBlogs({ locale, dictionary }: LatestBlogsPro
             <Card key={post.slug} className="overflow-hidden flex flex-col h-full hover:shadow-lg transition-shadow border border-border">
               <div className="relative h-48 w-full">
                 <Image
-                  src={post.coverImage || "/placeholder.svg?height=200&width=400"}
+                  src={post.coverImage || "https://matbud.net/placeholder.svg?height=200&width=400"}
                   alt={post.title}
                   fill
                   className="object-cover"

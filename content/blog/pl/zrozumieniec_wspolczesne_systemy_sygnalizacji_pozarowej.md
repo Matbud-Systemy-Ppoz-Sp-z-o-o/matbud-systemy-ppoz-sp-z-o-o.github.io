@@ -2,7 +2,7 @@
 title: "Zrozumienieć współczesne systemy sygnalizacji pożarowej i oddymiania"
 date: "2023-06-22"
 excerpt: "Kompleksowy przewodnik po dostępnych obecnie typach systemów sygnalizacji pożarowej, oddymiania i oświetlenia awaryjnego oraz jak wybrać odpowiednie dla swoich potrzeb."
-coverImage: "/blog/fire-alarm-systems.jpg"
+coverImage: "https://matbud.net/blog/fire-alarm-systems.jpg"
 ---
 
 # Zrozumienie współczesnych systemów sygnalizacji pożarowej i oddymiania

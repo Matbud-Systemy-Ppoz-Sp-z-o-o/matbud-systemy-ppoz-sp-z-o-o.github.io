@@ -2,7 +2,7 @@
 title: "Podstawowe wskazówki dotyczące bezpieczeństwa pożarowego dla firm"
 date: "2023-05-15"
 excerpt: "Poznaj najważniejsze środki bezpieczeństwa pożarowego, które każda firma powinna wdrożyć, aby chronić pracowników i mienie."
-coverImage: "/blog/fire-safety-business.jpg"
+coverImage: "https://matbud.net/blog/fire-safety-business.jpg"
 ---
 
 # Podstawowe wskazówki dotyczące bezpieczeństwa pożarowego dla firm
