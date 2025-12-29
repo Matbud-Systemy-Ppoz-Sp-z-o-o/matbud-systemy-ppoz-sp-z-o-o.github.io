@@ -21,7 +21,7 @@ export default function Hero({ dictionary }: { dictionary: HeroDictionary }) {
               alt="Logo"
               width={400}
               height={400}
-              className="w-auto h-auto max-w-[350px] max-h-[350px] sm:max-w-[450px] sm:max-h-[450px] drop-shadow-[0_10px_40px_rgba(0,0,0,1),0_20px_60px_rgba(0,0,0,1),0_30px_80px_rgba(0,0,0,1),0_40px_100px_rgba(0,0,0,1)] dark:drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)]"
+              className="w-auto h-auto max-w-[350px] max-h-[350px] sm:max-w-[450px] sm:max-h-[450px] drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)] dark:drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)]"
               priority
             />
           </div>
