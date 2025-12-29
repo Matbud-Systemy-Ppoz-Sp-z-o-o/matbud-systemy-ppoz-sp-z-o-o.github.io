@@ -126,7 +126,7 @@ export default async function CityPage({ params }: PageProps) {
             </div>
             <div className="relative h-[400px] rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/gallery/cities.jpeg"
+                src="https://matbud.net/images/gallery/cities.jpeg"
                 alt={`Usługi przeciwpożarowe w ${cityData.name}`}
                 fill
                 className="object-cover"
