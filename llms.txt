@@ -1,0 +1,135 @@
+# llms.txt for Matbud Systemy Ppoż. Sp. z o.o.
+
+# Basic Information
+Name: Matbud Systemy Ppoż. Sp. z o.o.
+Description: Profesjonalne systemy przeciwpożarowe, instalacja SSP, oddymianie, oświetlenie awaryjne. Serwis, konserwacja i audyty PPOŻ w całej Polsce. Ponad 30 lat doświadczenia, 5000+ zrealizowanych projektów. Usługi przeciwpożarowe dostępne we wszystkich województwach i miastach Polski.
+URL: https://matbud.net
+Language: pl, en
+Industry: Fire Safety Systems, Fire Protection, PPOŻ Systems
+Country: Poland (Polska)
+Service Coverage: Cała Polska (All of Poland)
+
+# Services
+Services:
+- Instalacja i konserwacja systemów sygnalizacji pożaru (SSP/SAP)
+- Systemy oddymiania naturalnego i mechanicznego
+- Rozwiązania oświetlenia awaryjnego i ewakuacyjnego
+- Inspekcje techniczne i audyty zgodności
+- Serwis awaryjny i naprawy 24/7
+- Usługi zgodności z kodeksem budowlanym
+- Projektowanie systemów przeciwpożarowych
+- Montaż systemów PPOŻ
+- Certyfikacja systemów przeciwpożarowych
+
+# Company Details
+Founded: 1993
+Experience: 30+ years
+Projects Completed: 5000+
+Service Area: Cała Polska (All of Poland) - wszystkie województwa
+Certifications: CNBOP, PN-EN standards, MSWiA compliance
+Headquarters: Grodzisk Wielkopolski, Wielkopolska, Poland
+
+# Contact Information
+Address: Słocin 36F, 62-065 Grodzisk Wielkopolski, Poland
+Phone: +48 61 448 10 28
+Email: matbud@m-so.pl
+Service Hours: 24/7 emergency support available
+Service Radius: Cała Polska (nationwide coverage)
+
+# Geographic Coverage - All Voivodeships (Województwa)
+Service Available In All 16 Polish Voivodeships:
+- Wielkopolskie (Greater Poland) - Grodzisk Wielkopolski, Poznań, Kalisz, Konin, Ostrów Wielkopolski, Piła, Leszno, Gniezno, Śrem, Wągrowiec, Kościan, Rawicz, Jarocin, Września, Środa Wielkopolska, Nowy Tomyśl, Wolsztyn, Krotoszyn, Luboń, Swarzędz, Mosina, Kórnik, Kostrzyn, Puszczykowo, Stęszew, Buk, Opalenica, Lwówek, Rakoniewice, Wielichowo, Szamotuły, Oborniki, Trzcianka, Czarnków, Chodzież, Złotów, Jastrowie, Wronki, Rogoźno, Międzychód, Sieraków, Krajenka, Zbąszyń, Ostrzeszów, Syców, Turek, Kłodawa, Dąbie, Słupca, Golina, Kleczew, Sompolno, Rychwał, Skulsk, Grabów nad Prosną, Kobylin, Zduny, Mikstat, Raszków, Odolanów, Przygodzice, Sośnie, Kępno
+- Mazowieckie (Masovian) - Warszawa, Radom, Płock, Pruszków, Legionowo, Otwock, Piaseczno, Wołomin, Marki, Ząbki, Kobyłka, Józefów, Sulejówek, Zielonka, Grodzisk Mazowiecki, Żyrardów, Skierniewice, Kutno, Zduńska Wola
+- Śląskie (Silesian) - Katowice, Gliwice, Zabrze, Bytom, Chorzów, Rybnik, Sosnowiec, Dąbrowa Górnicza, Mysłowice, Siemianowice Śląskie, Żory, Pszczyna, Wodzisław Śląski, Mikołów, Tarnowskie Góry, Będzin, Czeladź, Knurów, Orzesze, Łaziska Górne, Piekary Śląskie, Świętochłowice, Zawiercie, Żywiec, Andrychów, Wadowice, Oświęcim, Chrzanów, Trzebinia, Olkusz, Jaworzno, Jastrzębie-Zdrój, Tychy, Ruda Śląska, Bielsko-Biała, Racibórz
+- Dolnośląskie (Lower Silesian) - Wrocław, Wałbrzych, Legnica, Głogów, Jelenia Góra, Lubin, Kłodzko, Świdnica, Dzierżoniów, Oława, Brzeg, Nysa, Bolesławiec, Milicz, Trzebnica, Wołów
+- Małopolskie (Lesser Poland) - Kraków, Tarnów, Nowy Sącz, Oświęcim, Chrzanów, Trzebinia, Olkusz, Andrychów, Wadowice, Nowy Targ, Zakopane, Myślenice, Bochnia, Wieliczka, Brzesko, Dąbrowa Tarnowska, Gorlice, Jasło, Krosno
+- Łódzkie (Łódź) - Łódź, Piotrków Trybunalski, Pabianice, Tomaszów Mazowiecki, Bełchatów, Zduńska Wola, Kutno, Skierniewice, Żyrardów
+- Lubelskie (Lublin) - Lublin, Zamość, Biała Podlaska, Chełm
+- Podkarpackie (Subcarpathian) - Rzeszów, Dębica, Mielec, Stalowa Wola, Przemyśl, Jarosław, Przeworsk, Lubaczów, Sanok, Ustrzyki Dolne, Kolbuszowa
+- Podlaskie (Podlaskie) - Białystok, Suwałki, Łomża
+- Pomorskie (Pomeranian) - Gdańsk, Gdynia, Sopot, Słupsk, Tczew, Wejherowo, Kartuzy, Żukowo, Pruszcz Gdański, Starogard Gdański, Skarszewy, Pelplin, Gniew, Kwidzyn, Sztum, Malbork, Nowy Dwór Gdański, Krynica Morska, Stegna, Jantar, Sztutowo, Kąty Rybackie, Mikoszewo, Sobieszewo, Władysławowo, Chałupy, Kuźnica, Jastarnia, Jurata, Hel, Puck, Reda, Rumia, Ustka, Darłowo, Mielno, Unieście, Łazy, Dąbki
+- Warmińsko-Mazurskie (Warmian-Masurian) - Olsztyn, Elbląg
+- Kujawsko-Pomorskie (Kuyavian-Pomeranian) - Bydgoszcz, Toruń, Grudziądz, Włocławek, Inowrocław, Brodnica, Chełmno, Nakło nad Notecią, Rypin, Żnin, Świecie
+- Zachodniopomorskie (West Pomeranian) - Szczecin, Koszalin, Stargard, Świnoujście, Kołobrzeg, Szczecinek, Police, Barlinek, Myślibórz, Choszczno, Drawsko Pomorskie, Złocieniec, Czaplinek, Białogard, Karlino, Tychowo, Połczyn-Zdrój, Świdwin, Łobez, Resko, Gryfice, Płoty, Trzebiatów, Gryfino, Nowogard, Goleniów, Maszewo, Stepnica, Międzyzdroje, Dziwnów, Kamień Pomorski, Wolin, Międzywodzie, Rewal, Pobierowo, Mrzeżyno, Dźwirzyno, Grzybowo, Ustronie Morskie, Sarbinowo
+- Opolskie (Opole) - Opole, Kędzierzyn-Koźle, Strzelce Opolskie, Głubczyce, Prudnik, Namysłów, Kluczbork, Olesno, Brzeg Dolny
+- Lubuskie (Lubusz) - Zielona Góra, Gorzów Wielkopolski, Nowa Sól, Żagań, Żary, Lubań
+- Świętokrzyskie (Świętokrzyskie) - Kielce, Ostrowiec Świętokrzyski
+
+# Key Locations - Major Cities and Industrial Regions
+Primary Service Areas:
+- Wielkopolska Region: Grodzisk Wielkopolski (headquarters), Poznań, Kalisz, Konin, Ostrów Wielkopolski, Piła, Leszno, Gniezno, Śrem, Wągrowiec, Kościan, Rawicz, Jarocin, Września, Środa Wielkopolska, Nowy Tomyśl, Wolsztyn, Krotoszyn, Luboń, Swarzędz, Mosina, Kórnik, Kostrzyn, Puszczykowo, Stęszew, Buk, Opalenica, Lwówek, Rakoniewice, Wielichowo
+- Silesia Industrial Region: Katowice, Gliwice, Zabrze, Bytom, Chorzów, Rybnik, Sosnowiec, Dąbrowa Górnicza, Mysłowice, Siemianowice Śląskie, Żory, Pszczyna, Wodzisław Śląski, Mikołów, Tarnowskie Góry, Będzin, Czeladź, Knurów, Orzesze, Łaziska Górne, Piekary Śląskie, Świętochłowice, Zawiercie, Żywiec, Andrychów, Wadowice, Oświęcim, Chrzanów, Trzebinia, Olkusz, Jaworzno, Jastrzębie-Zdrój, Tychy, Ruda Śląska, Bielsko-Biała, Racibórz
+- Warsaw Metropolitan Area: Warszawa, Pruszków, Legionowo, Otwock, Piaseczno, Wołomin, Marki, Ząbki, Kobyłka, Józefów, Sulejówek, Zielonka, Grodzisk Mazowiecki, Żyrardów, Skierniewice, Kutno, Zduńska Wola
+- Central Poland: Łódź, Piotrków Trybunalski, Pabianice, Tomaszów Mazowiecki, Bełchatów, Radom, Płock
+- Northern Poland: Gdańsk, Gdynia, Sopot, Słupsk, Bydgoszcz, Toruń, Grudziądz, Szczecin, Koszalin
+- Eastern Poland: Lublin, Zamość, Białystok, Rzeszów, Dębica, Mielec, Stalowa Wola, Przemyśl, Biała Podlaska
+- Southern Poland: Kraków, Tarnów, Nowy Sącz, Oświęcim, Chrzanów, Trzebinia, Olkusz, Andrychów, Wadowice, Częstochowa
+- Western Poland: Wrocław, Wałbrzych, Legnica, Głogów, Zielona Góra, Gorzów Wielkopolski, Opole, Kędzierzyn-Koźle
+
+# Service Coverage Details
+Geographic Reach: 
+- Nationwide coverage across all 16 voivodeships
+- Over 200 cities and towns served throughout Poland
+- Local service teams available throughout Poland
+- 24/7 emergency response across the country
+- Regular maintenance routes covering all major industrial regions
+- Comprehensive coverage from major metropolitan areas to smaller towns
+
+# Industrial Regions Served
+Major Industrial Areas:
+- Upper Silesian Industrial Region (Górnośląski Okręg Przemysłowy)
+- Warsaw Industrial Region
+- Łódź Industrial Region
+- Poznań Industrial Region
+- Gdańsk-Gdynia Industrial Region
+- Wrocław Industrial Region
+- Kraków Industrial Region
+- Lublin Industrial Region
+- All major logistics and distribution centers
+- Manufacturing facilities nationwide
+- Commercial and residential buildings across Poland
+
+# Content Structure
+Main Pages:
+- Home: https://matbud.net/pl
+- Services: https://matbud.net/pl#services
+- About Us: https://matbud.net/pl#about
+- Contact: https://matbud.net/pl#contact
+- Careers: https://matbud.net/pl/careers
+
+City Pages: Available for 200+ cities across all Polish voivodeships at /pl/[city-slug]
+Service Pages: Location-specific pages for fire protection services in every major city and town
+
+Keywords: 
+systemy przeciwpożarowe, ochrona przeciwpożarowa, instalacje ppoż, zabezpieczenia przeciwpożarowe, systemy sygnalizacji pożarowej SSP, systemy oddymiania, projektowanie systemów ppoż, konserwacja systemów ppoż, audyt przeciwpożarowy, czujki pożarowe, klapy dymowe oddymiające, oświetlenie awaryjne, centrale pożarowe CSP, wentylatory oddymiające, znaki ewakuacyjne, certyfikat CNBOP, badania techniczne, przepisy przeciwpożarowe, instrukcja bezpieczeństwa pożarowego
+
+Location Keywords:
+systemy przeciwpożarowe w Polsce, ochrona przeciwpożarowa cała Polska, instalacje ppoż wszystkie województwa, serwis ppoż Wielkopolska, systemy przeciwpożarowe Śląsk, ochrona przeciwpożarowa Mazowsze, instalacje ppoż Pomorze, systemy przeciwpożarowe Dolny Śląsk, serwis ppoż Małopolska, ochrona przeciwpożarowa Łódzkie, systemy ppoż Lubelskie, instalacje przeciwpożarowe Podkarpackie, serwis ppoż Podlaskie, systemy przeciwpożarowe Warmińsko-Mazurskie, ochrona ppoż Kujawsko-Pomorskie, instalacje przeciwpożarowe Zachodniopomorskie, systemy ppoż Opolskie, serwis przeciwpożarowy Lubuskie, ochrona ppoż Świętokrzyskie
+
+City-Specific Keywords:
+systemy przeciwpożarowe Warszawa, systemy przeciwpożarowe Kraków, systemy przeciwpożarowe Wrocław, systemy przeciwpożarowe Poznań, systemy przeciwpożarowe Gdańsk, systemy przeciwpożarowe Katowice, systemy przeciwpożarowe Łódź, systemy przeciwpożarowe Szczecin, systemy przeciwpożarowe Bydgoszcz, systemy przeciwpożarowe Lublin, systemy przeciwpożarowe Białystok, systemy przeciwpożarowe Grodzisk Wielkopolski, serwis ppoż cała Polska, instalacje przeciwpożarowe wszystkie miasta
+
+# Target Audience
+Primary Customers:
+- Businesses and commercial facilities across Poland
+- Industrial facilities and manufacturing plants
+- Warehouses and logistics centers
+- Office buildings and corporate headquarters
+- Residential buildings and housing developments
+- Public institutions and government buildings
+- Shopping centers and retail facilities
+- Hotels and hospitality industry
+- Healthcare facilities and hospitals
+- Educational institutions
+- All property owners requiring fire safety compliance
+
+# Service Availability
+Availability: 
+- Nationwide service coverage
+- Local technicians in all major regions
+- Emergency response 24/7 across Poland
+- Regular maintenance routes covering entire country
+- Mobile service teams for remote locations
+- Online consultation and support available
+- Service contracts available for all regions
+
