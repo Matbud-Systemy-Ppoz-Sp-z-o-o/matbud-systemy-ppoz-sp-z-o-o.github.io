@@ -44,7 +44,7 @@ export function Footer({
   cities?: City[]
 }) {
   // Limit to 8 cities for the footer
-  // const footerCities = cities?.slice(0, 8) || []
+  const footerCities = cities?.slice(0, 5) || []
 
   return (
     <footer className="bg-muted py-12 border-t">
@@ -101,7 +101,7 @@ export function Footer({
           </ul>
         </div>
 
-        {/* <div>
+        <div>
           <h3 className="font-semibold text-lg mb-4">{dictionary.footer.locations}</h3>
           <ul className="space-y-2">
             {footerCities.map((city) => (
@@ -115,7 +115,7 @@ export function Footer({
               </li>
             ))}
           </ul>
-        </div> */}
+        </div>
 
         <div>
           <h3 className="font-semibold text-lg mb-4">{dictionary.footer.contact}</h3>

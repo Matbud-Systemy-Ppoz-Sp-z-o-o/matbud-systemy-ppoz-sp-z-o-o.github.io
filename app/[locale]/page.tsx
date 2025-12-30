@@ -14,10 +14,26 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   const locale = resolvedParams.locale
   const dict = await getDictionary(locale)
   
+  const title = `${dict.common.companyName} | ${dict.common.pageTitle}`;
+  const description = dict.common.pageDescription;
+  
   return {
-    title: `${dict.common.companyName} | ${dict.common.pageTitle}`,
-    description: dict.common.pageDescription,
+    title,
+    description,
     keywords: dict.common.keywords,
+    openGraph: {
+      title,
+      description,
+      type: "website",
+      locale: locale === "pl" ? "pl_PL" : "en_US",
+      url: "https://matbud.net",
+      siteName: dict.common.siteName,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
   }
 }
 

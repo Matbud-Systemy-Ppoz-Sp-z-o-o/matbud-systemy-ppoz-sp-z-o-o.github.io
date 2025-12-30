@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "generate-sitemap": "node scripts/generate-sitemap.mjs",
     "dev": "next dev --turbopack",
+    "prebuild": "npm run generate-sitemap",
     "build": "next build --no-lint",
     "deploy": "node deploy.js",
     "start": "next start",

@@ -61,14 +61,35 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   // Return dynamic metadata based on the city data
+  const title = `Systemy Przeciwpożarowe w ${cityData.name} | Instalacja i Serwis PPOŻ | Matbud Systemy Ppoż`;
+  const description = `Profesjonalne systemy przeciwpożarowe ${cityData.conjugation}. Instalacja, konserwacja i serwis systemów sygnalizacji pożaru (SSP), oddymiania, oświetlenia awaryjnego. Certyfikowani technicy, audyty zgodności. Serwis 24/7 w ${cityData.name} i okolicach.`;
+  
   return {
-    title: `Systemy Przeciwpożarowe w ${cityData.name} | Matbud Systemy Ppoż`,
-    description: `Profesjonalne rozwiązania przeciwpożarowe ${cityData.conjugation}. Instalacja, konserwacja i certyfikacja systemów.`, // Using conjugation field
+    title,
+    description,
     keywords: [
       `systemy przeciwpożarowe ${cityData.name}`,
       `ochrona przeciwpożarowa ${cityData.name}`,
       `instalacje ppoż ${cityData.name}`,
+      `serwis systemów przeciwpożarowych ${cityData.name}`,
+      `systemy sygnalizacji pożaru ${cityData.name}`,
+      `oddymianie ${cityData.name}`,
+      `oświetlenie awaryjne ${cityData.name}`,
+      `konserwacja ppoż ${cityData.name}`,
+      `audyt przeciwpożarowy ${cityData.name}`,
+      `certyfikacja ppoż ${cityData.name}`,
     ],
+    openGraph: {
+      title,
+      description,
+      type: "website",
+      locale: "pl_PL",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
   };
 }
 
@@ -113,9 +134,9 @@ export default async function CityPage({ params }: PageProps) {
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div className="space-y-6">
               <h1 className="text-4xl font-bold tracking-tight">
-                {trimWords(replaceCity(dict.cityPage?.title), 7)}
+                {replaceCity(dict.cityPage?.title)}
               </h1>
-              <p className="text-xl">{trimWords(replaceCity(dict.cityPage?.intro), 20)}</p>
+              <p className="text-xl">{replaceCity(dict.cityPage?.intro)}</p>
               <div className="pt-4">
                 <Button asChild size="lg" className="bg-white text-primary hover:bg-gray-100">
                   <Link href="#contact-form">
@@ -127,7 +148,7 @@ export default async function CityPage({ params }: PageProps) {
             <div className="relative h-[400px] rounded-lg overflow-hidden shadow-lg">
               <Image
                 src="https://matbud.net/images/gallery/cities.jpeg"
-                alt={`Usługi przeciwpożarowe w ${cityData.name}`}
+                alt={`Profesjonalne systemy przeciwpożarowe i instalacje PPOŻ w ${cityData.name} - Matbud Systemy Ppoż`}
                 fill
                 className="object-cover"
                 priority
@@ -206,12 +227,12 @@ export default async function CityPage({ params }: PageProps) {
                   <h3 className="font-semibold mb-1">{dict.aboutUs?.stats?.[0]?.label ?? 'Lat Doświadczenia'}</h3>
                 </div>
 
-                {/* Stat 2: Certified Techs */}
+                {/* Stat 2: Completed Projects */}
                 <div className="bg-card p-6 rounded-lg shadow-sm text-center border">
-                   <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-primary/20">
-                     <span className="text-primary text-2xl font-bold">100%</span>
+                   <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-primary/20">
+                     <span className="text-primary text-xl font-bold">5,000+</span>
                    </div>
-                   <h3 className="font-semibold mb-1">{dict.cityPage?.certifiedTechs ?? 'Certyfikowani Technicy'}</h3>
+                   <h3 className="font-semibold mb-1">{dict.aboutUs?.stats?.[1]?.label ?? 'Zrealizowanych projektów'}</h3>
                  </div>
 
                 {/* Stat 3: Support */}

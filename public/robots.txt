@@ -1,0 +1,51 @@
+# robots.txt for Matbud Systemy Ppoż. Sp. z o.o.
+# https://matbud.net
+
+User-agent: *
+Allow: /
+
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://matbud.net/sitemap.xml
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Googlebot-Image
+Allow: /public/
+Allow: /logo.svg
+Allow: /logo_pelne_tlo_w_tarczy.svg
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+# Crawl delay (optional, helps prevent server overload)
+Crawl-delay: 1
+
+# Allow indexing of all city pages
+Allow: /pl/systemy-ppoz-*
+Allow: /en/systemy-ppoz-*

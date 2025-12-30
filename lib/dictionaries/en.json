@@ -226,6 +226,10 @@
       }
      }
     },
+    "cities": {
+     "title": "Service Areas",
+     "subtitle": "We provide fire safety services in cities throughout Poland"
+    },
     "footer": {
      "description": "Matbud Systemy Ppoż. Sp. z o.o. provides comprehensive fire safety solutions for commercial and residential buildings. Our services include installation, maintenance, and certification of fire alarm, sprinkler, and other systems.",
      "quickLinks": "Quick links",
@@ -247,10 +251,10 @@
      "postNotFound": "Post not found"
     },
     "cityPage": {
-     "title": "Fire Safety Systems in {city}",
-     "intro": "Matbud Systemy Ppoż. sp. z o.o. provides professional fire safety services in {city} and the surrounding areas.",
-     "servicesTitle": "Our Services in {city}",
-     "servicesDescription": "We offer a comprehensive range of fire safety services for businesses and residents in {city}:",
+     "title": "Fire Safety Systems in {city} - Fire Protection Installation & Service",
+     "intro": "Matbud Systemy Ppoż. sp. z o.o. is an experienced provider of professional fire safety services in {city} and surrounding areas. We offer comprehensive solutions: installation, maintenance and service of fire alarm systems (SSP), smoke ventilation, emergency lighting, and compliance audits.",
+     "servicesTitle": "Fire Protection Services in {city} - Installation, Service, Maintenance",
+     "servicesDescription": "Comprehensive fire safety services for businesses, offices, warehouses and residential buildings in {city}. Professional installation, regular maintenance and emergency service of fire protection systems:",
      "servicesList": [
       "Fire alarm system installation and maintenance",
       "Sprinkler system design and installation",
@@ -259,12 +263,12 @@
       "24/7 emergency service and repairs",
       "Fire safety training for your staff"
      ],
-     "whyChooseTitle": "Why Choose Matbud Systemy Ppoż. sp. z o.o. in {city}",
-     "whyChooseDescription": "As a trusted provider of fire safety solutions in {city}, we combine local knowledge with industry expertise. Our certified technicians understand the specific requirements and regulations in your area, ensuring your fire safety systems are compliant and effective.",
-     "ctaButton": "Contact our {city} team",
+     "whyChooseTitle": "Why Choose Matbud Systemy Ppoż. sp. z o.o.",
+     "whyChooseDescription": "As a leader in fire safety solutions in {city}, we offer over 30 years of experience in designing, installing and servicing fire protection systems. Our certified technicians are well-versed in local fire regulations. We have completed over 5000 projects, ensuring the highest safety standards and compliance with PN-EN standards and building regulations. We guarantee quick response to emergencies thanks to our 24/7 service.",
+     "ctaButton": "Contact our team",
      "certifiedTechs": "Certified Technicians",
      "support": "Emergency Support",
-     "contactTitle": "Contact our {city} office",
+     "contactTitle": "Contact us",
      "contactSubtitle": "Fill out the form below and our local team will get back to you shortly",
      "formTitle": "Send us a message"
     },
@@ -513,10 +517,10 @@
      "companyName": "Matbud Systemy Ppoż. Sp. z o.o.",
      "companyNameShort": "Matbud Systemy Ppoż.",
      "pageTitle": "Fire Protection Systems",
-     "pageDescription": "Professional fire safety system installation, maintenance, and certification services for commercial and residential buildings.",
+     "pageDescription": "Matbud Systemy Ppoż - professional fire protection systems, SSP installation, smoke ventilation, emergency lighting. Fire protection service, maintenance and audits throughout Poland. Over 30 years of experience, 5000+ completed projects. Certified technicians, 24/7 service.",
      "defaultTitle": "Matbud Systemy Ppoż. Sp. z o.o. | Fire Protection Systems",
      "titleTemplate": "%s | Matbud Systemy Ppoż. Sp. z o.o.",
-     "defaultDescription": "Professional fire safety system installation, maintenance, and certification services for commercial and residential buildings.",
+     "defaultDescription": "Matbud Systemy Ppoż - professional fire protection systems, SSP installation, smoke ventilation, emergency lighting. Fire protection service, maintenance and audits throughout Poland. Over 30 years of experience, 5000+ completed projects. Certified technicians, 24/7 service.",
      "siteName": "Matbud Systemy Ppoż. Sp. z o.o.",
      "keywords": [
       "fire protection systems",

@@ -132,7 +132,7 @@
     "title": "Nasze Certyfikaty",
     "subtitle": "Utrzymujemy najwyższe standardy branżowe i certyfikaty",
     "certificateNames": [
-      "Uprawnienia do badań technicznych PKD 71.20.B",
+      "Uprawnienia do badań technicznych",
       "Instalacje certyfikowane przez CNBOP",
       "Zgodność z normami europejskimi PN-EN",
       "Zgodność z przepisami MSWiA",
@@ -227,6 +227,10 @@
       }
     }
   },
+  "cities": {
+    "title": "Obszary Działania",
+    "subtitle": "Świadczymy usługi z zakresu bezpieczeństwa przeciwpożarowego w miastach w całej Polsce"
+  },
   "footer": {
     "description": "Matbud Systemy Ppoż. Sp. z o.o. dostarcza kompleksowe rozwiązania z zakresu bezpieczeństwa przeciwpożarowego dla budynków komercyjnych i mieszkalnych w całej Polsce. Nasze usługi obejmują instalację, konserwację i certyfikację systemów sygnalizacji pożaru, oddymiania i oświetlenia awaryjnego.",
     "quickLinks": "Szybkie linki",
@@ -248,24 +252,24 @@
     "postNotFound": "Artykuł nie znaleziony"
   },
   "cityPage": {
-    "title": "Systemy bezpieczeństwa przeciwpożarowego {city}",
-    "intro": "Matbud Systemy Ppoż. sp. z o.o. świadczy profesjonalne usługi z zakresu bezpieczeństwa przeciwpożarowego {city} i okolicach.",
-    "servicesTitle": "Nasze Usługi {city}",
-    "servicesDescription": "Oferujemy kompleksowy zakres usług z zakresu bezpieczeństwa przeciwpożarowego dla firm i mieszkańców {city}:",
+    "title": "Systemy bezpieczeństwa przeciwpożarowego {city} - Instalacja i Serwis PPOŻ",
+    "intro": "Matbud Systemy Ppoż. sp. z o.o. to doświadczony dostawca profesjonalnych usług z zakresu bezpieczeństwa przeciwpożarowego {city} i okolicach. Oferujemy kompleksowe rozwiązania: instalację, konserwację i serwis systemów sygnalizacji pożaru (SSP), oddymiania, oświetlenia awaryjnego oraz audyty zgodności z przepisami.",
+    "servicesTitle": "Usługi Przeciwpożarowe {city} - Instalacja, Serwis, Konserwacja",
+    "servicesDescription": "Kompleksowe usługi z zakresu bezpieczeństwa przeciwpożarowego dla firm, biur, magazynów i budynków mieszkalnych {city}. Profesjonalna instalacja, regularna konserwacja i serwis awaryjny systemów PPOŻ:",
     "servicesList": [
       "Instalacja i konserwacja systemów sygnalizacji pożaru (SSP/SAP)",
       "Systemy oddymiania naturalnego i mechanicznego",
       "Rozwiązania oświetlenia awaryjnego i ewakuacyjnego",
-      "Inspekcje techniczne i audyty zgodności (PKD 71.20.B)",
+      "Inspekcje techniczne i audyty zgodności",
       "Serwis awaryjny i naprawy 24/7",
       "Usługi zgodności z kodeksem budowlanym"
     ],
-    "whyChooseTitle": "Dlaczego warto wybrać Matbud Systemy Ppoż. sp. z o.o. {city}",
-    "whyChooseDescription": "Jako zaufany dostawca rozwiązań z zakresu bezpieczeństwa przeciwpożarowego {city}, łączymy lokalną wiedzę z doświadczeniem branżowym. Nasi certyfikowani technicy rozumieją specyficzne wymagania i przepisy obowiązujące w Państwa okolicy, zapewniając, że Państwa systemy bezpieczeństwa przeciwpożarowego są zgodne z przepisami i skuteczne.",
-    "ctaButton": "Skontaktuj się z naszym zespołem {city}",
+    "whyChooseTitle": "Dlaczego warto wybrać Matbud Systemy Ppoż. sp. z o.o.",
+    "whyChooseDescription": "Jako lider w branży bezpieczeństwa przeciwpożarowego {city}, oferujemy ponad 30 lat doświadczenia w projektowaniu, instalacji i serwisie systemów PPOŻ. Nasi certyfikowani technicy doskonale znają lokalne przepisy przeciwpożarowe. Zrealizowaliśmy ponad 5000 projektów, zapewniając najwyższe standardy bezpieczeństwa i zgodność z normami PN-EN oraz przepisami prawa budowlanego. Gwarantujemy szybką reakcję na awarie dzięki serwisowi 24/7.",
+    "ctaButton": "Skontaktuj się z naszym zespołem",
     "certifiedTechs": "Certyfikowani Technicy",
     "support": "Wsparcie Awaryjne",
-    "contactTitle": "Skontaktuj się z naszym biurem {city}",
+    "contactTitle": "Skontaktuj się z nami",
     "contactSubtitle": "Wypełnij poniższy formularz, a nasz lokalny zespół skontaktuje się z Tobą wkrótce",
     "formTitle": "Wyślij nam wiadomość"
   },
@@ -381,7 +385,7 @@
     "pageDescription": "Serwis, projektowanie, montaż systemów przeciwpożarowych. Profesjonalne usługi instalacji, konserwacji i certyfikacji systemów bezpieczeństwa pożarowego dla budynków komercyjnych i mieszkalnych w całej Polsce.",
     "defaultTitle": "Matbud - Systemy Ppoż Sp. z o.o. | Systemy Przeciwpożarowe",
     "titleTemplate": "%s | Matbud - Systemy Ppoż Sp. z o.o.",
-    "defaultDescription": "Serwis, projektowanie, montaż systemów przeciwpożarowych. Profesjonalne usługi instalacji, konserwacji i certyfikacji systemów bezpieczeństwa pożarowego dla budynków komercyjnych i mieszkalnych w całej Polsce.",
+    "defaultDescription": "Matbud Systemy Ppoż - profesjonalne systemy przeciwpożarowe, instalacja SSP, oddymianie, oświetlenie awaryjne. Serwis, konserwacja i audyty PPOŻ w całej Polsce. Ponad 30 lat doświadczenia, 5000+ zrealizowanych projektów. Certyfikowani technicy, serwis 24/7.",
     "siteName": "Matbud - Systemy Ppoż Sp. z o.o.",
     "keywords": [
       "systemy przeciwpożarowe",
@@ -400,7 +404,7 @@
       "wentylatory oddymiające",
       "znaki ewakuacyjne",
       "certyfikat CNBOP",
-      "badania techniczne PKD 71.20.B",
+      "badania techniczne",
       "przepisy przeciwpożarowe",
       "instrukcja bezpieczeństwa pożarowego",
       "normy ppoż",
