@@ -79,6 +79,11 @@ function deployToBuiltBranch() {
     const copyRecursive = (src, dest) => {
       const stats = fs.statSync(src);
       if (stats.isDirectory()) {
+        // Skip .git directory
+        if (path.basename(src) === '.git') {
+          console.log('Skipping .git directory');
+          return;
+        }
         if (!fs.existsSync(dest)) {
           fs.mkdirSync(dest, { recursive: true });
         }
@@ -129,9 +134,13 @@ function deployToBuiltBranch() {
     }
     
     // Copy files from temp directory to current directory
-    console.log('📋 Copying files to built branch...');
+    console.log('Copying files to built branch...');
     const files = fs.readdirSync(tempDir);
     files.forEach(file => {
+      if (file === '.git') {
+        console.log('Skipping .git directory');
+        return;
+      }
       const srcPath = path.join(tempDir, file);
       const destPath = path.join('.', file);
       if (fs.statSync(srcPath).isDirectory()) {
@@ -140,6 +149,17 @@ function deployToBuiltBranch() {
         fs.copyFileSync(srcPath, destPath);
       }
     });
+    
+    // SECURITY: Remove .git directory if it exists in the built branch
+    const gitDirInBuilt = path.join(process.cwd(), '.git');
+    if (fs.existsSync(gitDirInBuilt) && fs.statSync(gitDirInBuilt).isDirectory()) {
+      // Check if this is the actual .git directory (not a subdirectory)
+      const gitConfig = path.join(gitDirInBuilt, 'config');
+      if (fs.existsSync(gitConfig)) {
+        console.log('WARNING: .git directory found in built branch. This should not happen.');
+        console.log('The .git directory should only exist at the repository root, not in the built branch.');
+      }
+    }
     
     // Add all files to git
     console.log('Adding files to git...');
