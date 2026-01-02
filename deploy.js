@@ -25,11 +25,10 @@ fs.writeFileSync(path.join(outDir, '.gitignore'), gitignoreContent);
 
 // Function to remove .git from gh-pages branch
 function removeGitFromGhPages() {
+  const worktreePath = path.join(process.cwd(), '.gh-pages-checkout');
+  
   try {
     console.log('Security: Checking gh-pages branch for .git directory...');
-    
-    // Get current branch
-    const currentBranch = execSync('git branch --show-current', { encoding: 'utf8' }).trim();
     
     // Fetch latest from remote (fetch all refs to ensure we have the latest)
     try {
@@ -65,43 +64,52 @@ function removeGitFromGhPages() {
       return;
     }
     
-    // Check if gh-pages branch exists locally
-    let hasLocalBranch = false;
+    // Use worktree to check the branch without switching
+    // Clean up any existing worktree first
     try {
-      execSync('git show-ref --verify --quiet refs/heads/gh-pages', { stdio: 'ignore' });
-      hasLocalBranch = true;
-    } catch (error) {
-      // Local branch doesn't exist, create local tracking branch
-      try {
-        execSync('git checkout -b gh-pages origin/gh-pages', { stdio: 'pipe' });
-        hasLocalBranch = true;
-      } catch (e) {
-        console.log('Could not create local gh-pages branch. Skipping cleanup.');
-        return;
+      if (fs.existsSync(worktreePath)) {
+        execSync(`git worktree remove -f .gh-pages-checkout`, { stdio: 'pipe' });
       }
+    } catch (error) {
+      // Worktree doesn't exist or couldn't be removed, that's okay
     }
-
-    // Checkout gh-pages branch if not already on it
-    if (!hasLocalBranch || currentBranch !== 'gh-pages') {
-      execSync('git checkout gh-pages', { stdio: 'pipe' });
+    
+    // Create a worktree for the gh-pages branch
+    try {
+      execSync(`git worktree add .gh-pages-checkout origin/gh-pages`, { stdio: 'pipe' });
+    } catch (error) {
+      console.log('Could not create worktree for gh-pages branch. Skipping cleanup.');
+      return;
     }
 
     // Check if .git directory is tracked in the branch (not the repo root .git)
-    // We check if .git/config or any .git file is tracked in the index
     try {
       // Check if .git directory or any file inside it is tracked
-      const trackedFiles = execSync('git ls-files .git/', { encoding: 'utf8' }).trim();
+      const trackedFiles = execSync('git ls-files .git/', { 
+        encoding: 'utf8',
+        cwd: worktreePath 
+      }).trim();
+      
       if (trackedFiles) {
         console.log('Found tracked .git directory in gh-pages branch. Removing it...');
-        execSync('git rm -rf .git', { stdio: 'pipe' });
+        execSync('git rm -rf .git', { 
+          stdio: 'pipe',
+          cwd: worktreePath 
+        });
         console.log('Removed .git directory');
         
         // Commit the removal
         const timestamp = new Date().toISOString();
-        execSync(`git commit -m "Remove .git directory from deployment [${timestamp}]"`, { stdio: 'pipe' });
+        execSync(`git commit -m "Remove .git directory from deployment [${timestamp}]"`, { 
+          stdio: 'pipe',
+          cwd: worktreePath 
+        });
         console.log('Committed removal of .git directory');
         
-        execSync('git push origin gh-pages', { stdio: 'pipe' });
+        execSync('git push origin gh-pages', { 
+          stdio: 'pipe',
+          cwd: worktreePath 
+        });
         console.log('Pushed cleanup to remote');
       } else {
         console.log('No tracked .git directory found in gh-pages branch. Already clean.');
@@ -111,30 +119,32 @@ function removeGitFromGhPages() {
       console.log('No tracked .git directory found in gh-pages branch. Already clean.');
     }
 
-    // Switch back to original branch
-    if (currentBranch !== 'gh-pages') {
-      execSync(`git checkout ${currentBranch}`, { stdio: 'pipe' });
+    // Clean up worktree
+    try {
+      execSync(`git worktree remove -f .gh-pages-checkout`, { stdio: 'pipe' });
+    } catch (error) {
+      // Try to remove directory manually if worktree remove fails
+      try {
+        fs.rmSync(worktreePath, { recursive: true, force: true });
+      } catch (e) {
+        // Ignore cleanup errors
+      }
     }
-    console.log('✅ Security check completed!');
+    
+    console.log('Security check completed!');
   } catch (error) {
     console.error('Warning: Could not clean .git from gh-pages branch:', error.message);
-    // Try to switch back to original branch if we're stuck
+    // Clean up worktree on error
     try {
-      const currentBranch = execSync('git branch --show-current', { encoding: 'utf8' }).trim();
-      if (currentBranch === 'gh-pages') {
-        // Try to find main or master branch
-        try {
-          execSync('git checkout main', { stdio: 'pipe' });
-        } catch (e) {
-          try {
-            execSync('git checkout master', { stdio: 'pipe' });
-          } catch (e2) {
-            // Can't switch back, but that's okay
-          }
-        }
+      if (fs.existsSync(worktreePath)) {
+        execSync(`git worktree remove -f .gh-pages-checkout`, { stdio: 'pipe' });
       }
     } catch (e) {
-      // Ignore errors here
+      try {
+        fs.rmSync(worktreePath, { recursive: true, force: true });
+      } catch (e2) {
+        // Ignore cleanup errors
+      }
     }
   }
 }
