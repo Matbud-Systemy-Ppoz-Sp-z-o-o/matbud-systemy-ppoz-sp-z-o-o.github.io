@@ -268,11 +268,11 @@ export default function Gallery({ dictionary }: { dictionary: DictionaryType }) 
                   {/* Content Section - Right Side */}
                   <CardContent className="p-6 md:p-8 flex flex-col h-full max-h-[500px]">
                     {/* Header */}
-                    <div className="space-y-3 mb-6 flex-shrink-0">
+                    <div className="space-y-3 mb-6">
                       <h2 className="text-2xl md:text-3xl font-bold text-foreground leading-tight">
                         {currentImageData.title}
                       </h2>
-                      <p className="text-sm text-foreground/70 leading-relaxed line-clamp-2">
+                      <p className="text-sm text-foreground/70 leading-relaxed">
                         {currentImageData.data.detailedDescription || currentImageData.description}
                       </p>
                     </div>
