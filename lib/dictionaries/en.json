@@ -94,37 +94,200 @@
      "aboutImageAlt": "About Matbud Systemy Ppoż"
     },
     "gallery": {
-     "title": "Our Project Gallery",
-     "subtitle": "See our recent fire safety installations and projects",
+     "title": "Our Offer",
+     "subtitle": "Comprehensive fire safety solutions",
      "images": [
       {
-       "title": "Commercial Fire Alarm System",
-       "description": "Installation of an advanced addressable fire alarm system in an office building."
+       "title": "Fire Alarm Systems SSP/SAP",
+       "description": "Installation of advanced fire alarm systems in commercial and industrial facilities.",
+       "detailedDescription": "Fire Alarm Systems (SSP) and Fire Alarm Panels (SAP) are advanced technical solutions that provide early fire detection and automatic notification of threats. Our systems meet the highest safety standards in accordance with PN-EN standards and building regulations.",
+       "features": [
+        "Smoke, heat and flame detectors",
+        "Central control panels with addressable function",
+        "Automatic notification of rescue services",
+        "Integration with smoke extraction and emergency lighting systems",
+        "Online monitoring and diagnostics",
+        "Compliance with PN-EN 54 standards"
+       ],
+       "benefits": [
+        "Early detection of fire hazards",
+        "Automatic activation of safety systems",
+        "Minimization of material losses",
+        "Compliance with fire regulations",
+        "Integration capability with BMS systems"
+       ],
+       "applications": [
+        "Office buildings and business centers",
+        "Industrial facilities and warehouses",
+        "Hospitals and medical facilities",
+        "Schools and universities",
+        "Hotels and hospitality facilities",
+        "Shopping centers and malls"
+       ],
+       "seoKeywords": "fire alarm systems, SSP, SAP, fire detectors, fire panels, fire alarms, fire detection systems"
       },
       {
-       "title": "Sprinkler System Installation",
-       "description": "Complete sprinkler system design and installation for a shopping center."
+       "title": "Natural Smoke Extraction Systems",
+       "description": "Design and installation of smoke vents and natural smoke extraction systems.",
+       "detailedDescription": "Natural smoke extraction systems use natural forces to remove smoke and hot gases from buildings. Smoke vents and smoke extraction windows open automatically in case of fire, enabling natural ventilation and improving evacuation conditions.",
+       "features": [
+        "Electric and pneumatic smoke vents",
+        "Smoke extraction windows with electric drive",
+        "Automatic opening in case of fire",
+        "Integration with SSP systems",
+        "Compliance with PN-EN 12101 standards",
+        "Weather resistance"
+       ],
+       "benefits": [
+        "Improved visibility during evacuation",
+        "Temperature reduction in fire zone",
+        "Building structure protection",
+        "Low operating costs",
+        "Eco-friendly solution",
+        "Compliance with building regulations"
+       ],
+       "applications": [
+        "Production and storage halls",
+        "Atriums and large-volume spaces",
+        "Underground parking lots",
+        "Shopping centers",
+        "Sports facilities",
+        "Public buildings"
+       ],
+       "seoKeywords": "natural smoke extraction, smoke vents, smoke extraction windows, smoke extraction systems, fire ventilation, fire vents"
       },
       {
-       "title": "Fire Safety Training",
-       "description": "Conducting comprehensive fire safety training for company employees."
+       "title": "Mechanical Smoke Extraction Systems",
+       "description": "Installation of smoke extraction fans and mechanical smoke removal systems.",
+       "detailedDescription": "Mechanical smoke extraction systems use high-performance fans to force removal of smoke and hot gases from buildings. They are particularly effective in facilities where natural smoke extraction is insufficient.",
+       "features": [
+        "High-performance smoke extraction fans",
+        "Smoke extraction ducts and conduits",
+        "Automatic activation by SSP system",
+        "High temperature resistance (up to 400°C)",
+        "Compliance with PN-EN 12101 standards",
+        "Control and monitoring systems"
+       ],
+       "benefits": [
+        "Effective smoke removal in all conditions",
+        "Evacuation route protection",
+        "Reduction of material losses",
+        "Increased evacuation safety",
+        "Applicable in facilities without daylight access",
+        "Compliance with legal requirements"
+       ],
+       "applications": [
+        "Multi-level underground parking",
+        "Tunnels and underground passages",
+        "Shopping centers and malls",
+        "Hospitals and medical facilities",
+        "Industrial facilities",
+        "High-rise office buildings"
+       ],
+       "seoKeywords": "mechanical smoke extraction, smoke extraction fans, mechanical smoke extraction systems, mechanical fire ventilation, smoke extraction ducts"
       },
       {
-       "title": "Fire Extinguisher Inspection",
-       "description": "Regular inspection and maintenance of fire extinguishers at a hotel."
+       "title": "Emergency and Evacuation Lighting",
+       "description": "Comprehensive emergency lighting systems and evacuation signs.",
+       "detailedDescription": "Emergency and evacuation lighting systems provide adequate visibility conditions during evacuation in case of main power failure. They ensure safe evacuation through lighting of evacuation routes and signs indicating exits.",
+       "features": [
+        "LED evacuation lighting",
+        "Backup and anti-panic lighting",
+        "Photoluminescent and LED evacuation signs",
+        "Central emergency power supplies",
+        "Automatic switching to emergency power",
+        "Compliance with PN-EN 1838 and PN-EN 50172 standards"
+       ],
+       "benefits": [
+        "Ensuring safe evacuation",
+        "Compliance with fire regulations",
+        "Low operating costs (LED)",
+        "Long battery life",
+        "Automatic diagnostics and tests",
+        "High system reliability"
+       ],
+       "applications": [
+        "All public buildings",
+        "Office buildings and business centers",
+        "Hospitals and medical facilities",
+        "Schools and universities",
+        "Hotels and hospitality facilities",
+        "Shopping centers and malls",
+        "Industrial facilities"
+       ],
+       "seoKeywords": "emergency lighting, evacuation lighting, evacuation signs, emergency power supplies, anti-panic lighting, backup lighting"
       },
       {
-       "title": "Emergency Evacuation System",
-       "description": "Installation of emergency lighting and exit route signage in a school."
+       "title": "Fire Doors",
+       "description": "Installation and maintenance of fire doors and fire gates.",
+       "detailedDescription": "Fire doors and gates are a key element of passive fire protection. They provide fire zone isolation, delaying the spread of fire and smoke, giving time for evacuation and rescue operations.",
+       "features": [
+        "Fire doors EI30, EI60, EI120",
+        "Fire gates and sectional doors",
+        "Automatic closing in case of fire",
+        "Compliance with PN-EN 1634 standards",
+        "CNBOP certificates",
+        "Automatic closing systems"
+       ],
+       "benefits": [
+        "Limiting fire spread",
+        "Evacuation route protection",
+        "Compliance with building regulations",
+        "Long lifespan and durability",
+        "Customization to individual needs",
+        "Certified solutions"
+       ],
+       "applications": [
+        "Stairwells and corridors",
+        "Technical rooms",
+        "Storage areas",
+        "Underground parking",
+        "Industrial facilities",
+        "Hospitals and medical facilities"
+       ],
+       "seoKeywords": "fire doors, fire gates, fire partitions, fire barriers, fire doors, CNBOP certificates"
       },
       {
-       "title": "Fire Safety Audit",
-       "description": "Performing a detailed fire safety audit at a manufacturing plant."
+       "title": "Sound Warning Systems DSO",
+       "description": "Installation and maintenance of sound warning systems.",
+       "detailedDescription": "Sound Warning Systems (DSO) provide effective notification of building users about fire hazards through sound and voice signals. These systems are essential in facilities where mass notification of threats is required.",
+       "features": [
+        "Sound speakers and sirens",
+        "Sound systems with DSO function",
+        "Automatic voice announcements",
+        "Integration with SSP systems",
+        "Compliance with PN-EN 60849 standards",
+        "Sound zone management"
+       ],
+       "benefits": [
+        "Effective threat notification",
+        "Voice message capability",
+        "Compliance with fire regulations",
+        "Reliable operation",
+        "Integration capability with other systems",
+        "Zone management"
+       ],
+       "applications": [
+        "Shopping centers and malls",
+        "Airports and train stations",
+        "Hospitals and medical facilities",
+        "Hotels and hospitality facilities",
+        "Sports and entertainment venues",
+        "Public buildings"
+       ],
+       "seoKeywords": "DSO, sound warning systems, sound systems, fire sirens, voice announcements, sound alarm systems"
       }
      ],
      "navigation": {
       "previous": "Previous",
       "next": "Next"
+     },
+     "modal": {
+      "features": "Features",
+      "benefits": "Benefits",
+      "applications": "Applications",
+      "close": "Close",
+      "learnMore": "Learn more"
      }
     },
     "certificates": {

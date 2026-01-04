@@ -100,32 +100,195 @@
     "images": [
       {
         "title": "Systemy Sygnalizacji Pożarowej SSP/SAP",
-        "description": "Instalacja zaawansowanych systemów sygnalizacji pożarowej w obiektach komercyjnych i przemysłowych."
+        "description": "Instalacja zaawansowanych systemów sygnalizacji pożarowej w obiektach komercyjnych i przemysłowych.",
+        "detailedDescription": "Systemy Sygnalizacji Pożarowej (SSP) i Systemy Alarmowe Pożarowe (SAP) to zaawansowane rozwiązania techniczne, które zapewniają wczesne wykrywanie pożaru i automatyczne powiadamianie o zagrożeniu. Nasze systemy spełniają najwyższe standardy bezpieczeństwa zgodne z normami PN-EN i przepisami prawa budowlanego.",
+        "features": [
+          "Czujki dymu, ciepła i płomienia",
+          "Centralne panele sterowania z funkcją adresowalną",
+          "Automatyczne powiadamianie służb ratowniczych",
+          "Integracja z systemami oddymiania i oświetlenia awaryjnego",
+          "Monitoring i diagnostyka online",
+          "Zgodność z normami PN-EN 54"
+        ],
+        "benefits": [
+          "Wczesne wykrywanie zagrożenia pożarowego",
+          "Automatyczna aktywacja systemów bezpieczeństwa",
+          "Minimalizacja strat materialnych",
+          "Zgodność z przepisami przeciwpożarowymi",
+          "Możliwość integracji z systemami BMS"
+        ],
+        "applications": [
+          "Biurowce i centra biznesowe",
+          "Obiekty przemysłowe i magazyny",
+          "Szpitale i placówki medyczne",
+          "Szkoły i uczelnie",
+          "Hotele i obiekty hotelarskie",
+          "Centra handlowe i galerie"
+        ],
+        "seoKeywords": "systemy sygnalizacji pożarowej, SSP, SAP, czujki pożarowe, centrale pożarowe, alarmy pożarowe, systemy detekcji pożaru"
       },
       {
         "title": "Systemy Oddymiania Naturalnego",
-        "description": "Projektowanie i montaż klap dymowych oraz systemów oddymiania naturalnego."
+        "description": "Projektowanie i montaż klap dymowych oraz systemów oddymiania naturalnego.",
+        "detailedDescription": "Systemy oddymiania naturalnego wykorzystują siły natury do usuwania dymu i gorących gazów z budynków. Klapy dymowe i okna oddymiające otwierają się automatycznie w przypadku pożaru, umożliwiając naturalną wentylację i poprawę warunków ewakuacji.",
+        "features": [
+          "Klapy dymowe elektryczne i pneumatyczne",
+          "Okna oddymiające z napędem elektrycznym",
+          "Automatyczne otwieranie w przypadku pożaru",
+          "Integracja z systemami SSP",
+          "Zgodność z normami PN-EN 12101",
+          "Odporność na warunki atmosferyczne"
+        ],
+        "benefits": [
+          "Poprawa widoczności podczas ewakuacji",
+          "Redukcja temperatury w strefie pożaru",
+          "Ochrona konstrukcji budynku",
+          "Niskie koszty eksploatacji",
+          "Ekologiczne rozwiązanie",
+          "Zgodność z przepisami budowlanymi"
+        ],
+        "applications": [
+          "Hale produkcyjne i magazynowe",
+          "Atria i przestrzenie wielkokubaturowe",
+          "Parkingi podziemne",
+          "Centra handlowe",
+          "Obiekty sportowe",
+          "Budynki użyteczności publicznej"
+        ],
+        "seoKeywords": "oddymianie naturalne, klapy dymowe, okna oddymiające, systemy oddymiania, wentylacja pożarowa, klapy przeciwpożarowe"
       },
       {
         "title": "Systemy Oddymiania Mechanicznego",
-        "description": "Instalacja wentylatorów oddymiających i mechanicznych systemów usuwania dymu."
+        "description": "Instalacja wentylatorów oddymiających i mechanicznych systemów usuwania dymu.",
+        "detailedDescription": "Systemy oddymiania mechanicznego wykorzystują wentylatory o wysokiej wydajności do wymuszonego usuwania dymu i gorących gazów z budynków. Są szczególnie skuteczne w obiektach, gdzie oddymianie naturalne nie jest wystarczające.",
+        "features": [
+          "Wentylatory oddymiające o wysokiej wydajności",
+          "Kanały i przewody oddymiające",
+          "Automatyczna aktywacja przez system SSP",
+          "Odporność na wysokie temperatury (do 400°C)",
+          "Zgodność z normami PN-EN 12101",
+          "Systemy sterowania i monitoringu"
+        ],
+        "benefits": [
+          "Skuteczne usuwanie dymu w każdych warunkach",
+          "Ochrona dróg ewakuacyjnych",
+          "Redukcja strat materialnych",
+          "Zwiększenie bezpieczeństwa ewakuacji",
+          "Możliwość zastosowania w obiektach bez dostępu światła dziennego",
+          "Zgodność z wymogami prawnymi"
+        ],
+        "applications": [
+          "Parkingi podziemne wielopoziomowe",
+          "Tunele i przejścia podziemne",
+          "Centra handlowe i galerie",
+          "Szpitale i placówki medyczne",
+          "Obiekty przemysłowe",
+          "Budynki biurowe wysokie"
+        ],
+        "seoKeywords": "oddymianie mechaniczne, wentylatory oddymiające, systemy oddymiania mechanicznego, wentylacja pożarowa mechaniczna, kanały oddymiające"
       },
       {
         "title": "Oświetlenie Awaryjne i Ewakuacyjne",
-        "description": "Kompleksowe systemy oświetlenia awaryjnego i znaków ewakuacyjnych."
+        "description": "Kompleksowe systemy oświetlenia awaryjnego i znaków ewakuacyjnych.",
+        "detailedDescription": "Systemy oświetlenia awaryjnego i ewakuacyjnego zapewniają odpowiednie warunki widoczności podczas ewakuacji w przypadku awarii zasilania głównego. Zapewniają bezpieczną ewakuację poprzez oświetlenie dróg ewakuacyjnych i znaki wskazujące wyjścia.",
+        "features": [
+          "Oświetlenie ewakuacyjne LED",
+          "Oświetlenie zapasowe i antypaniczne",
+          "Znaki ewakuacyjne fotoluminescencyjne i LED",
+          "Centralne zasilacze awaryjne",
+          "Automatyczne przełączanie na zasilanie awaryjne",
+          "Zgodność z normami PN-EN 1838 i PN-EN 50172"
+        ],
+        "benefits": [
+          "Zapewnienie bezpiecznej ewakuacji",
+          "Zgodność z przepisami przeciwpożarowymi",
+          "Niskie koszty eksploatacji (LED)",
+          "Długa żywotność baterii",
+          "Automatyczna diagnostyka i testy",
+          "Wysoka niezawodność systemu"
+        ],
+        "applications": [
+          "Wszystkie budynki użyteczności publicznej",
+          "Biurowce i centra biznesowe",
+          "Szpitale i placówki medyczne",
+          "Szkoły i uczelnie",
+          "Hotele i obiekty hotelarskie",
+          "Centra handlowe i galerie",
+          "Obiekty przemysłowe"
+        ],
+        "seoKeywords": "oświetlenie awaryjne, oświetlenie ewakuacyjne, znaki ewakuacyjne, zasilacze awaryjne, oświetlenie antypaniczne, oświetlenie zapasowe"
       },
       {
         "title": "Drzwi Przeciwpożarowe",
-        "description": "Montaż i serwis drzwi przeciwpożarowych oraz bram przeciwpożarowych."
+        "description": "Montaż i serwis drzwi przeciwpożarowych oraz bram przeciwpożarowych.",
+        "detailedDescription": "Drzwi i bramy przeciwpożarowe stanowią kluczowy element pasywnych zabezpieczeń przeciwpożarowych. Zapewniają izolację stref pożarowych, opóźniając rozprzestrzenianie się ognia i dymu, co daje czas na ewakuację i działania ratownicze.",
+        "features": [
+          "Drzwi przeciwpożarowe EI30, EI60, EI120",
+          "Bramy przeciwpożarowe i segmentowe",
+          "Automatyczne zamykanie w przypadku pożaru",
+          "Zgodność z normami PN-EN 1634",
+          "Certyfikaty CNBOP",
+          "Systemy automatycznego zamykania"
+        ],
+        "benefits": [
+          "Ograniczenie rozprzestrzeniania się ognia",
+          "Ochrona dróg ewakuacyjnych",
+          "Zgodność z przepisami budowlanymi",
+          "Długa żywotność i trwałość",
+          "Możliwość dostosowania do indywidualnych potrzeb",
+          "Certyfikowane rozwiązania"
+        ],
+        "applications": [
+          "Klatki schodowe i korytarze",
+          "Pomieszczenia techniczne",
+          "Strefy magazynowe",
+          "Parkingi podziemne",
+          "Obiekty przemysłowe",
+          "Szpitale i placówki medyczne"
+        ],
+        "seoKeywords": "drzwi przeciwpożarowe, bramy przeciwpożarowe, przegrody pożarowe, grodze pożarowe, drzwi ppoż, certyfikaty CNBOP"
       },
       {
         "title": "Systemy Dźwiękowe Ostrzegawcze DSO",
-        "description": "Instalacja i konserwacja dźwiękowych systemów ostrzegawczych."
+        "description": "Instalacja i konserwacja dźwiękowych systemów ostrzegawczych.",
+        "detailedDescription": "Dźwiękowe Systemy Ostrzegawcze (DSO) zapewniają skuteczne powiadamianie użytkowników budynku o zagrożeniu pożarowym poprzez sygnały dźwiękowe i głosowe. Systemy te są niezbędne w obiektach, gdzie wymagane jest masowe powiadamianie o zagrożeniu.",
+        "features": [
+          "Głośniki i syreny dźwiękowe",
+          "Systemy nagłośnieniowe z funkcją DSO",
+          "Automatyczne komunikaty głosowe",
+          "Integracja z systemami SSP",
+          "Zgodność z normami PN-EN 60849",
+          "Zarządzanie strefami dźwiękowymi"
+        ],
+        "benefits": [
+          "Skuteczne powiadamianie o zagrożeniu",
+          "Możliwość przekazywania komunikatów głosowych",
+          "Zgodność z przepisami przeciwpożarowymi",
+          "Niezawodność działania",
+          "Możliwość integracji z innymi systemami",
+          "Zarządzanie strefowe"
+        ],
+        "applications": [
+          "Centra handlowe i galerie",
+          "Lotniska i dworce",
+          "Szpitale i placówki medyczne",
+          "Hotele i obiekty hotelarskie",
+          "Obiekty sportowe i widowiskowe",
+          "Budynki użyteczności publicznej"
+        ],
+        "seoKeywords": "DSO, dźwiękowe systemy ostrzegawcze, systemy nagłośnieniowe, syreny pożarowe, komunikaty głosowe, systemy alarmowe dźwiękowe"
       }
     ],
     "navigation": {
       "previous": "Poprzedni",
       "next": "Następny"
+    },
+    "modal": {
+      "features": "Cechy i funkcje",
+      "benefits": "Korzyści",
+      "applications": "Zastosowania",
+      "close": "Zamknij",
+      "learnMore": "Dowiedz się więcej"
     }
   },
   "certificates": {
