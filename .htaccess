@@ -1,0 +1,26 @@
+# Redirect all unknown paths to 404.html
+# This ensures custom 404 page is shown instead of provider's default 404
+RewriteEngine On
+
+# Enable following symbolic links (if needed)
+Options +FollowSymLinks
+
+# Don't redirect if the file exists
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# Don't redirect if the directory exists
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Don't redirect if it's already the 404 page
+RewriteCond %{REQUEST_URI} !^/404\.html$ [NC]
+RewriteCond %{REQUEST_URI} !^/404/$ [NC]
+
+# Don't redirect static assets
+RewriteCond %{REQUEST_URI} !\.(css|js|jpg|jpeg|png|gif|ico|svg|woff|woff2|ttf|eot)$ [NC]
+
+# Don't redirect _next directory (Next.js assets)
+RewriteCond %{REQUEST_URI} !^/_next/ [NC]
+
+# Redirect to 404.html with 404 status code
+RewriteRule ^(.*)$ /404.html [L,R=404]
+
