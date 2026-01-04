@@ -1,11 +1,9 @@
 # Redirect all unknown paths to 404.html
-# This ensures custom 404 page is shown instead of provider's default 404
 RewriteEngine On
 
 # Enable following symbolic links (if needed)
 Options +FollowSymLinks
 
-# Don't redirect if the file exists
 RewriteCond %{REQUEST_FILENAME} !-f
 
 # Don't redirect if the directory exists
