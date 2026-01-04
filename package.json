@@ -7,6 +7,7 @@
     "dev": "next dev --turbopack",
     "prebuild": "npm run generate-sitemap",
     "build": "next build --no-lint",
+    "postbuild": "node scripts/generate-404-pages.js",
     "deploy": "node deploy.js",
     "start": "next start",
     "lint": "next lint"

@@ -1,14 +1,30 @@
-import Link from "next/link"
 import { getDictionary } from "@/lib/dictionaries"
 import { i18n } from "@/lib/i18n-config"
+import { NotFoundLink } from "@/components/not-found-link"
 
 export default async function LocaleNotFound({
   params,
 }: {
-  params?: { locale: string }
+  params?: Promise<{ locale: string }> | { locale: string }
 }) {
+  // Handle both sync and async params (Next.js 15 compatibility)
+  let locale: string
+  if (params) {
+    if (params instanceof Promise) {
+      const resolvedParams = await params
+      locale = resolvedParams?.locale || i18n.defaultLocale
+    } else {
+      locale = params?.locale || i18n.defaultLocale
+    }
+  } else {
+    locale = i18n.defaultLocale
+  }
   
-  const locale = params?.locale || i18n.defaultLocale
+  // Ensure locale is valid
+  if (!i18n.locales.includes(locale as any)) {
+    locale = i18n.defaultLocale
+  }
+  
   const dict = await getDictionary(locale)
 
   return (
@@ -19,12 +35,12 @@ export default async function LocaleNotFound({
         {dict.notFound?.description ||
           "Sorry, we couldn't find the page you're looking for. It might have been moved or deleted."}
       </p>
-      <Link
-        href={`/${locale}`}
+      <NotFoundLink
+        fallbackLocale={locale}
         className="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-md font-medium transition-colors"
       >
         {dict.notFound?.backHome || "Return to Home"}
-      </Link>
+      </NotFoundLink>
     </div>
   )
 }
