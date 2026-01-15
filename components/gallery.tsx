@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogClose, DialogTitle, DialogDescription } from "@/components/ui/dialog"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
+import { SectionHeader } from "@/components/ui/section-header"
 
 interface ImageData {
   title: string;
@@ -98,14 +99,12 @@ export default function Gallery({ dictionary }: { dictionary: DictionaryType }) 
     }
   }
 
-  // Reset tab when modal opens
   useEffect(() => {
     if (selectedImage !== null) {
       setActiveTab('features')
     }
   }, [selectedImage])
 
-  // Generate structured data for SEO
   const generateStructuredData = () => {
     if (selectedImage === null) return null
     
@@ -130,18 +129,14 @@ export default function Gallery({ dictionary }: { dictionary: DictionaryType }) 
     return JSON.stringify(service)
   }
 
-  // Update page title and meta for SEO when modal opens
-  // Use requestAnimationFrame to batch DOM updates and prevent forced reflow
   useEffect(() => {
     if (selectedImage !== null && typeof window !== 'undefined') {
       const currentImage = galleryImages[selectedImage]
       const originalTitle = document.title
       
-      // Batch DOM updates using requestAnimationFrame to prevent forced reflow
       requestAnimationFrame(() => {
         document.title = `${currentImage.title} | Matbud Systemy Ppoż.`
         
-        // Update meta description
         let metaDescription = document.querySelector('meta[name="description"]')
         if (!metaDescription) {
           metaDescription = document.createElement('meta')
@@ -172,10 +167,7 @@ export default function Gallery({ dictionary }: { dictionary: DictionaryType }) 
     <>
       <section id="gallery" className="py-16 md:py-24">
         <div className="container">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4 text-foreground">{dictionary.title}</h2>
-            <p className="text-xl text-foreground/80 max-w-3xl mx-auto">{dictionary.subtitle}</p>
-          </div>
+          <SectionHeader title={dictionary.title} subtitle={dictionary.subtitle} />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {galleryImages.map((image, index) => (
@@ -190,12 +182,13 @@ export default function Gallery({ dictionary }: { dictionary: DictionaryType }) 
                   src={image.src || "https://matbud.net/placeholder.svg"}
                   alt={image.alt}
                   fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 400px"
                   className="object-cover transition-transform duration-300 group-hover:scale-110"
                   style={image.src?.includes('sound.jpeg') ? { objectPosition: '100% center' } : {}}
                   itemProp="image"
-                  loading={index < 3 ? "eager" : "lazy"}
-                  quality={85}
+                  loading={index < 1 ? "eager" : "lazy"}
+                  quality={index < 1 ? 60 : 55}
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
                   <h3 className="text-white font-semibold text-lg mb-2" itemProp="name">{image.title}</h3>
@@ -243,10 +236,11 @@ export default function Gallery({ dictionary }: { dictionary: DictionaryType }) 
                       src={currentImageData.src || "https://matbud.net/placeholder.svg"}
                       alt={currentImageData.alt}
                       fill
-                      sizes="(max-width: 768px) 100vw, 50vw"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
                       className="object-cover"
                       priority
-                      quality={90}
+                      quality={60}
+                      decoding="async"
                     />
                     
                     {/* Navigation Buttons */}

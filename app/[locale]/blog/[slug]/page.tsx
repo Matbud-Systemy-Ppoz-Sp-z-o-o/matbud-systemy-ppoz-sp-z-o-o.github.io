@@ -2,11 +2,15 @@ import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
+import dynamic from "next/dynamic"
 import { ChevronLeft } from "lucide-react"
 import { getDictionary } from "@/lib/dictionaries"
 import { getPostBySlug, getAllPosts } from "@/lib/blog"
 import { formatDate } from "@/lib/utils"
-import { Markdown } from "@/components/markdown"
+
+const Markdown = dynamic(() => import("@/components/markdown").then(mod => ({ default: mod.Markdown })), {
+  loading: () => <div className="animate-pulse bg-muted h-96 rounded-md" />,
+})
 
 interface PostPageProps {
   params: {

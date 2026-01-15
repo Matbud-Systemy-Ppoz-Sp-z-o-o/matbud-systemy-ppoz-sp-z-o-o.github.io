@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { CheckCircle } from "lucide-react"
+import { SectionHeader } from "@/components/ui/section-header"
 
 interface StatItem {
   value: string;
@@ -23,10 +24,7 @@ export default function AboutUs({ dictionary }: { dictionary: Dictionary }) {
   return (
     <section id="about" className="py-16 md:py-24">
       <div className="container">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">{dictionary.title}</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">{dictionary.subtitle}</p>
-        </div>
+        <SectionHeader title={dictionary.title} subtitle={dictionary.subtitle} />
 
         <div className="grid md:grid-cols-2 gap-12 items-stretch">
           <div className="relative min-h-[500px] md:min-h-[600px]">
@@ -34,11 +32,12 @@ export default function AboutUs({ dictionary }: { dictionary: Dictionary }) {
               src="https://matbud.net/images/gallery/ONas.jpeg"
               alt={dictionary.aboutImageAlt}
               fill
-              sizes="(max-width: 768px) 100vw, 50vw"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
               className="object-cover rounded-lg"
               style={{ objectPosition: '66% center' }}
               loading="lazy"
-              quality={85}
+              quality={55}
+              decoding="async"
             />
           </div>
 

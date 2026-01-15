@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   images: {
     unoptimized: true,
+    qualities: [50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],
     remotePatterns: [
       {
         protocol: 'https',
@@ -21,9 +22,94 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  // Add this to ensure proper handling of public assets
   experimental: {
     scrollRestoration: true,
+  },
+  compress: true,
+  poweredByHeader: false,
+  compiler: {
+    removeConsole: true,
+  },
+  webpack: (config, { isServer, dev }) => {
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+        net: false,
+        tls: false,
+      };
+      
+      const webpack = require('webpack');
+      if (!config.plugins) {
+        config.plugins = [];
+      }
+      
+      config.plugins.push(
+        new webpack.IgnorePlugin({
+          resourceRegExp: /^core-js\/modules\/es\.(array\.(at|flat|flat-map)|object\.(from-entries|has-own)|string\.(trim-end|trim-start))$/,
+        })
+      );
+      
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        'core-js/modules/es.array.at': false,
+        'core-js/modules/es.array.flat': false,
+        'core-js/modules/es.array.flat-map': false,
+        'core-js/modules/es.object.from-entries': false,
+        'core-js/modules/es.object.has-own': false,
+        'core-js/modules/es.string.trim-end': false,
+        'core-js/modules/es.string.trim-start': false,
+      };
+      if (!dev) {
+        config.optimization = {
+          ...config.optimization,
+          moduleIds: 'deterministic',
+          runtimeChunk: 'single',
+          splitChunks: {
+            chunks: 'all',
+            maxInitialRequests: 4,
+            minSize: 20000,
+            cacheGroups: {
+              default: false,
+              vendors: false,
+              react: {
+                name: 'react',
+                test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+                priority: 20,
+                chunks: 'all',
+                minSize: 20000,
+              },
+              radix: {
+                name: 'radix',
+                test: /[\\/]node_modules[\\/]@radix-ui[\\/]/,
+                priority: 15,
+                chunks: 'async',
+                enforce: true,
+              },
+              markdown: {
+                name: 'markdown',
+                test: /[\\/]node_modules[\\/](react-markdown|remark|rehype)[\\/]/,
+                priority: 10,
+                chunks: 'async',
+              },
+              form: {
+                name: 'form',
+                test: /[\\/]node_modules[\\/](react-hook-form|zod|@hookform)[\\/]/,
+                priority: 10,
+                chunks: 'async',
+              },
+              lucide: {
+                name: 'lucide',
+                test: /[\\/]node_modules[\\/]lucide-react[\\/]/,
+                priority: 5,
+                chunks: 'async',
+              },
+            },
+          },
+        };
+      }
+    }
+    return config;
   },
 };
 

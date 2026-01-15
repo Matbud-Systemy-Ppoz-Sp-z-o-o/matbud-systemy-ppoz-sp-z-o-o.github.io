@@ -1,21 +1,38 @@
 import type { Metadata } from "next"
+import dynamic from "next/dynamic"
 import { getDictionary } from "@/lib/dictionaries"
 import Hero from "@/components/hero"
-import Services from "@/components/services"
-import AboutUs from "@/components/about-us"
-// import Certificates from "@/components/certificates"
-// import Clients from "@/components/clients"
-import Gallery from "@/components/gallery"
-// import LatestBlogs from "@/components/latest-blogs"
-import Contact from "@/components/contact"
+
+// Shared loading component to reduce bundle size
+const SectionLoader = () => (
+  <div className="py-16 md:py-24">
+    <div className="container">
+      <div className="animate-pulse h-64 bg-muted rounded-lg" />
+    </div>
+  </div>
+)
+
+// Dynamically import below-the-fold components to reduce initial bundle size
+const Services = dynamic(() => import("@/components/services"), {
+  loading: SectionLoader,
+})
+const AboutUs = dynamic(() => import("@/components/about-us"), {
+  loading: SectionLoader,
+})
+const Gallery = dynamic(() => import("@/components/gallery"), {
+  loading: SectionLoader,
+})
+const Contact = dynamic(() => import("@/components/contact"), {
+  loading: SectionLoader,
+})
 
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const resolvedParams = await Promise.resolve(params)
   const locale = resolvedParams.locale
   const dict = await getDictionary(locale)
   
-  const title = `${dict.common.companyName} | ${dict.common.pageTitle}`;
-  const description = dict.common.pageDescription;
+  const title = `${dict.common.companyName} | ${dict.common.pageTitle}`
+  const description = dict.common.pageDescription
   
   return {
     title,
@@ -44,7 +61,6 @@ export default async function Home({
 }) {
   const resolvedParams = await Promise.resolve(params)
   const locale = resolvedParams.locale
-  
   const dict = await getDictionary(locale)
   
   return (
@@ -53,10 +69,7 @@ export default async function Home({
       <Services dictionary={dict.services} />
       <AboutUs dictionary={dict.aboutUs} />
       <Gallery dictionary={dict.gallery} />
-      {/* <Certificates dictionary={dict.certificates} /> */}
-      {/* <Clients dictionary={dict.clients} /> */}
       <Contact dictionary={dict.contact} />
-      {/* <LatestBlogs locale={locale} dictionary={dict.latestBlogs} /> */}
     </>
   )
 }

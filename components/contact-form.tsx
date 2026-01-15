@@ -104,7 +104,6 @@ export default function ContactForm({ dictionary, className = "" }: ContactFormP
     } catch (error) {
       console.error('Error submitting contact form:', error)
       
-      // Provide more specific error messages
       let errorMessage = "Failed to send message. Please try again later."
       
       if (error instanceof Error) {

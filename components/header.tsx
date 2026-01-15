@@ -2,20 +2,20 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { Menu } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
+import dynamic from "next/dynamic"
 import { LanguageSwitcher } from "@/components/language-switcher"
 import { ThemeToggle } from "@/components/theme-toggle"
+
+const MobileMenu = dynamic(() => import("@/components/mobile-menu"), {
+  ssr: false,
+  loading: () => null,
+})
 
 interface Dictionary {
   navigation: {
     services: string;
     about: string;
-    certificates: string;
-    blog: string;
     contact: string;
-    gallery: string;
     careers: string;
   };
   common: {
@@ -42,12 +42,6 @@ export function Header({ locale, dictionary }: { locale: string; dictionary: Dic
           <Link href={`/${locale}#about`} className="text-sm font-medium transition-colors hover:text-primary">
             {dictionary.navigation.about}
           </Link>
-          {/* <Link href={`/${locale}#certificates`} className="text-sm font-medium transition-colors hover:text-primary">
-            {dictionary.navigation.certificates}
-          </Link> */}
-          {/* <Link href={`/${locale}/blog`} className="text-sm font-medium transition-colors hover:text-primary">
-            {dictionary.navigation.blog}
-          </Link> */}
           <Link href={`/${locale}/careers`} className="text-sm font-medium transition-colors hover:text-primary">
             {dictionary.navigation.careers}
           </Link>
@@ -59,41 +53,7 @@ export function Header({ locale, dictionary }: { locale: string; dictionary: Dic
         <div className="flex items-center gap-2">
           <ThemeToggle dictionary={dictionary} />
           <LanguageSwitcher locale={locale} />
-          <Sheet>
-            <SheetTrigger asChild className="md:hidden">
-              <Button variant="outline" size="icon" aria-label={dictionary.common.menu}>
-                <Menu className="h-5 w-5" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right">
-              <SheetTitle className="sr-only">
-                {dictionary.common.menu}
-              </SheetTitle>
-              <div className="flex flex-col gap-6 mt-8">
-                <Link href={`/${locale}#services`} className="text-lg font-medium transition-colors hover:text-primary">
-                  {dictionary.navigation.services}
-                </Link>
-                <Link href={`/${locale}#about`} className="text-lg font-medium transition-colors hover:text-primary">
-                  {dictionary.navigation.about}
-                </Link>
-                {/* <Link
-                  href={`/${locale}#certificates`}
-                  className="text-lg font-medium transition-colors hover:text-primary"
-                >
-                  {dictionary.navigation.certificates}
-                </Link> */}
-                {/* <Link href={`/${locale}/blog`} className="text-lg font-medium transition-colors hover:text-primary">
-                  {dictionary.navigation.blog}
-                </Link> */}
-                <Link href={`/${locale}/careers`} className="text-lg font-medium transition-colors hover:text-primary">
-                  {dictionary.navigation.careers}
-                </Link>
-                <Link href={`/${locale}#contact`} className="text-lg font-medium transition-colors hover:text-primary">
-                  {dictionary.navigation.contact}
-                </Link>
-              </div>
-            </SheetContent>
-          </Sheet>
+          <MobileMenu locale={locale} dictionary={dictionary} />
         </div>
       </div>
     </header>

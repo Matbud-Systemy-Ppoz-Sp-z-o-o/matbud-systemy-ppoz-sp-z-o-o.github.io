@@ -31,53 +31,7 @@ export default function GoogleMaps({ className = "" }: GoogleMapsProps) {
   const encodedBusinessName = encodeURIComponent(businessName);
   const iframeUrl = `https://www.google.com/maps?q=${encodedBusinessName}&output=embed&hl=pl&z=15`;
 
-  useEffect(() => {
-    if (!mapContainerRef.current || mapRef.current || !apiKey) {
-      if (!apiKey) {
-        // No API key - will use iframe fallback
-        setMapError(true);
-      }
-      return;
-    }
-
-    const loadGoogleMaps = () => {
-      // Check if Google Maps is already loaded
-      if (window.google && window.google.maps) {
-        initializeMap();
-        return;
-      }
-
-      // Check if script is already being loaded
-      if (document.querySelector('script[src*="maps.googleapis.com"]')) {
-        // Wait for it to load
-        const checkInterval = setInterval(() => {
-          if (window.google && window.google.maps) {
-            clearInterval(checkInterval);
-            initializeMap();
-          }
-        }, 100);
-        return;
-      }
-
-      // Load Google Maps JavaScript API with Places library
-      const script = document.createElement("script");
-      script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&loading=async&libraries=places`;
-      script.async = true;
-      script.defer = true;
-      script.onload = () => {
-        if (window.google && window.google.maps) {
-          initializeMap();
-        }
-      };
-      script.onerror = () => {
-        console.error("Failed to load Google Maps");
-        setMapError(true);
-      };
-      
-      document.head.appendChild(script);
-    };
-
-    const initializeMap = () => {
+  const initializeMap = () => {
       if (!mapContainerRef.current || !window.google?.maps) {
         return;
       }
@@ -188,10 +142,76 @@ export default function GoogleMaps({ className = "" }: GoogleMapsProps) {
       }
     };
 
-    loadGoogleMaps();
+  useEffect(() => {
+    if (!mapContainerRef.current || mapRef.current || !apiKey) {
+      if (!apiKey) {
+        // No API key - will use iframe fallback
+        setMapError(true);
+      }
+      return;
+    }
 
-    // Cleanup
+    const loadGoogleMaps = () => {
+      // Check if Google Maps is already loaded
+      if (window.google && window.google.maps) {
+        initializeMap();
+        return;
+      }
+
+      // Check if script is already being loaded
+      if (document.querySelector('script[src*="maps.googleapis.com"]')) {
+        // Wait for it to load
+        const checkInterval = setInterval(() => {
+          if (window.google && window.google.maps) {
+            clearInterval(checkInterval);
+            initializeMap();
+          }
+        }, 100);
+        return;
+      }
+
+      // Load Google Maps JavaScript API with Places library
+      const script = document.createElement("script");
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&loading=async&libraries=places&callback=__initGoogleMaps`;
+      script.async = true;
+      script.defer = true;
+      
+      // Set up global callback for Google Maps
+      (window as any).__initGoogleMaps = () => {
+        if (window.google && window.google.maps && mapContainerRef.current) {
+          initializeMap();
+        }
+      };
+      
+      script.onerror = () => {
+        console.error("Failed to load Google Maps");
+        setMapError(true);
+        delete (window as any).__initGoogleMaps;
+      };
+      
+      document.head.appendChild(script);
+    };
+
+    // Use Intersection Observer to lazy load map only when visible
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          loadGoogleMaps();
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '50px' } // Start loading 50px before map is visible
+    );
+
+    if (mapContainerRef.current) {
+      observer.observe(mapContainerRef.current);
+    }
+
     return () => {
+      observer.disconnect();
+      if ((window as any).__initGoogleMaps) {
+        delete (window as any).__initGoogleMaps;
+      }
       if (mapRef.current) {
         mapRef.current = null;
       }

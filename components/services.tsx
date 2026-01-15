@@ -1,5 +1,6 @@
 import { FileCheck, Wrench, Building, Bell } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { SectionHeader } from "@/components/ui/section-header"
 
 interface ServiceItem {
   title: string;
@@ -25,10 +26,7 @@ export default function Services({ dictionary }: { dictionary: DictionaryType })
   return (
     <section id="services" className="py-16 md:py-24 bg-muted/50">
       <div className="container">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">{dictionary.title}</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">{dictionary.subtitle}</p>
-        </div>
+        <SectionHeader title={dictionary.title} subtitle={dictionary.subtitle} />
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
           {dictionary.services.map((service, index) => (

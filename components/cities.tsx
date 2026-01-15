@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { MapPin } from "lucide-react"
 import type { City } from "@/lib/cities"
+import { SectionHeader } from "@/components/ui/section-header"
 
 interface Dictionary {
   title: string
@@ -31,10 +32,7 @@ export default function Cities({ cities, locale, dictionary }: CitiesProps) {
   return (
     <section id="cities" className="py-16 md:py-24 bg-muted/50">
       <div className="container">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">{dictionary.title}</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">{dictionary.subtitle}</p>
-        </div>
+        <SectionHeader title={dictionary.title} subtitle={dictionary.subtitle} />
 
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">

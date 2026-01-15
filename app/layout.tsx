@@ -6,7 +6,12 @@ import { i18n } from "@/lib/i18n-config"
 
 import "@/app/globals.css"
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ 
+  subsets: ["latin"],
+  display: "swap",
+  preload: true,
+  adjustFontFallback: true,
+})
 
 export async function generateMetadata(): Promise<Metadata> {
   const dict = await getDictionary(i18n.defaultLocale)
@@ -44,6 +49,13 @@ export default function RootLayout({
   return (
     <html lang="pl" suppressHydrationWarning>
       <head>
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+        <link rel="dns-prefetch" href="https://matbud.net" />
+        <link rel="dns-prefetch" href="https://maps.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://matbud.net" crossOrigin="anonymous" />
         <link
           rel="preload"
           href="https://matbud.net/images/gallery/hero.jpeg"
@@ -56,6 +68,7 @@ export default function RootLayout({
           as="image"
           fetchPriority="high"
         />
+        <link rel="prefetch" href="https://fonts.gstatic.com" />
       </head>
       <body className={inter.className}>{children}</body>
     </html>

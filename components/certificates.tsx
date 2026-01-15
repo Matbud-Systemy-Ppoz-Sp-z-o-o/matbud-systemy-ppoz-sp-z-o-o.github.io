@@ -2,9 +2,10 @@
 
 import Image from "next/image"
 import { useState } from "react"
-import { ChevronLeft, ChevronRight, X } from "lucide-react"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogClose, DialogTitle } from "@/components/ui/dialog"
+import { SectionHeader } from "@/components/ui/section-header"
 
 interface DictionaryType {
   title: string;
@@ -43,10 +44,7 @@ export default function Certificates({ dictionary }: { dictionary: DictionaryTyp
   return (
     <section id="certificates" className="py-16 md:py-24 bg-muted/50">
       <div className="container">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">{dictionary.title}</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">{dictionary.subtitle}</p>
-        </div>
+        <SectionHeader title={dictionary.title} subtitle={dictionary.subtitle} />
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           {certificates.map((certificate, index) => (
@@ -62,7 +60,8 @@ export default function Certificates({ dictionary }: { dictionary: DictionaryTyp
                 sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 16vw"
                 className="object-cover rounded-md border-2 border-muted hover:border-primary/50 transition-colors"
                 loading="lazy"
-                quality={80}
+                quality={60}
+                decoding="async"
               />
             </div>
           ))}
@@ -85,7 +84,8 @@ export default function Certificates({ dictionary }: { dictionary: DictionaryTyp
                     fill
                     sizes="(max-width: 768px) 100vw, 80vw"
                     className="object-contain"
-                    quality={90}
+                    quality={65}
+                    decoding="async"
                   />
 
                   <Button

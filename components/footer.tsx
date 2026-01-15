@@ -4,7 +4,6 @@ import Link from "next/link"
 import Image from "next/image"
 import type { City } from "@/lib/cities"
 
-// Define a type for the dictionary prop
 interface Dictionary {
   footer: {
     description: string
@@ -43,7 +42,6 @@ export function Footer({
   dictionary: Dictionary
   cities?: City[]
 }) {
-  // Limit to 8 cities for the footer
   const footerCities = cities?.slice(0, 5) || []
 
   return (
@@ -61,40 +59,47 @@ export function Footer({
           <h3 className="font-semibold text-lg mb-4">{dictionary.footer.quickLinks}</h3>
           <ul className="space-y-2">
             <li>
-              <Link href={`/${locale}#services`} className="text-muted-foreground hover:text-primary transition-colors">
+              <Link 
+                href={`/${locale}#services`} 
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label={dictionary.navigation.services || "Usługi"}
+              >
                 {dictionary.navigation.services}
               </Link>
             </li>
             <li>
-              <Link href={`/${locale}#about`} className="text-muted-foreground hover:text-primary transition-colors">
+              <Link 
+                href={`/${locale}#about`} 
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label={dictionary.navigation.about}
+              >
                 {dictionary.navigation.about}
               </Link>
             </li>
-            {/* <li>
-              <Link
-                href={`/${locale}#certificates`}
-                className="text-muted-foreground hover:text-primary transition-colors"
-              >
-                {dictionary.navigation.certificates}
-              </Link>
-            </li> */}
             <li>
-              <Link href={`/${locale}#clients`} className="text-muted-foreground hover:text-primary transition-colors">
+              <Link 
+                href={`/${locale}#clients`} 
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label={dictionary.navigation.clients}
+              >
                 {dictionary.navigation.clients}
               </Link>
             </li>
-            {/* <li>
-              <Link href={`/${locale}/blog`} className="text-muted-foreground hover:text-primary transition-colors">
-                {dictionary.navigation.blog}
-              </Link>
-            </li> */}
             <li>
-              <Link href={`/${locale}/careers`} className="text-muted-foreground hover:text-primary transition-colors">
+              <Link 
+                href={`/${locale}/careers`} 
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label={dictionary.navigation.careers}
+              >
                 {dictionary.navigation.careers}
               </Link>
             </li>
             <li>
-              <Link href={`/${locale}#contact`} className="text-muted-foreground hover:text-primary transition-colors">
+              <Link 
+                href={`/${locale}#contact`} 
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label={dictionary.navigation.contact}
+              >
                 {dictionary.navigation.contact}
               </Link>
             </li>
@@ -109,6 +114,7 @@ export function Footer({
                 <Link
                   href={`/${locale}/${city.slug}`}
                   className="text-muted-foreground hover:text-primary transition-colors"
+                  aria-label={`${dictionary.footer.locations}: ${city.name}`}
                 >
                   {city.name}
                 </Link>
@@ -122,12 +128,20 @@ export function Footer({
           <address className="not-italic space-y-2 text-muted-foreground">
             <p>{dictionary.footer.address}</p>
             <p className="mt-4">
-              <a href={`tel:${dictionary.footer.phone}`} className="hover:text-primary transition-colors">
+              <a 
+                href={`tel:${dictionary.footer.phone}`} 
+                className="hover:text-primary transition-colors"
+                aria-label={`Telefon: ${dictionary.footer.phone}`}
+              >
                 {dictionary.footer.phone}
               </a>
             </p>
             <p>
-              <a href={`mailto:${dictionary.footer.email}`} className="hover:text-primary transition-colors">
+              <a 
+                href={`mailto:${dictionary.footer.email}`} 
+                className="hover:text-primary transition-colors"
+                aria-label={`Email: ${dictionary.footer.email}`}
+              >
                 {dictionary.footer.email}
               </a>
             </p>
@@ -146,15 +160,10 @@ export function Footer({
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              aria-label={`${dictionary.footer.privacyPolicy} (otwiera się w nowej karcie)`}
             >
               {dictionary.footer.privacyPolicy}
             </a>
-            {/* <Link
-              href={`/${locale}/terms-of-service`}
-              className="text-sm text-muted-foreground hover:text-primary transition-colors"
-            >
-              {dictionary.footer.termsOfService}
-            </Link> */}
           </div>
         </div>
       </div>

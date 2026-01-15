@@ -1,11 +1,13 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import ReactMarkdown from "react-markdown"
-import remarkGfm from "remark-gfm"
-import rehypeRaw from "rehype-raw"
-import rehypeSanitize from "rehype-sanitize"
+import dynamic from "next/dynamic"
 import Image from "next/image"
+
+const ReactMarkdown = dynamic(() => import("react-markdown"), { 
+  ssr: false,
+  loading: () => <div className="animate-pulse bg-muted h-96 rounded-md" />
+})
 
 interface CodeProps {
   inline?: boolean
@@ -16,19 +18,31 @@ interface CodeProps {
 export function Markdown({ content }: { content: string }) {
   const [mounted, setMounted] = useState(false)
 
+  const [plugins, setPlugins] = useState<{ remark: any; rehype: any[] } | null>(null)
+
   useEffect(() => {
     setMounted(true)
+    Promise.all([
+      import("remark-gfm"),
+      import("rehype-raw"),
+      import("rehype-sanitize")
+    ]).then(([gfm, raw, sanitize]) => {
+      setPlugins({
+        remark: gfm.default,
+        rehype: [raw.default, sanitize.default]
+      })
+    })
   }, [])
 
-  if (!mounted) {
+  if (!mounted || !plugins) {
     return <div className="animate-pulse bg-muted h-96 rounded-md" />
   }
 
   return (
     <article className="max-w-4xl mx-auto leading-relaxed">
       <ReactMarkdown
-        remarkPlugins={[remarkGfm]}
-        rehypePlugins={[rehypeRaw, rehypeSanitize]}
+        remarkPlugins={[plugins.remark]}
+        rehypePlugins={plugins.rehype}
         components={{
           h1: ({ ...props }) => (
             <h1 
@@ -119,7 +133,8 @@ export function Markdown({ content }: { content: string }) {
                   sizes="(max-width: 768px) 100vw, 800px"
                   className="rounded-2xl shadow-lg border border-border/50 max-w-full h-auto hover:shadow-xl transition-all duration-300"
                   loading="lazy"
-                  quality={85}
+                  quality={60}
+                  decoding="async"
                   {...props}
                 />
               </div>

@@ -1,7 +1,14 @@
 "use client"
 
+import dynamic from "next/dynamic"
 import { MapPin, Phone, Mail } from "lucide-react"
-import GoogleMaps from "@/components/google-maps"
+import { SectionHeader } from "@/components/ui/section-header"
+import { ContactInfoItem } from "@/components/ui/contact-info-item"
+
+const GoogleMaps = dynamic(() => import("@/components/google-maps"), {
+  loading: () => <div className="bg-card rounded-lg shadow-sm h-full min-h-[450px] animate-pulse" />,
+  ssr: false,
+})
 
 interface Dictionary {
   title: string;
@@ -48,10 +55,7 @@ export default function Contact({ dictionary }: { dictionary: Dictionary }) {
   return (
     <section id="contact" className="py-16 md:py-24 bg-background border-b border-border">
       <div className="container">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">{dictionary.title}</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">{dictionary.subtitle}</p>
-        </div>
+        <SectionHeader title={dictionary.title} subtitle={dictionary.subtitle} />
 
         <div className="grid md:grid-cols-2 gap-12">
           <div className="h-full">
@@ -59,39 +63,27 @@ export default function Contact({ dictionary }: { dictionary: Dictionary }) {
               <h3 className="text-2xl font-bold mb-6">{dictionary.contactInfo.title}</h3>
 
               <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <MapPin className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                  <div>
-                    <h4 className="font-medium">{dictionary.contactInfo.addressTitle}</h4>
-                    <address className="not-italic text-muted-foreground">
-                      {dictionary.contactInfo.address}
-                    </address>
-                  </div>
-                </div>
+                <ContactInfoItem icon={MapPin} title={dictionary.contactInfo.addressTitle}>
+                  <address className="not-italic text-muted-foreground">
+                    {dictionary.contactInfo.address}
+                  </address>
+                </ContactInfoItem>
 
-                <div className="flex items-start gap-4">
-                  <Phone className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                  <div>
-                    <h4 className="font-medium">{dictionary.contactInfo.phoneTitle}</h4>
-                    <p className="text-muted-foreground">
-                      <a href={`tel:${dictionary.contactInfo.phone}`} className="hover:text-primary transition-colors">
-                        {dictionary.contactInfo.phone}
-                      </a>
-                    </p>
-                  </div>
-                </div>
+                <ContactInfoItem icon={Phone} title={dictionary.contactInfo.phoneTitle}>
+                  <p className="text-muted-foreground">
+                    <a href={`tel:${dictionary.contactInfo.phone}`} className="hover:text-primary transition-colors">
+                      {dictionary.contactInfo.phone}
+                    </a>
+                  </p>
+                </ContactInfoItem>
 
-                <div className="flex items-start gap-4">
-                  <Mail className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                  <div>
-                    <h4 className="font-medium">{dictionary.contactInfo.emailTitle}</h4>
-                    <p className="text-muted-foreground">
-                      <a href={`mailto:${dictionary.contactInfo.email}`} className="hover:text-primary transition-colors">
-                        {dictionary.contactInfo.email}
-                      </a>
-                    </p>
-                  </div>
-                </div>
+                <ContactInfoItem icon={Mail} title={dictionary.contactInfo.emailTitle}>
+                  <p className="text-muted-foreground">
+                    <a href={`mailto:${dictionary.contactInfo.email}`} className="hover:text-primary transition-colors">
+                      {dictionary.contactInfo.email}
+                    </a>
+                  </p>
+                </ContactInfoItem>
               </div>
 
               <div className="mt-8">

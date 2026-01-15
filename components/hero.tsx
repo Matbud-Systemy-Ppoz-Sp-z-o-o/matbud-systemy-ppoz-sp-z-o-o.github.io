@@ -11,8 +11,26 @@ interface HeroDictionary {
 
 export default function Hero({ dictionary }: { dictionary: HeroDictionary }) {
   return (
-    <section className="hero-image relative">
-      <div className="container hero-content text-white flex flex-col items-center justify-center min-h-[600px] py-12">
+    <section className="relative min-h-[600px] flex items-center justify-center overflow-hidden">
+      {/* Optimized hero background image for LCP */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="https://matbud.net/images/gallery/hero.jpeg"
+          alt=""
+          fill
+          priority
+          fetchPriority="high"
+          className="object-cover"
+          style={{
+            filter: 'blur(2px) brightness(0.8) contrast(1.2)',
+          }}
+          sizes="100vw"
+          quality={50}
+          decoding="sync"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40 z-10" />
+      </div>
+      <div className="container hero-content text-white flex flex-col items-center justify-center min-h-[600px] py-12 relative z-20">
         <div className="flex flex-col items-center w-full max-w-4xl">
           {/* Logo */}
           <div className="flex justify-center mb-0">
@@ -24,6 +42,7 @@ export default function Hero({ dictionary }: { dictionary: HeroDictionary }) {
               className="w-auto h-auto max-w-[350px] max-h-[350px] sm:max-w-[450px] sm:max-h-[450px] drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)] dark:drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)]"
               priority
               fetchPriority="high"
+              decoding="async"
             />
           </div>
           

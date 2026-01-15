@@ -75,48 +75,7 @@
   }
 }
 
-.hero-image {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 600px;
-}
-
-.hero-image::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url("https://matbud.net/images/gallery/hero.jpeg");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  filter: blur(2px) brightness(0.8) contrast(1.2);
-  z-index: 0;
-}
-
-.dark .hero-image::before {
-  filter: blur(2px) brightness(0.8) contrast(1.2);
-}
-
-.hero-image::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
-  z-index: 1;
-}
-
-.dark .hero-image::after {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
-}
-
+/* Hero styles - background image now handled by Image component for better LCP */
 .hero-content {
   position: relative;
   z-index: 2;

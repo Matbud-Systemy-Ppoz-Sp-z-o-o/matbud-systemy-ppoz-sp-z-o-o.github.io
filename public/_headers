@@ -3,6 +3,15 @@
 /_next/static/*
   Cache-Control: public, max-age=31536000, immutable
 
+/_next/static/chunks/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/_next/static/css/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/_next/static/media/*
+  Cache-Control: public, max-age=31536000, immutable
+
 /*.jpg
   Cache-Control: public, max-age=31536000, immutable
 
