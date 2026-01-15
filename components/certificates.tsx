@@ -59,7 +59,10 @@ export default function Certificates({ dictionary }: { dictionary: DictionaryTyp
                 src={certificate || "https://matbud.net/placeholder.svg"}
                 alt={`Certificate ${index + 1}`}
                 fill
+                sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 16vw"
                 className="object-cover rounded-md border-2 border-muted hover:border-primary/50 transition-colors"
+                loading="lazy"
+                quality={80}
               />
             </div>
           ))}
@@ -80,7 +83,9 @@ export default function Certificates({ dictionary }: { dictionary: DictionaryTyp
                     src={certificates[selectedImage] || "https://matbud.net/placeholder.svg"}
                     alt={`Certificate ${selectedImage + 1}`}
                     fill
+                    sizes="(max-width: 768px) 100vw, 80vw"
                     className="object-contain"
+                    quality={90}
                   />
 
                   <Button

@@ -43,6 +43,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pl" suppressHydrationWarning>
+      <head>
+        <link
+          rel="preload"
+          href="https://matbud.net/images/gallery/hero.jpeg"
+          as="image"
+          fetchPriority="high"
+        />
+        <link
+          rel="preload"
+          href="/logo_pelne_tlo_w_tarczy.svg"
+          as="image"
+          fetchPriority="high"
+        />
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   )

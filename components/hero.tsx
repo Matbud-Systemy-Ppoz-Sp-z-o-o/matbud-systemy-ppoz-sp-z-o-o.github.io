@@ -23,6 +23,7 @@ export default function Hero({ dictionary }: { dictionary: HeroDictionary }) {
               height={400}
               className="w-auto h-auto max-w-[350px] max-h-[350px] sm:max-w-[450px] sm:max-h-[450px] drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)] dark:drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)]"
               priority
+              fetchPriority="high"
             />
           </div>
           

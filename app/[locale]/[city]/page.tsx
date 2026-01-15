@@ -150,8 +150,10 @@ export default async function CityPage({ params }: PageProps) {
                 src="https://matbud.net/images/gallery/cities.jpeg"
                 alt={`Profesjonalne systemy przeciwpożarowe i instalacje PPOŻ w ${cityData.name} - Matbud Systemy Ppoż`}
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
                 priority
+                quality={85}
               />
             </div>
           </div>

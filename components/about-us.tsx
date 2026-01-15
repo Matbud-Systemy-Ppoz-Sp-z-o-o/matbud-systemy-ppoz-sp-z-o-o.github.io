@@ -34,8 +34,11 @@ export default function AboutUs({ dictionary }: { dictionary: Dictionary }) {
               src="https://matbud.net/images/gallery/ONas.jpeg"
               alt={dictionary.aboutImageAlt}
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover rounded-lg"
               style={{ objectPosition: '66% center' }}
+              loading="lazy"
+              quality={85}
             />
           </div>
 

@@ -131,23 +131,30 @@ export default function Gallery({ dictionary }: { dictionary: DictionaryType }) 
   }
 
   // Update page title and meta for SEO when modal opens
+  // Use requestAnimationFrame to batch DOM updates and prevent forced reflow
   useEffect(() => {
     if (selectedImage !== null && typeof window !== 'undefined') {
       const currentImage = galleryImages[selectedImage]
       const originalTitle = document.title
-      document.title = `${currentImage.title} | Matbud Systemy Ppoż.`
       
-      // Update meta description
-      let metaDescription = document.querySelector('meta[name="description"]')
-      if (!metaDescription) {
-        metaDescription = document.createElement('meta')
-        metaDescription.setAttribute('name', 'description')
-        document.head.appendChild(metaDescription)
-      }
-      metaDescription.setAttribute('content', currentImage.data.detailedDescription || currentImage.description)
+      // Batch DOM updates using requestAnimationFrame to prevent forced reflow
+      requestAnimationFrame(() => {
+        document.title = `${currentImage.title} | Matbud Systemy Ppoż.`
+        
+        // Update meta description
+        let metaDescription = document.querySelector('meta[name="description"]')
+        if (!metaDescription) {
+          metaDescription = document.createElement('meta')
+          metaDescription.setAttribute('name', 'description')
+          document.head.appendChild(metaDescription)
+        }
+        metaDescription.setAttribute('content', currentImage.data.detailedDescription || currentImage.description)
+      })
       
       return () => {
-        document.title = originalTitle
+        requestAnimationFrame(() => {
+          document.title = originalTitle
+        })
       }
     }
   }, [selectedImage])
@@ -183,9 +190,12 @@ export default function Gallery({ dictionary }: { dictionary: DictionaryType }) 
                   src={image.src || "https://matbud.net/placeholder.svg"}
                   alt={image.alt}
                   fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover transition-transform duration-300 group-hover:scale-110"
                   style={image.src?.includes('sound.jpeg') ? { objectPosition: '100% center' } : {}}
                   itemProp="image"
+                  loading={index < 3 ? "eager" : "lazy"}
+                  quality={85}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
                   <h3 className="text-white font-semibold text-lg mb-2" itemProp="name">{image.title}</h3>
@@ -233,8 +243,10 @@ export default function Gallery({ dictionary }: { dictionary: DictionaryType }) 
                       src={currentImageData.src || "https://matbud.net/placeholder.svg"}
                       alt={currentImageData.alt}
                       fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
                       className="object-cover"
                       priority
+                      quality={90}
                     />
                     
                     {/* Navigation Buttons */}
