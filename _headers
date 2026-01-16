@@ -12,6 +12,9 @@
 /_next/static/media/*
   Cache-Control: public, max-age=31536000, immutable
 
+/sw.js
+  Cache-Control: public, max-age=0, must-revalidate
+
 /*.jpg
   Cache-Control: public, max-age=31536000, immutable
 
