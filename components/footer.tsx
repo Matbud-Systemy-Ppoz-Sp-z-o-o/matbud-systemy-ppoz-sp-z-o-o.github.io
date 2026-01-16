@@ -62,7 +62,6 @@ export function Footer({
               <Link 
                 href={`/${locale}#services`} 
                 className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label={dictionary.navigation.services || "Usługi"}
               >
                 {dictionary.navigation.services}
               </Link>
@@ -71,7 +70,6 @@ export function Footer({
               <Link 
                 href={`/${locale}#about`} 
                 className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label={dictionary.navigation.about}
               >
                 {dictionary.navigation.about}
               </Link>
@@ -80,7 +78,6 @@ export function Footer({
               <Link 
                 href={`/${locale}#clients`} 
                 className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label={dictionary.navigation.clients}
               >
                 {dictionary.navigation.clients}
               </Link>
@@ -89,7 +86,6 @@ export function Footer({
               <Link 
                 href={`/${locale}/careers`} 
                 className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label={dictionary.navigation.careers}
               >
                 {dictionary.navigation.careers}
               </Link>
@@ -98,7 +94,6 @@ export function Footer({
               <Link 
                 href={`/${locale}#contact`} 
                 className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label={dictionary.navigation.contact}
               >
                 {dictionary.navigation.contact}
               </Link>

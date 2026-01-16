@@ -24,6 +24,7 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     scrollRestoration: true,
+    optimizeCss: true,
   },
   compress: true,
   poweredByHeader: false,
@@ -61,14 +62,18 @@ const nextConfig: NextConfig = {
         'core-js/modules/es.string.trim-start': false,
       };
       if (!dev) {
+        config.target = ['web', 'es2022'];
         config.optimization = {
           ...config.optimization,
           moduleIds: 'deterministic',
           runtimeChunk: 'single',
+          usedExports: true,
+          sideEffects: false,
           splitChunks: {
             chunks: 'all',
-            maxInitialRequests: 4,
+            maxInitialRequests: 3,
             minSize: 20000,
+            maxSize: 244000,
             cacheGroups: {
               default: false,
               vendors: false,
@@ -78,6 +83,7 @@ const nextConfig: NextConfig = {
                 priority: 20,
                 chunks: 'all',
                 minSize: 20000,
+                reuseExistingChunk: true,
               },
               radix: {
                 name: 'radix',
@@ -85,24 +91,28 @@ const nextConfig: NextConfig = {
                 priority: 15,
                 chunks: 'async',
                 enforce: true,
+                reuseExistingChunk: true,
               },
               markdown: {
                 name: 'markdown',
                 test: /[\\/]node_modules[\\/](react-markdown|remark|rehype)[\\/]/,
                 priority: 10,
                 chunks: 'async',
+                reuseExistingChunk: true,
               },
               form: {
                 name: 'form',
                 test: /[\\/]node_modules[\\/](react-hook-form|zod|@hookform)[\\/]/,
                 priority: 10,
                 chunks: 'async',
+                reuseExistingChunk: true,
               },
               lucide: {
                 name: 'lucide',
                 test: /[\\/]node_modules[\\/]lucide-react[\\/]/,
                 priority: 5,
                 chunks: 'async',
+                reuseExistingChunk: true,
               },
             },
           },
