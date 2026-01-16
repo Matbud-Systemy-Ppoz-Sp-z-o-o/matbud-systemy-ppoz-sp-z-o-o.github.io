@@ -8,9 +8,10 @@ import "@/app/globals.css"
 
 const inter = Inter({ 
   subsets: ["latin"],
-  display: "swap",
-  preload: true,
+  display: "optional",
+  preload: false,
   adjustFontFallback: true,
+  variable: '--font-inter',
 })
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -70,7 +71,7 @@ export default function RootLayout({
         />
         <link rel="prefetch" href="https://fonts.gstatic.com" />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.variable} ${inter.className}`}>{children}</body>
     </html>
   )
 }

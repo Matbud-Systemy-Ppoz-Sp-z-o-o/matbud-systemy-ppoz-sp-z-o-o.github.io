@@ -36,8 +36,12 @@ export default function GoogleMaps({ className = "" }: GoogleMapsProps) {
         return;
       }
 
-      try {
-        const map = new window.google.maps.Map(mapContainerRef.current, {
+      // Use requestAnimationFrame to avoid forced reflows when reading container dimensions
+      requestAnimationFrame(() => {
+        if (!mapContainerRef.current) return;
+        
+        try {
+          const map = new window.google.maps.Map(mapContainerRef.current, {
           center: { lat: latitude, lng: longitude },
           zoom: 15,
           mapTypeControl: true,
@@ -134,12 +138,13 @@ export default function GoogleMaps({ className = "" }: GoogleMapsProps) {
           }
         });
 
-        mapRef.current = map;
-        setMapLoaded(true);
-      } catch (error) {
-        console.error("Error initializing Google Maps:", error);
-        setMapError(true);
-      }
+          mapRef.current = map;
+          setMapLoaded(true);
+        } catch (error) {
+          console.error("Error initializing Google Maps:", error);
+          setMapError(true);
+        }
+      });
     };
 
   useEffect(() => {

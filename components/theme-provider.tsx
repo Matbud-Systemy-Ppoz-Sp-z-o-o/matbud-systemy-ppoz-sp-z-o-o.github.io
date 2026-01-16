@@ -43,28 +43,28 @@ export function ThemeProvider({
   }, [])
 
   useEffect(() => {
-    const root = window.document.documentElement
+    // Use requestAnimationFrame to batch DOM updates and avoid forced reflows
+    const frameId = requestAnimationFrame(() => {
+      const root = window.document.documentElement
 
-    // Remove previous theme classes/attributes
-    if (attribute === "class") {
-      root.classList.remove("light", "dark")
-    } else {
-      root.removeAttribute(attribute)
-    }
+      // Determine the theme to apply
+      const themeToApply = theme === "system"
+        ? window.matchMedia("(prefers-color-scheme: dark)").matches 
+          ? "dark" 
+          : "light"
+        : theme
 
-    // Determine the theme to apply
-    const themeToApply = theme === "system"
-      ? window.matchMedia("(prefers-color-scheme: dark)").matches 
-        ? "dark" 
-        : "light"
-      : theme
+      // Batch DOM updates to avoid forced reflows
+      if (attribute === "class") {
+        root.classList.remove("light", "dark")
+        root.classList.add(themeToApply)
+      } else {
+        root.removeAttribute(attribute)
+        root.setAttribute(attribute, themeToApply)
+      }
+    })
 
-    // Apply the theme
-    if (attribute === "class") {
-      root.classList.add(themeToApply)
-    } else {
-      root.setAttribute(attribute, themeToApply)
-    }
+    return () => cancelAnimationFrame(frameId)
   }, [theme, attribute])
 
   const value = {

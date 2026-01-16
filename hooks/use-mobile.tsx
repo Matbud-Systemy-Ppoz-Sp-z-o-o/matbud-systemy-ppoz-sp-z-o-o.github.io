@@ -8,18 +8,25 @@ export function useMobile() {
   useEffect(() => {
     // Check if window is defined (client-side)
     if (typeof window !== "undefined") {
-      const checkIfMobile = () => {
-        setIsMobile(window.innerWidth < 768)
+      // Use matchMedia instead of innerWidth to avoid forced reflows
+      const mediaQuery = window.matchMedia("(max-width: 767px)")
+      
+      const updateIsMobile = (e: MediaQueryList | MediaQueryListEvent) => {
+        setIsMobile(e.matches)
       }
 
       // Initial check
-      checkIfMobile()
+      updateIsMobile(mediaQuery)
 
-      // Add event listener
-      window.addEventListener("resize", checkIfMobile)
-
-      // Clean up
-      return () => window.removeEventListener("resize", checkIfMobile)
+      // Use modern addEventListener API for MediaQueryList
+      if (mediaQuery.addEventListener) {
+        mediaQuery.addEventListener("change", updateIsMobile)
+        return () => mediaQuery.removeEventListener("change", updateIsMobile)
+      } else {
+        // Fallback for older browsers
+        mediaQuery.addListener(updateIsMobile)
+        return () => mediaQuery.removeListener(updateIsMobile)
+      }
     }
   }, [])
 

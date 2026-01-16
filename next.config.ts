@@ -49,7 +49,12 @@ const nextConfig: NextConfig = {
       config.plugins.push(
         new webpack.IgnorePlugin({
           resourceRegExp: /^core-js\/modules\/es\.(array\.(at|flat|flat-map)|object\.(from-entries|has-own)|string\.(trim-end|trim-start))$/,
-        })
+        }),
+        // Replace Next.js polyfill module with empty stub for modern browsers (ES2022+)
+        new webpack.NormalModuleReplacementPlugin(
+          /next\/dist\/build\/polyfills\/polyfill-module\.js/,
+          require.resolve('./lib/polyfill-stub.js')
+        )
       );
       
       config.resolve.alias = {
@@ -71,6 +76,10 @@ const nextConfig: NextConfig = {
           runtimeChunk: 'single',
           usedExports: true,
           sideEffects: false,
+          // Better deduplication
+          removeAvailableModules: true,
+          removeEmptyChunks: true,
+          mergeDuplicateChunks: true,
           splitChunks: {
             chunks: 'all',
             maxInitialRequests: 5, // Increased to allow more parallel chunk loading
