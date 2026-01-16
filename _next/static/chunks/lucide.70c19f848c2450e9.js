@@ -1,0 +1,2 @@
+"use strict";(globalThis.webpackChunk_N_E=globalThis.webpackChunk_N_E||[]).push([[1707],{9540:(e,y,k)=>{k.d(y,{A:()=>i});var i=(0,k(1847).A)("Menu",[["line",{x1:"4",x2:"20",y1:"12",y2:"12",key:"1e0a9i"}],["line",{x1:"4",x2:"20",y1:"6",y2:"6",key:"1owob3"}],["line",{x1:"4",x2:"20",y1:"18",y2:"18",key:"yk5zj1"}]])}}]);
+//# sourceMappingURL=lucide.70c19f848c2450e9.js.map
