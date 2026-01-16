@@ -182,12 +182,12 @@ export default function Gallery({ dictionary }: { dictionary: DictionaryType }) 
                   src={image.src || "https://matbud.net/placeholder.svg"}
                   alt={image.alt}
                   fill
-                  sizes="(max-width: 640px) calc(100vw - 4rem), (max-width: 1024px) calc(50vw - 3rem), (max-width: 1400px) calc(33.333vw - 2rem), 429px"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1400px) 33vw, 400px"
                   className="object-cover transition-transform duration-300 group-hover:scale-110"
                   style={image.src?.includes('sound.webp') ? { objectPosition: '100% center' } : {}}
                   itemProp="image"
                   loading={index < 1 ? "eager" : "lazy"}
-                  quality={index < 1 ? 55 : 50}
+                  quality={index < 1 ? 35 : 30}
                   decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
@@ -236,10 +236,10 @@ export default function Gallery({ dictionary }: { dictionary: DictionaryType }) 
                       src={currentImageData.src || "https://matbud.net/placeholder.svg"}
                       alt={currentImageData.alt}
                       fill
-                      sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1024px) calc(50vw - 2rem), 600px"
+                      sizes="(max-width: 768px) 100vw, 500px"
                       className="object-cover"
                       priority
-                      quality={55}
+                      quality={35}
                       decoding="async"
                     />
                     

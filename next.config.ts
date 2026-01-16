@@ -73,12 +73,20 @@ const nextConfig: NextConfig = {
           sideEffects: false,
           splitChunks: {
             chunks: 'all',
-            maxInitialRequests: 3,
+            maxInitialRequests: 5, // Increased to allow more parallel chunk loading
             minSize: 20000,
-            maxSize: 200000,
+            maxSize: 100000, // Reduced to force smaller, more focused chunks
             cacheGroups: {
-              default: false,
-              vendors: false,
+              default: {
+                minChunks: 2,
+                priority: -20,
+                reuseExistingChunk: true,
+              },
+              vendors: {
+                test: /[\\/]node_modules[\\/]/,
+                priority: -10,
+                reuseExistingChunk: true,
+              },
               react: {
                 name: 'react',
                 test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
@@ -100,6 +108,7 @@ const nextConfig: NextConfig = {
                 test: /[\\/]node_modules[\\/](react-markdown|remark|rehype)[\\/]/,
                 priority: 10,
                 chunks: 'async',
+                enforce: true,
                 reuseExistingChunk: true,
               },
               form: {
@@ -107,6 +116,7 @@ const nextConfig: NextConfig = {
                 test: /[\\/]node_modules[\\/](react-hook-form|zod|@hookform)[\\/]/,
                 priority: 10,
                 chunks: 'async',
+                enforce: true,
                 reuseExistingChunk: true,
               },
               lucide: {
@@ -114,15 +124,8 @@ const nextConfig: NextConfig = {
                 test: /[\\/]node_modules[\\/]lucide-react[\\/]/,
                 priority: 5,
                 chunks: 'async',
+                enforce: true,
                 reuseExistingChunk: true,
-              },
-              common: {
-                name: 'common',
-                minChunks: 2,
-                priority: 1,
-                chunks: 'async',
-                reuseExistingChunk: true,
-                minSize: 30000,
               },
             },
           },

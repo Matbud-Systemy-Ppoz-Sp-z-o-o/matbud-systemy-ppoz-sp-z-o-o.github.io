@@ -32,11 +32,11 @@ export default function AboutUs({ dictionary }: { dictionary: Dictionary }) {
               src="https://matbud.net/images/gallery/ONas.webp"
               alt={dictionary.aboutImageAlt}
               fill
-              sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1024px) calc(50vw - 3rem), (max-width: 1400px) calc(50vw - 3rem), 644px"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, (max-width: 1400px) 50vw, 650px"
               className="object-cover rounded-lg"
               style={{ objectPosition: '66% center' }}
               loading="lazy"
-              quality={50}
+              quality={30}
               decoding="async"
             />
           </div>

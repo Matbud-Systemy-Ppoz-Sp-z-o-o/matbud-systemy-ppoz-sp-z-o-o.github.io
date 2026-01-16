@@ -48,7 +48,7 @@ export default async function LocaleLayout({
       <Header locale={locale} dictionary={dict} />
       <main>{children}</main>
       <Footer locale={locale} dictionary={dict} cities={cities} />
-      <CookieConsent locale={locale} dictionary={dict.cookieConsent} />
+      <CookieConsent dictionary={dict.cookieConsent} />
       <Toaster />
     </ThemeProvider>
   )

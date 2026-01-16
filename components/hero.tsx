@@ -25,7 +25,7 @@ export default function Hero({ dictionary }: { dictionary: HeroDictionary }) {
             filter: 'blur(2px) brightness(0.8) contrast(1.2)',
           }}
           sizes="100vw"
-          quality={45}
+          quality={25}
           decoding="sync"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40 z-10" />
