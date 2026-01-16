@@ -7,7 +7,7 @@ import { getCities } from "@/lib/cities";
 import { Shield, Bell, Droplets, FileCheck, Wrench, Building, MapPin, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import GoogleMaps from "@/components/google-maps";
+import GoogleMapsClient from "@/components/google-maps-client";
 
 // Type definition for the specific route parameters
 type CityParams = {
@@ -327,7 +327,7 @@ export default async function CityPage({ params }: PageProps) {
 
               {/* Google Maps Side */}
               <div className="h-full">
-                <GoogleMaps className="h-full" />
+                <GoogleMapsClient className="h-full" />
               </div>
             </div>
           </div>

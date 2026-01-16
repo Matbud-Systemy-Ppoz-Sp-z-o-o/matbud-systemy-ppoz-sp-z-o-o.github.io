@@ -172,9 +172,10 @@ export default function GoogleMaps({ className = "" }: GoogleMapsProps) {
 
       // Load Google Maps JavaScript API with Places library
       const script = document.createElement("script");
-      script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&loading=async&libraries=places&callback=__initGoogleMaps`;
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&loading=async&libraries=places&callback=__initGoogleMaps&language=pl`;
       script.async = true;
       script.defer = true;
+      script.loading = 'lazy' as any;
       
       // Set up global callback for Google Maps
       (window as any).__initGoogleMaps = () => {

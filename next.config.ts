@@ -28,6 +28,7 @@ const nextConfig: NextConfig = {
   },
   compress: true,
   poweredByHeader: false,
+  productionBrowserSourceMaps: true,
   compiler: {
     removeConsole: true,
   },
@@ -62,6 +63,7 @@ const nextConfig: NextConfig = {
         'core-js/modules/es.string.trim-start': false,
       };
       if (!dev) {
+        config.devtool = 'source-map';
         config.target = ['web', 'es2022'];
         config.optimization = {
           ...config.optimization,
@@ -73,7 +75,7 @@ const nextConfig: NextConfig = {
             chunks: 'all',
             maxInitialRequests: 3,
             minSize: 20000,
-            maxSize: 244000,
+            maxSize: 200000,
             cacheGroups: {
               default: false,
               vendors: false,
@@ -113,6 +115,14 @@ const nextConfig: NextConfig = {
                 priority: 5,
                 chunks: 'async',
                 reuseExistingChunk: true,
+              },
+              common: {
+                name: 'common',
+                minChunks: 2,
+                priority: 1,
+                chunks: 'async',
+                reuseExistingChunk: true,
+                minSize: 30000,
               },
             },
           },

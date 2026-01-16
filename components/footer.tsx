@@ -64,43 +64,43 @@ export function Footer({
                 className="text-muted-foreground hover:text-primary transition-colors"
                 aria-label={dictionary.navigation.services || "Usługi"}
               >
-                {dictionary.navigation.services}
+                {dictionary.navigation.services || "Usługi"}
               </Link>
             </li>
             <li>
               <Link 
                 href={`/${locale}#about`} 
                 className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label={dictionary.navigation.about}
+                aria-label={dictionary.navigation.about || "O nas"}
               >
-                {dictionary.navigation.about}
+                {dictionary.navigation.about || "O nas"}
               </Link>
             </li>
             <li>
               <Link 
                 href={`/${locale}#clients`} 
                 className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label={dictionary.navigation.clients}
+                aria-label={dictionary.navigation.clients || "Klienci"}
               >
-                {dictionary.navigation.clients}
+                {dictionary.navigation.clients || "Klienci"}
               </Link>
             </li>
             <li>
               <Link 
                 href={`/${locale}/careers`} 
                 className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label={dictionary.navigation.careers}
+                aria-label={dictionary.navigation.careers || "Kariera"}
               >
-                {dictionary.navigation.careers}
+                {dictionary.navigation.careers || "Kariera"}
               </Link>
             </li>
             <li>
               <Link 
                 href={`/${locale}#contact`} 
                 className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label={dictionary.navigation.contact}
+                aria-label={dictionary.navigation.contact || "Kontakt"}
               >
-                {dictionary.navigation.contact}
+                {dictionary.navigation.contact || "Kontakt"}
               </Link>
             </li>
           </ul>
