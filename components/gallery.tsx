@@ -42,42 +42,42 @@ export default function Gallery({ dictionary }: { dictionary: DictionaryType }) 
 
   const galleryImages = [
     {
-      src: "https://matbud.net/images/gallery/SSP.jpeg",
+      src: "https://matbud.net/images/gallery/SSP.webp",
       alt: "Systemy Sygnalizacji Pożarowej SSP/SAP - Instalacja i serwis",
       title: dictionary.images[0].title,
       description: dictionary.images[0].description,
       data: dictionary.images[0],
     },
     {
-      src: "https://matbud.net/images/gallery/smokedamper.jpeg",
+      src: "https://matbud.net/images/gallery/smokedamper.webp",
       alt: "Systemy Oddymiania Naturalnego - Klapy dymowe i okna oddymiające",
       title: dictionary.images[1].title,
       description: dictionary.images[1].description,
       data: dictionary.images[1],
     },
     {
-      src: "https://matbud.net/images/gallery/smokedetector.jpeg",
+      src: "https://matbud.net/images/gallery/smokedetector.webp",
       alt: "Systemy Oddymiania Mechanicznego - Wentylatory oddymiające",
       title: dictionary.images[2].title,
       description: dictionary.images[2].description,
       data: dictionary.images[2],
     },
     {
-      src: "https://matbud.net/images/gallery/EvacuationLights.jpeg",
+      src: "https://matbud.net/images/gallery/EvacuationLights.webp",
       alt: "Oświetlenie Awaryjne i Ewakuacyjne - Systemy oświetlenia bezpieczeństwa",
       title: dictionary.images[3].title,
       description: dictionary.images[3].description,
       data: dictionary.images[3],
     },
     {
-      src: "https://matbud.net/images/gallery/firedoors.jpeg",
+      src: "https://matbud.net/images/gallery/firedoors.webp",
       alt: "Drzwi Przeciwpożarowe - Montaż i serwis drzwi i bram przeciwpożarowych",
       title: dictionary.images[4].title,
       description: dictionary.images[4].description,
       data: dictionary.images[4],
     },
     {
-      src: "https://matbud.net/images/gallery/sound.jpeg",
+      src: "https://matbud.net/images/gallery/sound.webp",
       alt: "Systemy Dźwiękowe Ostrzegawcze DSO - Instalacja i konserwacja",
       title: dictionary.images[5].title,
       description: dictionary.images[5].description,
@@ -184,7 +184,7 @@ export default function Gallery({ dictionary }: { dictionary: DictionaryType }) 
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 400px"
                   className="object-cover transition-transform duration-300 group-hover:scale-110"
-                  style={image.src?.includes('sound.jpeg') ? { objectPosition: '100% center' } : {}}
+                  style={image.src?.includes('sound.webp') ? { objectPosition: '100% center' } : {}}
                   itemProp="image"
                   loading={index < 1 ? "eager" : "lazy"}
                   quality={index < 1 ? 60 : 55}

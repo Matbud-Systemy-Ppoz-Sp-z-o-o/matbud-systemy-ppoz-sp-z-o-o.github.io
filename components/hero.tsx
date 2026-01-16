@@ -15,7 +15,7 @@ export default function Hero({ dictionary }: { dictionary: HeroDictionary }) {
       {/* Optimized hero background image for LCP */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://matbud.net/images/gallery/hero.jpeg"
+          src="https://matbud.net/images/gallery/hero.webp"
           alt=""
           fill
           priority

@@ -58,7 +58,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://matbud.net" crossOrigin="anonymous" />
         <link
           rel="preload"
-          href="https://matbud.net/images/gallery/hero.jpeg"
+          href="https://matbud.net/images/gallery/hero.webp"
           as="image"
           fetchPriority="high"
         />

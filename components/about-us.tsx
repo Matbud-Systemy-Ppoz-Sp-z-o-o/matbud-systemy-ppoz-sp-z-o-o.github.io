@@ -29,7 +29,7 @@ export default function AboutUs({ dictionary }: { dictionary: Dictionary }) {
         <div className="grid md:grid-cols-2 gap-12 items-stretch">
           <div className="relative min-h-[500px] md:min-h-[600px]">
             <Image
-              src="https://matbud.net/images/gallery/ONas.jpeg"
+              src="https://matbud.net/images/gallery/ONas.webp"
               alt={dictionary.aboutImageAlt}
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
