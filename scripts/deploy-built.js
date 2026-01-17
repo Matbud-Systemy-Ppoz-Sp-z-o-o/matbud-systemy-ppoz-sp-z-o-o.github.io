@@ -150,7 +150,6 @@ function deployToBuiltBranch() {
       }
     });
     
-    
     // Add all files to git
     console.log('Adding files to git...');
     execSync('git add .', { stdio: 'inherit' });
