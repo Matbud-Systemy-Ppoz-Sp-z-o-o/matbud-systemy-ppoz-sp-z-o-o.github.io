@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { MapPin, Clock, Briefcase, ArrowRight } from "lucide-react"
+import { MapPin, Briefcase, ArrowRight } from "lucide-react"
 import { getDictionary } from "@/lib/dictionaries"
 import { getJobs } from "@/content/jobs"
 import { generateMetadata as generateSEOMetadata } from "@/lib/seo"

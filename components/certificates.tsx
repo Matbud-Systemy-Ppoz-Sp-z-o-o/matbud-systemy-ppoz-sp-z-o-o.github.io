@@ -4,7 +4,7 @@ import Image from "next/image"
 import { useState } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Dialog, DialogContent, DialogClose, DialogTitle } from "@/components/ui/dialog"
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
 import { SectionHeader } from "@/components/ui/section-header"
 
 interface DictionaryType {
@@ -127,4 +127,3 @@ export default function Certificates({ dictionary }: { dictionary: DictionaryTyp
     </section>
   )
 }
-

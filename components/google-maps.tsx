@@ -21,9 +21,6 @@ export default function GoogleMaps({ className = "" }: GoogleMapsProps) {
   const longitude = 16.3656;
   const address = "Słocin 36F, 62-065 Grodzisk Wielkopolski, Polska";
   
-  // Direct link to Google Maps - search by business name to show Business Profile
-  const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(businessName)}`;
-  
   // Get API key from environment
   const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "";
   

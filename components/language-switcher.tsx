@@ -9,13 +9,13 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { i18n } from "@/lib/i18n-config-client"
 
 export function LanguageSwitcher({ locale }: { locale: string }) {
+  const [isOpen, setIsOpen] = useState(false)
+  const pathname = usePathname()
+
   // Only render if there are more than one language available
   if (i18n.locales.length <= 1) {
     return null
   }
-
-  const [isOpen, setIsOpen] = useState(false)
-  const pathname = usePathname()
 
   // Remove the locale part from the pathname
   const pathnameWithoutLocale = pathname.replace(`/${locale}`, "") || "/"

@@ -105,12 +105,6 @@ export default async function CityPage({ params }: PageProps) {
     return text.replace(/{city}/g, cityData.conjugation);
   };
 
-  function trimWords(text: string | undefined, maxWords: number): string {
-    if (!text) return "";
-    const words = text.split(" ");
-    return words.length > maxWords ? words.slice(0, maxWords).join(" ") + "..." : text;
-  }
-
   const cityUrl = `${baseUrl}/${locale}/${city}`
   const cityBreadcrumb = dict.breadcrumbs.cityPage.replace(/{city}/g, cityData.name)
 

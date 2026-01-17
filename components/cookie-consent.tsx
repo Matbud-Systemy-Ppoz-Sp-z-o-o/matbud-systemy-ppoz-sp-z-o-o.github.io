@@ -26,11 +26,6 @@ export function CookieConsent({ dictionary }: { dictionary: Dictionary }) {
     checkCookieConsent()
   }, [])
 
-  const acceptAll = () => {
-    localStorage.setItem("cookie-consent", "all")
-    setIsVisible(false)
-  }
-
   const acceptNecessary = () => {
     localStorage.setItem("cookie-consent", "necessary")
     setIsVisible(false)

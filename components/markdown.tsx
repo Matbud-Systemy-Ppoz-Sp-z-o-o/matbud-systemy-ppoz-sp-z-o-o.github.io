@@ -104,7 +104,7 @@ export function Markdown({ content }: { content: string }) {
               {...props} 
             />
           ),
-          code: ({ inline, className, children, ...props }: CodeProps) =>
+          code: ({ inline, children, ...props }: CodeProps) =>
             inline ? (
               <code 
                 className="bg-muted/80 text-foreground px-2 py-1 rounded text-sm font-mono border border-border/50" 

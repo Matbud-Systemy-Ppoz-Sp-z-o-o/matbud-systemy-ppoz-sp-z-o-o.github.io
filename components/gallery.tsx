@@ -1,10 +1,10 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo } from "react"
 import Image from "next/image"
 import { ChevronLeft, ChevronRight, CheckCircle2, Sparkles, Building2, ArrowRight, Shield, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Dialog, DialogContent, DialogClose, DialogTitle, DialogDescription } from "@/components/ui/dialog"
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { SectionHeader } from "@/components/ui/section-header"
@@ -41,7 +41,7 @@ export default function Gallery({ dictionary }: { dictionary: DictionaryType }) 
   const [selectedImage, setSelectedImage] = useState<number | null>(null)
   const [activeTab, setActiveTab] = useState<'features' | 'benefits' | 'applications'>('features')
 
-  const galleryImages = [
+  const galleryImages = useMemo(() => [
     {
       src: "https://matbud.net/images/gallery/SSP.webp",
       alt: "Systemy Sygnalizacji Pożarowej SSP/SAP - Instalacja i serwis",
@@ -84,7 +84,7 @@ export default function Gallery({ dictionary }: { dictionary: DictionaryType }) 
       description: dictionary.images[5].description,
       data: dictionary.images[5],
     },
-  ]
+  ], [dictionary.images])
 
   const handlePrevious = () => {
     if (selectedImage !== null) {
@@ -153,7 +153,7 @@ export default function Gallery({ dictionary }: { dictionary: DictionaryType }) 
         })
       }
     }
-  }, [selectedImage])
+  }, [selectedImage, galleryImages, dictionary.companyNameShort])
 
   const currentImageData = selectedImage !== null ? galleryImages[selectedImage] : null
   const modalLabels = dictionary.modal!

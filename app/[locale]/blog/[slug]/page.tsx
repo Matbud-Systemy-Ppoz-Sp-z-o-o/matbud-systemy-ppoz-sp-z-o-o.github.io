@@ -37,7 +37,6 @@ export async function generateMetadata({
     }
   }
 
-  const url = `${baseUrl}/${locale}/blog/${slug}`
   const image = post.coverImage || `${baseUrl}/logo_pelne_tlo_w_tarczy.svg`
 
   return generateSEOMetadata({

@@ -21,7 +21,7 @@ export default async function LocaleNotFound({
   }
   
   // Ensure locale is valid
-  if (!i18n.locales.includes(locale as any)) {
+  if (!i18n.locales.includes(locale as (typeof i18n.locales)[number])) {
     locale = i18n.defaultLocale
   }
   
