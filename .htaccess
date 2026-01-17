@@ -80,7 +80,7 @@ RewriteRule ^([a-z]{2,5})/?$ /$1/index.html [L]
 RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.txt[\s?] [NC]
 RewriteRule ^(.*/)?index\.txt$ /$1index.html [R=301,L]
 
-# Step 3: Add trailing slash to directories (for SEO and consistency)
+# Step 3: Add trailing slash to directories
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteCond %{REQUEST_URI} !/$
 RewriteCond %{REQUEST_URI} !^/([a-z]{2,5})/?$ [NC]
