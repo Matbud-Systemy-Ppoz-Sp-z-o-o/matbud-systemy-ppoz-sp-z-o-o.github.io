@@ -64,19 +64,20 @@ DirectoryIndex index.html index.htm
 # Redirect all unknown paths to 404.html
 RewriteEngine On
 
+# Block direct access to .txt files
+RewriteCond %{REQUEST_URI} (.*/)?index\.txt$ [NC]
+RewriteRule ^(.*/)?index\.txt$ $1index.html [R=301,L]
+
 # Prevent .txt files from being served as directory indexes
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteCond %{REQUEST_URI} !/$
 RewriteRule ^(.*)$ $1/ [R=301,L]
 
-# Redirect /pl/ to /pl/index.html explicitly (not index.txt)
-RewriteCond %{REQUEST_URI} ^/pl/?$ [NC]
+# Ensure locale directories (e.g., /pl/, /en/, /de/) serve index.html, not index.txt
+# This pattern matches any 2-5 letter locale code at the root level
+RewriteCond %{REQUEST_URI} ^/([a-z]{2,5})/?$ [NC]
 RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule ^pl/?$ /pl/index.html [L]
-
-# Redirect root to /pl/index.html
-RewriteCond %{REQUEST_URI} ^/$ [NC]
-RewriteRule ^$ /pl/index.html [R=301,L]
+RewriteRule ^([a-z]{2,5})/?$ /$1/index.html [L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 
