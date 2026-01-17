@@ -150,16 +150,6 @@ function deployToBuiltBranch() {
       }
     });
     
-    // SECURITY: Remove .git directory if it exists in the built branch
-    const gitDirInBuilt = path.join(process.cwd(), '.git');
-    if (fs.existsSync(gitDirInBuilt) && fs.statSync(gitDirInBuilt).isDirectory()) {
-      // Check if this is the actual .git directory (not a subdirectory)
-      const gitConfig = path.join(gitDirInBuilt, 'config');
-      if (fs.existsSync(gitConfig)) {
-        console.log('WARNING: .git directory found in built branch. This should not happen.');
-        console.log('The .git directory should only exist at the repository root, not in the built branch.');
-      }
-    }
     
     // Add all files to git
     console.log('Adding files to git...');
