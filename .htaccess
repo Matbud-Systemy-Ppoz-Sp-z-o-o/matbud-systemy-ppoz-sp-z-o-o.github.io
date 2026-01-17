@@ -58,12 +58,11 @@ Options +FollowSymLinks
   </FilesMatch>
 </IfModule>
 
+# Set index.html as the default directory index
+DirectoryIndex index.html
+
 # Redirect all unknown paths to 404.html
 RewriteEngine On
-
-# Redirect root to default locale
-RewriteCond %{REQUEST_URI} ^/$ [NC]
-RewriteRule ^$ /pl/ [R=301,L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 
