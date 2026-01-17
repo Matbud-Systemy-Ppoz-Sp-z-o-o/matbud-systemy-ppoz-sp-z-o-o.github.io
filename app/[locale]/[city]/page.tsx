@@ -4,6 +4,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getDictionary } from "@/lib/dictionaries";
 import { getCities } from "@/lib/cities";
+import { generateMetadata as generateSEOMetadata, baseUrl } from "@/lib/seo";
+import { StructuredData } from "@/components/structured-data";
 import { Shield, Bell, Droplets, FileCheck, Wrench, Building, MapPin, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -48,7 +50,7 @@ export async function generateStaticParams(): Promise<CityParams[]> {
 // Uses the PageProps interface to satisfy Next.js type constraints
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const cities = await getCities();
-  const { city } = await params;
+  const { locale, city } = await params;
 
   // Find the specific city data based on the slug from params
   const cityData = cities.find(c => c.slug === city);
@@ -64,7 +66,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const title = `Systemy Przeciwpożarowe w ${cityData.name} | Instalacja i Serwis PPOŻ | Matbud Systemy Ppoż`;
   const description = `Profesjonalne systemy przeciwpożarowe ${cityData.conjugation}. Instalacja, konserwacja i serwis systemów sygnalizacji pożaru (SSP), oddymiania, oświetlenia awaryjnego. Certyfikowani technicy, audyty zgodności. Serwis 24/7 w ${cityData.name} i okolicach.`;
   
-  return {
+  return generateSEOMetadata({
     title,
     description,
     keywords: [
@@ -79,18 +81,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       `audyt przeciwpożarowy ${cityData.name}`,
       `certyfikacja ppoż ${cityData.name}`,
     ],
-    openGraph: {
-      title,
-      description,
-      type: "website",
-      locale: "pl_PL",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-    },
-  };
+    locale,
+    path: city,
+    type: "website",
+    image: "https://matbud.net/images/gallery/cities.webp",
+  });
 }
 
 // The main page component - this is an async Server Component
@@ -126,8 +121,17 @@ export default async function CityPage({ params }: PageProps) {
     return words.length > maxWords ? words.slice(0, maxWords).join(" ") + "..." : text;
   }
 
+  const cityUrl = `${baseUrl}/${locale}/${city}`
+
   return (
     <>
+      <StructuredData
+        type="breadcrumb"
+        data={[
+          { name: "Strona główna", url: `${baseUrl}/${locale}` },
+          { name: `Systemy PPOŻ w ${cityData.name}`, url: cityUrl },
+        ]}
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary-dark to-primary dark:from-black/70 dark:via-black/50 dark:to-black/30 py-16 md:py-24 text-white">
         <div className="container">

@@ -4,6 +4,8 @@ import Image from "next/image"
 import { getDictionary } from "@/lib/dictionaries"
 import { getAllPosts } from "@/lib/blog"
 import { formatDate } from "@/lib/utils"
+import { generateMetadata as generateSEOMetadata } from "@/lib/seo"
+import { StructuredData } from "@/components/structured-data"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -11,10 +13,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const locale = resolvedParams.locale
   const dict = await getDictionary(locale)
   
-  return {
+  return generateSEOMetadata({
     title: dict.blog.title,
     description: dict.blog.description,
-  }
+    locale,
+    path: "blog",
+    type: "website",
+  })
 }
 
 interface PageProps {
@@ -31,6 +36,13 @@ export default async function BlogPage({ params }: PageProps) {
 
   return (
     <section className="container py-12 md:py-24">
+      <StructuredData
+        type="breadcrumb"
+        data={[
+          { name: "Strona główna", url: `https://matbud.net/${locale}` },
+          { name: "Blog", url: `https://matbud.net/${locale}/blog` },
+        ]}
+      />
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold tracking-tight mb-4">{dict.blog.title}</h1>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">{dict.blog.description}</p>

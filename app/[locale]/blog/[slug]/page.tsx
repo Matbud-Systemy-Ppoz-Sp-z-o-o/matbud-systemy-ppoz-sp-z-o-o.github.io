@@ -7,6 +7,8 @@ import { ChevronLeft } from "lucide-react"
 import { getDictionary } from "@/lib/dictionaries"
 import { getPostBySlug, getAllPosts } from "@/lib/blog"
 import { formatDate } from "@/lib/utils"
+import { generateMetadata as generateSEOMetadata, baseUrl } from "@/lib/seo"
+import { StructuredData } from "@/components/structured-data"
 
 const Markdown = dynamic(() => import("@/components/markdown").then(mod => ({ default: mod.Markdown })), {
   loading: () => <div className="animate-pulse bg-muted h-96 rounded-md" />,
@@ -35,17 +37,19 @@ export async function generateMetadata({
     }
   }
 
-  return {
+  const url = `${baseUrl}/${locale}/blog/${slug}`
+  const image = post.coverImage || `${baseUrl}/logo_pelne_tlo_w_tarczy.svg`
+
+  return generateSEOMetadata({
     title: post.title,
     description: post.excerpt,
-    openGraph: {
-      title: post.title,
-      description: post.excerpt,
-      type: "article",
-      publishedTime: post.date,
-      authors: [dict.common.companyName],
-    },
-  }
+    locale,
+    path: `blog/${slug}`,
+    type: "article",
+    image,
+    publishedTime: post.date,
+    authors: [dict.common.companyName],
+  })
 }
 
 export async function generateStaticParams() {
@@ -78,8 +82,30 @@ export default async function PostPage({
     notFound()
   }
 
+  const postUrl = `${baseUrl}/${locale}/blog/${slug}`
+  const postImage = post.coverImage || `${baseUrl}/logo_pelne_tlo_w_tarczy.svg`
+
   return (
     <article className="container py-12 max-w-4xl">
+      <StructuredData
+        type="article"
+        data={{
+          title: post.title,
+          description: post.excerpt,
+          url: postUrl,
+          image: postImage,
+          publishedTime: post.date,
+          author: dict.common.companyName,
+        }}
+      />
+      <StructuredData
+        type="breadcrumb"
+        data={[
+          { name: "Strona główna", url: `${baseUrl}/${locale}` },
+          { name: "Blog", url: `${baseUrl}/${locale}/blog` },
+          { name: post.title, url: postUrl },
+        ]}
+      />
       <Link href={`/${locale}/blog`} className="flex items-center text-muted-foreground hover:text-primary mb-8">
         <ChevronLeft className="mr-2 h-4 w-4" />
         {dict.blog.backToBlog}

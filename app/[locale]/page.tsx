@@ -1,6 +1,8 @@
 import type { Metadata } from "next"
 import dynamic from "next/dynamic"
 import { getDictionary } from "@/lib/dictionaries"
+import { generateMetadata as generateSEOMetadata } from "@/lib/seo"
+import { StructuredData } from "@/components/structured-data"
 import Hero from "@/components/hero"
 
 // Shared loading component to reduce bundle size
@@ -34,24 +36,15 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   const title = `${dict.common.companyName} | ${dict.common.pageTitle}`
   const description = dict.common.pageDescription
   
-  return {
+  return generateSEOMetadata({
     title,
     description,
     keywords: dict.common.keywords,
-    openGraph: {
-      title,
-      description,
-      type: "website",
-      locale: locale === "pl" ? "pl_PL" : "en_US",
-      url: "https://matbud.net",
-      siteName: dict.common.siteName,
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-    },
-  }
+    locale,
+    path: "",
+    type: "website",
+    image: "https://matbud.net/images/gallery/hero.webp",
+  })
 }
 
 export default async function Home({
@@ -65,6 +58,12 @@ export default async function Home({
   
   return (
     <>
+      <StructuredData
+        type="breadcrumb"
+        data={[
+          { name: "Strona główna", url: `https://matbud.net/${locale}` },
+        ]}
+      />
       <Hero dictionary={dict.hero} />
       <Services dictionary={dict.services} />
       <AboutUs dictionary={dict.aboutUs} />

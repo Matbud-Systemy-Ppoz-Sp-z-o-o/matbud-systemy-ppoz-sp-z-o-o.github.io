@@ -3,6 +3,8 @@ import Link from "next/link"
 import { MapPin, Clock, Briefcase, ArrowRight } from "lucide-react"
 import { getDictionary } from "@/lib/dictionaries"
 import { getJobs } from "@/content/jobs"
+import { generateMetadata as generateSEOMetadata } from "@/lib/seo"
+import { StructuredData } from "@/components/structured-data"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -17,10 +19,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const locale = resolvedParams.locale
   const dict = await getDictionary(locale)
   
-  return {
+  return generateSEOMetadata({
     title: dict.careers.title,
     description: dict.careers.description,
-  }
+    locale,
+    path: "careers",
+    type: "website",
+  })
 }
 
 export default async function CareersPage({ params }: PageProps) {
@@ -33,6 +38,13 @@ export default async function CareersPage({ params }: PageProps) {
 
   return (
     <div className="min-h-screen">
+      <StructuredData
+        type="breadcrumb"
+        data={[
+          { name: "Strona główna", url: `https://matbud.net/${locale}` },
+          { name: dict.careers.title, url: `https://matbud.net/${locale}/careers` },
+        ]}
+      />
       {/* Hero Section */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-primary/5 to-primary/10">
         <div className="container">

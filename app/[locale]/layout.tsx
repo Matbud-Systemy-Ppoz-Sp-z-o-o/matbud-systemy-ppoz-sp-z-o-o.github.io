@@ -7,6 +7,7 @@ import { Header } from "@/components/header"
 import { i18n } from "@/lib/i18n-config"
 import { getDictionary } from "@/lib/dictionaries"
 import { getCities } from "@/lib/cities"
+import { StructuredData } from "@/components/structured-data"
 
 const Footer = dynamic(() => import("@/components/footer").then(mod => ({ default: mod.Footer })), {
   loading: () => (
@@ -45,6 +46,7 @@ export default async function LocaleLayout({
 
   return (
     <ThemeProvider attribute="class" defaultTheme="dark">
+      <StructuredData type="localBusiness" locale={locale} />
       <Header locale={locale} dictionary={dict} />
       <main>{children}</main>
       <Footer locale={locale} dictionary={dict} cities={cities} />

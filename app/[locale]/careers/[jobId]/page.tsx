@@ -4,6 +4,8 @@ import { notFound } from "next/navigation"
 import { ChevronLeft, MapPin, Clock, Briefcase, CheckCircle } from "lucide-react"
 import { getDictionary } from "@/lib/dictionaries"
 import { getJobById, getJobs } from "@/content/jobs"
+import { generateMetadata as generateSEOMetadata, baseUrl } from "@/lib/seo"
+import { StructuredData } from "@/components/structured-data"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -60,10 +62,13 @@ export async function generateMetadata({
     }
   }
 
-  return {
+  return generateSEOMetadata({
     title: `${job.title} - ${dict.careers.title}`,
     description: job.description,
-  }
+    locale,
+    path: `careers/${jobId}`,
+    type: "website",
+  })
 }
 
 export default async function JobPage({ 
@@ -86,8 +91,18 @@ export default async function JobPage({
     notFound()
   }
 
+  const jobUrl = `${baseUrl}/${locale}/careers/${jobId}`
+
   return (
     <div className="min-h-screen py-16 md:py-24">
+      <StructuredData
+        type="breadcrumb"
+        data={[
+          { name: "Strona główna", url: `${baseUrl}/${locale}` },
+          { name: dict.careers.title, url: `${baseUrl}/${locale}/careers` },
+          { name: job.title, url: jobUrl },
+        ]}
+      />
       <div className="container max-w-4xl">
         {/* Back Button */}
         <Link 
