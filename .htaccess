@@ -59,10 +59,24 @@ Options +FollowSymLinks
 </IfModule>
 
 # Set index.html as the default directory index
-DirectoryIndex index.html
+DirectoryIndex index.html index.htm
 
 # Redirect all unknown paths to 404.html
 RewriteEngine On
+
+# Prevent .txt files from being served as directory indexes
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_URI} !/$
+RewriteRule ^(.*)$ $1/ [R=301,L]
+
+# Redirect /pl/ to /pl/index.html explicitly (not index.txt)
+RewriteCond %{REQUEST_URI} ^/pl/?$ [NC]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^pl/?$ /pl/index.html [L]
+
+# Redirect root to /pl/index.html
+RewriteCond %{REQUEST_URI} ^/$ [NC]
+RewriteRule ^$ /pl/index.html [R=301,L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 
