@@ -1,20 +1,11 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
 import { getDictionary } from "@/lib/dictionaries"
 import { i18n } from "@/lib/i18n-config"
 import { generateMetadata as generateSEOMetadata } from "@/lib/seo"
 import { StructuredData } from "@/components/structured-data"
 
 import "@/app/globals.css"
-
-const inter = Inter({ 
-  subsets: ["latin"],
-  display: "optional",
-  preload: false,
-  adjustFontFallback: true,
-  variable: '--font-inter',
-})
 
 export async function generateMetadata(): Promise<Metadata> {
   const dict = await getDictionary(i18n.defaultLocale)
@@ -52,12 +43,8 @@ export default function RootLayout({
   return (
     <html lang="pl" suppressHydrationWarning>
       <head>
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
         <link rel="dns-prefetch" href="https://matbud.net" />
         <link rel="dns-prefetch" href="https://maps.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://matbud.net" crossOrigin="anonymous" />
         <link
           rel="preload"
@@ -71,11 +58,10 @@ export default function RootLayout({
           as="image"
           fetchPriority="high"
         />
-        <link rel="prefetch" href="https://fonts.gstatic.com" />
         <StructuredData type="organization" />
         <StructuredData type="website" />
       </head>
-      <body className={`${inter.variable} ${inter.className}`}>{children}</body>
+      <body>{children}</body>
     </html>
   )
 }
