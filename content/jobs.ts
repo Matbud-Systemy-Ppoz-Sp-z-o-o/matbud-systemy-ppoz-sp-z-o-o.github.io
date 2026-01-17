@@ -12,7 +12,6 @@ export type Job = {
 }
 
 export async function getJobs(): Promise<Job[]> {
-  // Return empty array for now - no active jobs
   return []
 }
 
