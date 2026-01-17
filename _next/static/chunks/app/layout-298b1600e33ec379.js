@@ -1,2 +1,0 @@
-(globalThis.webpackChunk_N_E=globalThis.webpackChunk_N_E||[]).push([[7177],{6611:(e,a,l)=>{Promise.resolve().then(l.t.bind(l,87826,23)),Promise.resolve().then(l.t.bind(l,41290,23))},41290:()=>{},87826:e=>{e.exports={style:{fontFamily:"'Inter', 'Inter Fallback'",fontStyle:"normal"},className:"__className_e87b38",variable:"__variable_e87b38"}}},e=>{e.O(0,[2662,4628,5624,5570,3432,207,7317,4848,9258,3251,8076,4007,7258,8930,9248,5911,6616,6374,7358],()=>e(e.s=6611)),_N_E=e.O()}]);
-//# sourceMappingURL=layout-298b1600e33ec379.js.map
