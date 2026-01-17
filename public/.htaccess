@@ -61,6 +61,10 @@ Options +FollowSymLinks
 # Redirect all unknown paths to 404.html
 RewriteEngine On
 
+# Redirect root to default locale
+RewriteCond %{REQUEST_URI} ^/$ [NC]
+RewriteRule ^$ /pl/ [R=301,L]
+
 RewriteCond %{REQUEST_FILENAME} !-f
 
 # Don't redirect if the directory exists
