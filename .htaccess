@@ -63,8 +63,9 @@ DirectoryIndex index.html index.htm
 
 # Redirect all unknown paths to 404.html
 RewriteEngine On
+RewriteBase /
 
-# Block direct access to .txt files
+# Block direct access to .txt files (redirect to .html equivalent)
 RewriteCond %{REQUEST_URI} (.*/)?index\.txt$ [NC]
 RewriteRule ^(.*/)?index\.txt$ $1index.html [R=301,L]
 
@@ -77,6 +78,7 @@ RewriteRule ^(.*)$ $1/ [R=301,L]
 # This pattern matches any 2-5 letter locale code at the root level
 RewriteCond %{REQUEST_URI} ^/([a-z]{2,5})/?$ [NC]
 RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
 RewriteRule ^([a-z]{2,5})/?$ /$1/index.html [L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
