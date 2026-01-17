@@ -62,47 +62,44 @@ Options +FollowSymLinks
 DirectoryIndex index.html index.htm
 
 # Redirect all unknown paths to 404.html
+<IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /
 
-# Block direct access to .txt files (redirect to .html equivalent)
-RewriteCond %{REQUEST_URI} (.*/)?index\.txt$ [NC]
-RewriteRule ^(.*/)?index\.txt$ $1index.html [R=301,L]
+# CRITICAL: Prevent filesystem path exposure
+# Never use filesystem paths in rewrite rules - only use URL paths
 
-# Prevent .txt files from being served as directory indexes
+# Step 1: Handle locale directories - serve index.html internally (no redirect)
+# This must come FIRST to catch locale requests before other rules
+# Pattern: /pl/, /en/, /de/, etc. (2-5 letter codes)
+RewriteCond %{THE_REQUEST} \s/+([a-z]{2,5})/?[\s?] [NC]
 RewriteCond %{REQUEST_FILENAME} -d
-RewriteCond %{REQUEST_URI} !/$
-RewriteRule ^(.*)$ $1/ [R=301,L]
-
-# Ensure locale directories (e.g., /pl/, /en/, /de/) serve index.html, not index.txt
-# This pattern matches any 2-5 letter locale code at the root level
-RewriteCond %{REQUEST_URI} ^/([a-z]{2,5})/?$ [NC]
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
 RewriteRule ^([a-z]{2,5})/?$ /$1/index.html [L]
 
+# Step 2: Block direct access to .txt files - redirect to .html
+RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.txt[\s?] [NC]
+RewriteRule ^(.*/)?index\.txt$ /$1index.html [R=301,L]
+
+# Step 3: Add trailing slash to directories (for SEO and consistency)
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_URI} !/$
+RewriteCond %{REQUEST_URI} !^/([a-z]{2,5})/?$ [NC]
+RewriteRule ^(.*)$ $1/ [R=301,L]
+
+# Step 4: Handle 404 for non-existent files and directories
 RewriteCond %{REQUEST_FILENAME} !-f
-
-# Don't redirect if the directory exists
 RewriteCond %{REQUEST_FILENAME} !-d
-
-# Don't redirect if it's already the 404 page
 RewriteCond %{REQUEST_URI} !^/404\.html$ [NC]
 RewriteCond %{REQUEST_URI} !^/404/$ [NC]
-
-# Don't redirect static assets
 RewriteCond %{REQUEST_URI} !\.(css|js|jpg|jpeg|png|gif|ico|svg|woff|woff2|ttf|eot)$ [NC]
-
-  # Don't redirect _next directory (Next.js assets)
-  RewriteCond %{REQUEST_URI} !^/_next/ [NC]
-  
-  # Cache Next.js static files
-  <IfModule mod_headers.c>
-    <FilesMatch "^/_next/static/">
-      Header set Cache-Control "public, max-age=31536000, immutable"
-    </FilesMatch>
-  </IfModule>
-
-# Redirect to 404.html with 404 status code
+RewriteCond %{REQUEST_URI} !^/_next/ [NC]
 RewriteRule ^(.*)$ /404.html [L,R=404]
+</IfModule>
+
+# Cache Next.js static files
+<IfModule mod_headers.c>
+  <FilesMatch "^/_next/static/">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+</IfModule>
 
