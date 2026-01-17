@@ -6,8 +6,7 @@ import { getDictionary } from "@/lib/dictionaries"
 import { getJobById, getJobs } from "@/content/jobs"
 import { generateMetadata as generateSEOMetadata, baseUrl } from "@/lib/seo"
 import { StructuredData } from "@/components/structured-data"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { ApplyButton } from "@/components/apply-button"
 import { i18n } from "@/lib/i18n-config"
@@ -25,7 +24,6 @@ export async function generateStaticParams(): Promise<Array<{ locale: string; jo
   
   const params: Array<{ locale: string; jobId: string }> = []
   
-  // Always generate at least one param for each locale to satisfy Next.js export requirements
   for (const locale of i18n.locales) {
     if (activeJobs.length > 0) {
       for (const job of activeJobs) {
@@ -80,7 +78,6 @@ export default async function JobPage({
   
   const dict = await getDictionary(locale)
   
-  // Handle the case when no jobs exist
   if (jobId === 'no-jobs') {
     notFound()
   }
@@ -98,7 +95,7 @@ export default async function JobPage({
       <StructuredData
         type="breadcrumb"
         data={[
-          { name: "Strona główna", url: `${baseUrl}/${locale}` },
+          { name: dict.breadcrumbs.home, url: `${baseUrl}/${locale}` },
           { name: dict.careers.title, url: `${baseUrl}/${locale}/careers` },
           { name: job.title, url: jobUrl },
         ]}
@@ -207,10 +204,10 @@ export default async function JobPage({
         {/* Apply Section */}
         <div className="text-center bg-gradient-to-r from-primary/5 to-primary/10 rounded-lg p-8">
           <h2 className="text-2xl font-bold mb-4 text-foreground">
-            Zainteresowany tą ofertą?
+            {dict.careers.interestedTitle}
           </h2>
           <p className="text-foreground/70 mb-6 max-w-2xl mx-auto">
-            Wyślij nam swoje CV i list motywacyjny. Skontaktujemy się z Tobą w ciągu kilku dni.
+            {dict.careers.interestedDescription}
           </p>
           <div className="flex justify-center">
             <ApplyButton 

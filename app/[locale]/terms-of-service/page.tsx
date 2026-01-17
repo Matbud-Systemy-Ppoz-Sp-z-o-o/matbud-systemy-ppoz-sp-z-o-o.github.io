@@ -32,7 +32,7 @@ export default async function TermsOfServicePage({ params }: PageProps) {
       <StructuredData
         type="breadcrumb"
         data={[
-          { name: "Strona główna", url: `https://matbud.net/${locale}` },
+          { name: dict.breadcrumbs.home, url: `https://matbud.net/${locale}` },
           { name: dict.termsOfService.title, url: `https://matbud.net/${locale}/terms-of-service` },
         ]}
       />

@@ -7,7 +7,6 @@ export default async function LocaleNotFound({
 }: {
   params?: Promise<{ locale: string }> | { locale: string }
 }) {
-  // Handle both sync and async params (Next.js 15 compatibility)
   let locale: string
   if (params) {
     if (params instanceof Promise) {

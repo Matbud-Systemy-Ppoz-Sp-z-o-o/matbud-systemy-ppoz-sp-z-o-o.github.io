@@ -304,7 +304,8 @@
     "navigation": {
       "previous": "Poprzedni",
       "next": "Następny"
-    }
+    },
+    "certificateAlt": "Certyfikat {number}"
   },
   "clients": {
     "title": "Nasi Klienci",
@@ -621,6 +622,16 @@
       "backToJobs": "Powrót do ofert pracy"
     },
     "noJobsAvailable": "Aktualnie nie mamy dostępnych ofert pracy",
-    "checkBackLater": "Sprawdź ponownie później lub wyślij nam swoje CV na adres praca@matbud.net"
+    "checkBackLater": "Sprawdź ponownie później lub wyślij nam swoje CV na adres praca@matbud.net",
+    "availableJobsTitle": "Dostępne Oferty Pracy",
+    "availableJobsDescription": "Sprawdź nasze aktualne oferty i dołącz do zespołu profesjonalistów",
+    "details": "Szczegóły",
+    "interestedTitle": "Zainteresowany tą ofertą?",
+    "interestedDescription": "Wyślij nam swoje CV i list motywacyjny. Skontaktujemy się z Tobą w ciągu kilku dni."
+  },
+  "breadcrumbs": {
+    "home": "Strona główna",
+    "blog": "Blog",
+    "cityPage": "Systemy PPOŻ w {city}"
   }
 }

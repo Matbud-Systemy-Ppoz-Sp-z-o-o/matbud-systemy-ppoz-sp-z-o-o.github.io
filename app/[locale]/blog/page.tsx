@@ -39,8 +39,8 @@ export default async function BlogPage({ params }: PageProps) {
       <StructuredData
         type="breadcrumb"
         data={[
-          { name: "Strona główna", url: `https://matbud.net/${locale}` },
-          { name: "Blog", url: `https://matbud.net/${locale}/blog` },
+          { name: dict.breadcrumbs.home, url: `https://matbud.net/${locale}` },
+          { name: dict.breadcrumbs.blog, url: `https://matbud.net/${locale}/blog` },
         ]}
       />
       <div className="text-center mb-12">

@@ -41,7 +41,7 @@ export default async function CareersPage({ params }: PageProps) {
       <StructuredData
         type="breadcrumb"
         data={[
-          { name: "Strona główna", url: `https://matbud.net/${locale}` },
+          { name: dict.breadcrumbs.home, url: `https://matbud.net/${locale}` },
           { name: dict.careers.title, url: `https://matbud.net/${locale}/careers` },
         ]}
       />
@@ -90,10 +90,10 @@ export default async function CareersPage({ params }: PageProps) {
         <div className="container">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4 text-foreground">
-              Dostępne Oferty Pracy
+              {dict.careers.availableJobsTitle}
             </h2>
             <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
-              Sprawdź nasze aktualne oferty i dołącz do zespołu profesjonalistów
+              {dict.careers.availableJobsDescription}
             </p>
           </div>
 
@@ -133,7 +133,7 @@ export default async function CareersPage({ params }: PageProps) {
                     <div className="flex gap-2">
                       <Button asChild variant="outline" className="flex-1">
                         <Link href={`/${locale}/careers/${job.id}`}>
-                          Szczegóły
+                          {dict.careers.details}
                           <ArrowRight className="ml-2 h-4 w-4" />
                         </Link>
                       </Button>

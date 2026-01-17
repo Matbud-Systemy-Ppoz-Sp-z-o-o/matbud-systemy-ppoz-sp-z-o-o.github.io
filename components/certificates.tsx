@@ -15,6 +15,7 @@ interface DictionaryType {
     previous: string;
     next: string;
   };
+  certificateAlt: string;
 }
 
 export default function Certificates({ dictionary }: { dictionary: DictionaryType }) {
@@ -80,7 +81,7 @@ export default function Certificates({ dictionary }: { dictionary: DictionaryTyp
                 <div className="relative h-[80vh] max-h-[600px]">
                   <Image
                     src={certificates[selectedImage] || "https://matbud.net/placeholder.svg"}
-                    alt={`Certificate ${selectedImage + 1}`}
+                    alt={dictionary.certificateAlt.replace('{number}', String(selectedImage + 1))}
                     fill
                     sizes="(max-width: 768px) 100vw, 80vw"
                     className="object-contain"

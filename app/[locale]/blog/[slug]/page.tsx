@@ -53,7 +53,7 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-  const locales = ["pl", "en"] // Available locales from i18n config
+  const locales = ["pl"]
   const allParams: { locale: string; slug: string }[] = []
   
   for (const locale of locales) {
@@ -101,8 +101,8 @@ export default async function PostPage({
       <StructuredData
         type="breadcrumb"
         data={[
-          { name: "Strona główna", url: `${baseUrl}/${locale}` },
-          { name: "Blog", url: `${baseUrl}/${locale}/blog` },
+          { name: dict.breadcrumbs.home, url: `${baseUrl}/${locale}` },
+          { name: dict.breadcrumbs.blog, url: `${baseUrl}/${locale}/blog` },
           { name: post.title, url: postUrl },
         ]}
       />

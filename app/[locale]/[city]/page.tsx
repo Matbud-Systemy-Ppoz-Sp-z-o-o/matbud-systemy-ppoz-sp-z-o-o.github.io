@@ -22,7 +22,7 @@ interface PageProps {
   params: Promise<{ locale: string; city: string }>;
 }
 
-// Disable dynamic params - only allow pre-generated routes
+// Disable dynamic params
 export const dynamicParams = false;
 
 // Generates static paths for all city pages during the build
@@ -31,13 +31,10 @@ export async function generateStaticParams(): Promise<CityParams[]> {
   const locales = ["pl", "en"];
 
   // Handle case where cities might be undefined or empty
-  // Return at least one placeholder to satisfy Next.js static export requirements
   if (!cities || cities.length === 0) {
-    // Return a placeholder that will trigger 404 (cities are disabled)
     return [{ locale: "pl", city: "placeholder" }];
   }
 
-  // Create paths for each locale and city combination
   return locales.flatMap(locale =>
     cities.map(city => ({
       locale,
@@ -46,8 +43,6 @@ export async function generateStaticParams(): Promise<CityParams[]> {
   );
 }
 
-// Generates metadata (like title, description) for each city page
-// Uses the PageProps interface to satisfy Next.js type constraints
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const cities = await getCities();
   const { locale, city } = await params;
@@ -88,8 +83,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   });
 }
 
-// The main page component - this is an async Server Component
-// Uses the PageProps interface to satisfy Next.js type constraints
 export default async function CityPage({ params }: PageProps) {
   const { locale, city } = await params;
 
@@ -107,14 +100,11 @@ export default async function CityPage({ params }: PageProps) {
     notFound();
   }
 
-  // Helper function to replace {city} placeholder in dictionary strings
   const replaceCity = (text: string | undefined): string => {
-    // Handle potential undefined text gracefully
     if (text === undefined) return "";
     return text.replace(/{city}/g, cityData.conjugation);
   };
 
-  // Helper function to trim text to a certain number of words
   function trimWords(text: string | undefined, maxWords: number): string {
     if (!text) return "";
     const words = text.split(" ");
@@ -122,17 +112,17 @@ export default async function CityPage({ params }: PageProps) {
   }
 
   const cityUrl = `${baseUrl}/${locale}/${city}`
+  const cityBreadcrumb = dict.breadcrumbs.cityPage.replace(/{city}/g, cityData.name)
 
   return (
     <>
       <StructuredData
         type="breadcrumb"
         data={[
-          { name: "Strona główna", url: `${baseUrl}/${locale}` },
-          { name: `Systemy PPOŻ w ${cityData.name}`, url: cityUrl },
+          { name: dict.breadcrumbs.home, url: `${baseUrl}/${locale}` },
+          { name: cityBreadcrumb, url: cityUrl },
         ]}
       />
-      {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary-dark to-primary dark:from-black/70 dark:via-black/50 dark:to-black/30 py-16 md:py-24 text-white">
         <div className="container">
           <div className="grid md:grid-cols-2 gap-12 items-start">
@@ -165,7 +155,6 @@ export default async function CityPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* Services Section */}
       <section id="services" className="py-16 md:py-24 bg-muted/50">
         <div className="container">
           <div className="text-center mb-12">
@@ -215,7 +204,6 @@ export default async function CityPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
       <section className="py-16 md:py-20 bg-muted/50">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
@@ -225,24 +213,20 @@ export default async function CityPage({ params }: PageProps) {
              <p className="text-lg mb-12 text-muted-foreground">{replaceCity(dict.cityPage?.whyChooseDescription)}</p>
 
              <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-12">
-                {/* Stat 1: Experience */}
                 <div className="bg-card p-6 rounded-lg shadow-sm text-center border">
                   <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-primary/20">
-                    {/* Dynamically use value from dictionary if available */}
                     <span className="text-primary text-2xl font-bold">{dict.aboutUs?.stats?.[0]?.value ?? '25+'}</span>
                   </div>
                   <h3 className="font-semibold mb-1">{dict.aboutUs?.stats?.[0]?.label ?? 'Lat Doświadczenia'}</h3>
                 </div>
 
-                {/* Stat 2: Completed Projects */}
                 <div className="bg-card p-6 rounded-lg shadow-sm text-center border">
                    <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-primary/20">
                      <span className="text-primary text-xl font-bold">5,000+</span>
                    </div>
-                   <h3 className="font-semibold mb-1">{dict.aboutUs?.stats?.[1]?.label ?? 'Zrealizowanych projektów'}</h3>
+                   <h3 className="font-semibold mb-1">{dict.aboutUs?.stats?.[1]?.label || ''}</h3>
                  </div>
 
-                {/* Stat 3: Support */}
                 <div className="bg-card p-6 rounded-lg shadow-sm text-center border">
                    <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-primary/20">
                       <span className="text-primary text-2xl font-bold">24/7</span>
@@ -254,7 +238,6 @@ export default async function CityPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* Contact Form Section */}
       <section id="contact-form" className="py-16 md:py-20">
         <div className="container">
           <div className="max-w-5xl mx-auto">
@@ -266,12 +249,10 @@ export default async function CityPage({ params }: PageProps) {
             </div>
 
             <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-              {/* Contact Info Side */}
               <div className="bg-card p-6 md:p-8 rounded-lg shadow-md border h-full flex flex-col">
                 <h3 className="text-xl font-semibold mb-6">{dict.contact?.contactInfo?.title ?? 'Informacje Kontaktowe'}</h3>
 
                 <div className="space-y-6">
-                  {/* Address */}
                   <div className="flex items-start gap-4">
                     <MapPin className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                     <div>
@@ -283,7 +264,6 @@ export default async function CityPage({ params }: PageProps) {
                     </div>
                   </div>
 
-                  {/* Phone */}
                   <div className="flex items-start gap-4">
                     <Phone className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                     <div>
@@ -296,7 +276,6 @@ export default async function CityPage({ params }: PageProps) {
                      </div>
                    </div>
 
-                  {/* Email */}
                   <div className="flex items-start gap-4">
                     <Mail className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                     <div>
@@ -312,7 +291,6 @@ export default async function CityPage({ params }: PageProps) {
                     </div>
                   </div>
 
-                  {/* Business Hours */}
                   <div className="mt-8">
                     <h4 className="font-medium mb-4">{dict.contact?.contactInfo?.hoursTitle ?? 'Godziny Pracy'}</h4>
                     <ul className="space-y-2 text-muted-foreground">
@@ -329,7 +307,6 @@ export default async function CityPage({ params }: PageProps) {
                 </div>
               </div>
 
-              {/* Google Maps Side */}
               <div className="h-full">
                 <GoogleMapsClient className="h-full" />
               </div>

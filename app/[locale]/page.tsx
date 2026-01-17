@@ -61,13 +61,13 @@ export default async function Home({
       <StructuredData
         type="breadcrumb"
         data={[
-          { name: "Strona główna", url: `https://matbud.net/${locale}` },
+          { name: dict.breadcrumbs.home, url: `https://matbud.net/${locale}` },
         ]}
       />
       <Hero dictionary={dict.hero} />
       <Services dictionary={dict.services} />
       <AboutUs dictionary={dict.aboutUs} />
-      <Gallery dictionary={dict.gallery} />
+      <Gallery dictionary={{ ...dict.gallery, companyNameShort: dict.common.companyNameShort }} />
       <Contact dictionary={dict.contact} />
     </>
   )

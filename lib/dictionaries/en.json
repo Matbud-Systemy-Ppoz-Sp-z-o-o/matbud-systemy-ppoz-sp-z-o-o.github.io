@@ -305,7 +305,8 @@
      "navigation": {
       "previous": "Previous",
       "next": "Next"
-     }
+     },
+     "certificateAlt": "Certificate {number}"
     },
     "clients": {
      "title": "Our Clients",
@@ -745,6 +746,16 @@
       "backToJobs": "Back to job listings"
      },
      "noJobsAvailable": "We currently have no job openings available",
-     "checkBackLater": "Please check back later or send us your CV at praca@matbud.net"
+     "checkBackLater": "Please check back later or send us your CV at praca@matbud.net",
+     "availableJobsTitle": "Available Job Openings",
+     "availableJobsDescription": "Check our current openings and join our team of professionals",
+     "details": "Details",
+     "interestedTitle": "Interested in this position?",
+     "interestedDescription": "Send us your CV and cover letter. We will contact you within a few days."
+    },
+    "breadcrumbs": {
+     "home": "Home",
+     "blog": "Blog",
+     "cityPage": "Fire Safety Systems in {city}"
     }
    }

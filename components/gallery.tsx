@@ -27,13 +27,14 @@ interface DictionaryType {
     previous: string;
     next: string;
   };
-  modal?: {
+  modal: {
     features: string;
     benefits: string;
     applications: string;
     close: string;
     learnMore: string;
   };
+  companyNameShort?: string;
 }
 
 export default function Gallery({ dictionary }: { dictionary: DictionaryType }) {
@@ -135,7 +136,7 @@ export default function Gallery({ dictionary }: { dictionary: DictionaryType }) 
       const originalTitle = document.title
       
       requestAnimationFrame(() => {
-        document.title = `${currentImage.title} | Matbud Systemy Ppoż.`
+        document.title = `${currentImage.title} | ${dictionary.companyNameShort || 'Matbud Systemy Ppoż.'}`
         
         let metaDescription = document.querySelector('meta[name="description"]')
         if (!metaDescription) {
@@ -155,13 +156,7 @@ export default function Gallery({ dictionary }: { dictionary: DictionaryType }) 
   }, [selectedImage])
 
   const currentImageData = selectedImage !== null ? galleryImages[selectedImage] : null
-  const modalLabels = dictionary.modal || {
-    features: "Features",
-    benefits: "Benefits",
-    applications: "Applications",
-    close: "Close",
-    learnMore: "Learn more"
-  }
+  const modalLabels = dictionary.modal!
 
   return (
     <>

@@ -62,45 +62,45 @@ export function Footer({
               <Link 
                 href={`/${locale}#services`} 
                 className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label={dictionary.navigation.services || "Usługi"}
+                aria-label={dictionary.navigation.services}
               >
-                {dictionary.navigation.services || "Usługi"}
+                {dictionary.navigation.services}
               </Link>
             </li>
             <li>
               <Link 
                 href={`/${locale}#about`} 
                 className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label={dictionary.navigation.about || "O nas"}
+                aria-label={dictionary.navigation.about}
               >
-                {dictionary.navigation.about || "O nas"}
+                {dictionary.navigation.about}
               </Link>
             </li>
             <li>
               <Link 
                 href={`/${locale}#clients`} 
                 className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label={dictionary.navigation.clients || "Klienci"}
+                aria-label={dictionary.navigation.clients}
               >
-                {dictionary.navigation.clients || "Klienci"}
+                {dictionary.navigation.clients}
               </Link>
             </li>
             <li>
               <Link 
                 href={`/${locale}/careers`} 
                 className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label={dictionary.navigation.careers || "Kariera"}
+                aria-label={dictionary.navigation.careers}
               >
-                {dictionary.navigation.careers || "Kariera"}
+                {dictionary.navigation.careers}
               </Link>
             </li>
             <li>
               <Link 
                 href={`/${locale}#contact`} 
                 className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label={dictionary.navigation.contact || "Kontakt"}
+                aria-label={dictionary.navigation.contact}
               >
-                {dictionary.navigation.contact || "Kontakt"}
+                {dictionary.navigation.contact}
               </Link>
             </li>
           </ul>
