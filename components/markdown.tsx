@@ -131,7 +131,8 @@ export function Markdown({ content }: { content: string }) {
                   width={800}
                   height={600}
                   sizes="(max-width: 768px) 100vw, 800px"
-                  className="rounded-2xl shadow-lg border border-border/50 max-w-full h-auto hover:shadow-xl transition-all duration-300"
+                  className="rounded-2xl shadow-lg border border-border/50 max-w-full hover:shadow-xl transition-all duration-300"
+                  style={{ height: "auto" }}
                   loading="lazy"
                   quality={60}
                   decoding="async"
