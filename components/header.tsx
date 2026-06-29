@@ -17,6 +17,7 @@ interface Dictionary {
     about: string;
     contact: string;
     careers: string;
+    blog: string;
   };
   common: {
     companyName: string;
@@ -41,6 +42,9 @@ export function Header({ locale, dictionary }: { locale: string; dictionary: Dic
           </Link>
           <Link href={`/${locale}#about`} className="text-sm font-medium transition-colors hover:text-primary">
             {dictionary.navigation.about}
+          </Link>
+          <Link href={`/${locale}/blog`} className="text-sm font-medium transition-colors hover:text-primary">
+            {dictionary.navigation.blog}
           </Link>
           <Link href={`/${locale}/careers`} className="text-sm font-medium transition-colors hover:text-primary">
             {dictionary.navigation.careers}

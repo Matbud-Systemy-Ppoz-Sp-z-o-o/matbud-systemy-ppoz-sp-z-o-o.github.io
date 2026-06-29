@@ -11,6 +11,7 @@ interface Dictionary {
     about: string;
     contact: string;
     careers: string;
+    blog: string;
   };
   common: {
     menu: string;
@@ -35,6 +36,9 @@ export default function MobileMenu({ locale, dictionary }: { locale: string; dic
           </Link>
           <Link href={`/${locale}#about`} className="text-lg font-medium transition-colors hover:text-primary">
             {dictionary.navigation.about}
+          </Link>
+          <Link href={`/${locale}/blog`} className="text-lg font-medium transition-colors hover:text-primary">
+            {dictionary.navigation.blog}
           </Link>
           <Link href={`/${locale}/careers`} className="text-lg font-medium transition-colors hover:text-primary">
             {dictionary.navigation.careers}

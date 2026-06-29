@@ -413,7 +413,8 @@
      "description": "Stay up-to-date with the latest fire safety news, tips, and industry insights",
      "readMore": "Read more",
      "backToBlog": "Back to blog",
-     "postNotFound": "Post not found"
+     "postNotFound": "Post not found",
+     "noPosts": "There are currently no blog posts available. New articles will be published soon."
     },
     "cityPage": {
      "title": "Fire Safety Systems in {city} - Fire Protection Installation & Service",

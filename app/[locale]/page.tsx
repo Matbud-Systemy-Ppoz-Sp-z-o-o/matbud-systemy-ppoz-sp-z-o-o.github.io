@@ -24,6 +24,9 @@ const AboutUs = dynamic(() => import("@/components/about-us"), {
 const Gallery = dynamic(() => import("@/components/gallery"), {
   loading: SectionLoader,
 })
+const LatestBlogs = dynamic(() => import("@/components/latest-blogs"), {
+  loading: SectionLoader,
+})
 const Contact = dynamic(() => import("@/components/contact"), {
   loading: SectionLoader,
 })
@@ -68,6 +71,7 @@ export default async function Home({
       <Services dictionary={dict.services} />
       <AboutUs dictionary={dict.aboutUs} />
       <Gallery dictionary={{ ...dict.gallery, companyNameShort: dict.common.companyNameShort }} />
+      <LatestBlogs locale={locale} dictionary={dict.latestBlogs} />
       <Contact dictionary={dict.contact} />
     </>
   )

@@ -408,11 +408,12 @@
     "email": "matbud@m-so.pl"
   },
   "blog": {
-    "title": "Blog o Bezpieczeństwie Przeciwpożarowym",
+    "title": "Blog Bezpieczeństwa Przeciwpożarowego",
     "description": "Bądź na bieżąco z najnowszymi wiadomościami, poradami i spostrzeżeniami branżowymi dotyczącymi bezpieczeństwa przeciwpożarowego",
     "readMore": "Czytaj więcej",
     "backToBlog": "Powrót do bloga",
-    "postNotFound": "Artykuł nie znaleziony"
+    "postNotFound": "Artykuł nie znaleziony",
+    "noPosts": "Aktualnie nie ma dostępnych artykułów. Wkrótce pojawią się nowe wpisy."
   },
   "cityPage": {
     "title": "Systemy bezpieczeństwa przeciwpożarowego {city} - Instalacja i Serwis PPOŻ",

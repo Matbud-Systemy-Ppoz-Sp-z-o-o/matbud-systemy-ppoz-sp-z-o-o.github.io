@@ -22,6 +22,11 @@ export default async function LatestBlogs({ locale, dictionary }: LatestBlogsPro
   const allPosts = await getAllPosts(locale)
   const latestPosts = allPosts.slice(0, 3) // Get the 3 most recent posts
 
+  // Don't render the section if there are no posts
+  if (allPosts.length === 0) {
+    return null
+  }
+
   return (
     <section id="blog" className="py-16 md:py-24 bg-muted/30 border-t border-border">
       <div className="container">

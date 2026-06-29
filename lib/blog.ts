@@ -25,49 +25,60 @@ function ensureDirectoryExists() {
 }
 
 export async function getAllPosts(locale: string): Promise<Post[]> {
-  ensureDirectoryExists()
+  try {
+    ensureDirectoryExists()
 
-  // Get the locale-specific directory
-  const localeDirectory = path.join(postsDirectory, locale)
+    // Get the locale-specific directory
+    const localeDirectory = path.join(postsDirectory, locale)
 
-  // Check if the locale directory exists, if not return empty array
-  if (!fs.existsSync(localeDirectory)) {
-    return []
-  }
+    // Check if the locale directory exists, if not return empty array
+    if (!fs.existsSync(localeDirectory)) {
+      return []
+    }
 
-  const fileNames = fs.readdirSync(localeDirectory)
-  const allPostsData = fileNames
-    .filter((fileName) => fileName.endsWith(".md") || fileName.endsWith(".mdx"))
-    .map((fileName) => {
-      // Remove ".md" or ".mdx" from file name to get slug
-      const slug = fileName.replace(/\.mdx?$/, "")
+    const fileNames = fs.readdirSync(localeDirectory)
+    const allPostsData = fileNames
+      .filter((fileName) => fileName.endsWith(".md") || fileName.endsWith(".mdx"))
+      .map((fileName) => {
+        try {
+          // Remove ".md" or ".mdx" from file name to get slug
+          const slug = fileName.replace(/\.mdx?$/, "")
 
-      // Read markdown file as string
-      const fullPath = path.join(localeDirectory, fileName)
-      const fileContents = fs.readFileSync(fullPath, "utf8")
+          // Read markdown file as string
+          const fullPath = path.join(localeDirectory, fileName)
+          const fileContents = fs.readFileSync(fullPath, "utf8")
 
-      // Use gray-matter to parse the post metadata section
-      const matterResult = matter(fileContents)
+          // Use gray-matter to parse the post metadata section
+          const matterResult = matter(fileContents)
 
-      // Combine the data with the slug
-      return {
-        slug,
-        title: matterResult.data.title || "",
-        date: matterResult.data.date || "",
-        excerpt: matterResult.data.excerpt || "",
-        coverImage: matterResult.data.coverImage || "",
-        content: matterResult.content,
+          // Combine the data with the slug
+          return {
+            slug,
+            title: matterResult.data.title || "",
+            date: matterResult.data.date || "",
+            excerpt: matterResult.data.excerpt || "",
+            coverImage: matterResult.data.coverImage || "",
+            content: matterResult.content,
+          }
+        } catch (error) {
+          console.error(`Error reading post file ${fileName}:`, error)
+          return null
+        }
+      })
+      .filter((post): post is Post => post !== null)
+
+    // Sort posts by date
+    return allPostsData.sort((a, b) => {
+      if (a.date < b.date) {
+        return 1
+      } else {
+        return -1
       }
     })
-
-  // Sort posts by date
-  return allPostsData.sort((a, b) => {
-    if (a.date < b.date) {
-      return 1
-    } else {
-      return -1
-    }
-  })
+  } catch (error) {
+    console.error(`Error in getAllPosts for locale ${locale}:`, error)
+    return []
+  }
 }
 
 export async function getPostBySlug(slug: string, locale: string): Promise<Post | null> {
