@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { execFileSync } from 'child_process';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { createRequire } from 'module';
@@ -8,6 +9,52 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const require = createRequire(import.meta.url);
 
+const matter = require('gray-matter');
+
+const repoRoot = path.join(__dirname, '..');
+const today = new Date().toISOString().split('T')[0];
+const lastModCache = new Map();
+
+// Most recent git commit date that touched a file, falling back to its
+// filesystem mtime (untracked file) or today (file missing/no git history).
+// Keeps lastmod stable across builds instead of always stamping "today".
+function getLastModified(relativePath) {
+  if (lastModCache.has(relativePath)) {
+    return lastModCache.get(relativePath);
+  }
+
+  const absolutePath = path.join(repoRoot, relativePath);
+  let result = null;
+
+  try {
+    const output = execFileSync(
+      'git',
+      ['log', '-1', '--format=%cd', '--date=short', '--', relativePath],
+      { cwd: repoRoot, encoding: 'utf8' }
+    ).trim();
+    if (output) {
+      result = output;
+    }
+  } catch {
+    // git not available or path not tracked - fall through to mtime
+  }
+
+  if (!result && fs.existsSync(absolutePath)) {
+    result = fs.statSync(absolutePath).mtime.toISOString().split('T')[0];
+  }
+
+  result = result || today;
+  lastModCache.set(relativePath, result);
+  return result;
+}
+
+// Most recent date among several files (e.g. a page plus its dictionary).
+function getLastModifiedOf(relativePaths) {
+  return relativePaths
+    .map(getLastModified)
+    .sort()
+    .pop();
+}
 
 // Simple function to get cities (reading from the exported array)
 async function getCities() {
@@ -15,11 +62,11 @@ async function getCities() {
     // Read the cities file and extract the array
     const citiesPath = path.join(__dirname, '..', 'lib', 'cities.ts');
     const citiesContent = fs.readFileSync(citiesPath, 'utf8');
-    
+
     // Extract the polishCities array using regex
     const arrayMatch = citiesContent.match(/const polishCities = \[([\s\S]*?)\];/);
     if (!arrayMatch) return [];
-    
+
     const arrayContent = arrayMatch[1];
     // Parse the array (simplified - just extract slugs)
     const cityMatches = [...arrayContent.matchAll(/"slug":\s*"([^"]+)"/g)];
@@ -34,19 +81,31 @@ async function getCities() {
   }
 }
 
-// Simple function to get blog posts
+// Simple function to get blog posts, using each post's frontmatter date
+// (falling back to the file's last git commit date) instead of "today".
 async function getAllPosts(locale) {
   try {
     const postsDir = path.join(__dirname, '..', 'content', 'blog', locale);
     if (!fs.existsSync(postsDir)) return [];
-    
+
     const files = fs.readdirSync(postsDir);
     return files
       .filter(file => file.endsWith('.md') || file.endsWith('.mdx'))
-      .map(file => ({
-        slug: file.replace(/\.mdx?$/, ''),
-        date: new Date().toISOString().split('T')[0]
-      }));
+      .map(file => {
+        const relativePath = path.join('content', 'blog', locale, file);
+        const fileContents = fs.readFileSync(path.join(__dirname, '..', relativePath), 'utf8');
+        const { data } = matter(fileContents);
+
+        let date = data.date ? String(data.date).split('T')[0] : null;
+        if (!date || Number.isNaN(Date.parse(date))) {
+          date = getLastModified(relativePath);
+        }
+
+        return {
+          slug: file.replace(/\.mdx?$/, ''),
+          date,
+        };
+      });
   } catch (error) {
     console.error(`Error loading blog posts for ${locale}:`, error);
     return [];
@@ -58,23 +117,30 @@ const locales = ['pl', 'en'];
 
 async function generateSitemap() {
   const urls = [];
-  const currentDate = new Date().toISOString().split('T')[0];
 
   // Get all cities
   const cities = await getCities();
-  
+
   // Get all blog posts for each locale
   const blogPosts = {};
   for (const locale of locales) {
     blogPosts[locale] = await getAllPosts(locale);
   }
 
+  // City pages share the same source data, so compute their lastmod once.
+  const cityPagesLastmod = getLastModifiedOf([
+    path.join('lib', 'cities.ts'),
+    path.join('app', '[locale]', '[city]', 'page.tsx'),
+  ]);
+
   // Add main pages
   for (const locale of locales) {
+    const dictionaryPath = path.join('lib', 'dictionaries', `${locale}.json`);
+
     // Home page
     urls.push({
       loc: `${baseUrl}/${locale}`,
-      lastmod: currentDate,
+      lastmod: getLastModifiedOf([path.join('app', '[locale]', 'page.tsx'), dictionaryPath]),
       changefreq: 'weekly',
       priority: '1.0'
     });
@@ -82,7 +148,7 @@ async function generateSitemap() {
     // Blog listing page
     urls.push({
       loc: `${baseUrl}/${locale}/blog`,
-      lastmod: currentDate,
+      lastmod: getLastModifiedOf([path.join('app', '[locale]', 'blog', 'page.tsx'), dictionaryPath]),
       changefreq: 'weekly',
       priority: '0.8'
     });
@@ -92,7 +158,7 @@ async function generateSitemap() {
       blogPosts[locale].forEach(post => {
         urls.push({
           loc: `${baseUrl}/${locale}/blog/${post.slug}`,
-          lastmod: post.date || currentDate,
+          lastmod: post.date,
           changefreq: 'monthly',
           priority: '0.7'
         });
@@ -102,7 +168,7 @@ async function generateSitemap() {
     // Careers page
     urls.push({
       loc: `${baseUrl}/${locale}/careers`,
-      lastmod: currentDate,
+      lastmod: getLastModifiedOf([path.join('app', '[locale]', 'careers', 'page.tsx'), dictionaryPath]),
       changefreq: 'monthly',
       priority: '0.6'
     });
@@ -110,7 +176,7 @@ async function generateSitemap() {
     // Privacy policy
     // urls.push({
     //   loc: `${baseUrl}/${locale}/privacy-policy`,
-    //   lastmod: currentDate,
+    //   lastmod: getLastModifiedOf([path.join('app', '[locale]', 'privacy-policy', 'page.tsx'), dictionaryPath]),
     //   changefreq: 'yearly',
     //   priority: '0.3'
     // });
@@ -118,7 +184,7 @@ async function generateSitemap() {
     // Terms of service
     urls.push({
       loc: `${baseUrl}/${locale}/terms-of-service`,
-      lastmod: currentDate,
+      lastmod: getLastModifiedOf([path.join('app', '[locale]', 'terms-of-service', 'page.tsx'), dictionaryPath]),
       changefreq: 'yearly',
       priority: '0.3'
     });
@@ -128,7 +194,7 @@ async function generateSitemap() {
       cities.forEach(city => {
         urls.push({
           loc: `${baseUrl}/${locale}/${city.slug}`,
-          lastmod: currentDate,
+          lastmod: cityPagesLastmod,
           changefreq: 'monthly',
           priority: '0.8'
         });
@@ -158,7 +224,7 @@ ${urls.map(url => `  <url>
 
   const sitemapPath = path.join(publicDir, 'sitemap.xml');
   fs.writeFileSync(sitemapPath, sitemap, 'utf8');
-  
+
   console.log(`Sitemap generated successfully with ${urls.length} URLs`);
   console.log(`Location: ${sitemapPath}`);
 }
