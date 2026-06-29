@@ -6,7 +6,7 @@ import { SectionHeader } from "@/components/ui/section-header"
 import { ContactInfoItem } from "@/components/ui/contact-info-item"
 
 const GoogleMaps = dynamic(() => import("@/components/google-maps"), {
-  loading: () => <div className="bg-card rounded-lg shadow-sm h-full min-h-[450px] animate-pulse" />,
+  loading: () => <div className="bg-card rounded-lg shadow-xs h-full min-h-[450px] animate-pulse" />,
   ssr: false,
 })
 
@@ -59,7 +59,7 @@ export default function Contact({ dictionary }: { dictionary: Dictionary }) {
 
         <div className="grid md:grid-cols-2 gap-12">
           <div className="h-full">
-            <div className="bg-card rounded-lg p-6 shadow-sm border border-border h-full flex flex-col">
+            <div className="bg-card rounded-lg p-6 shadow-xs border border-border h-full flex flex-col">
               <h3 className="text-2xl font-bold mb-6">{dictionary.contactInfo.title}</h3>
 
               <div className="space-y-6">

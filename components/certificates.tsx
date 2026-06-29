@@ -51,7 +51,7 @@ export default function Certificates({ dictionary }: { dictionary: DictionaryTyp
           {certificates.map((certificate, index) => (
             <div
               key={index}
-              className="relative aspect-[2/3] cursor-pointer hover:scale-105 transition-transform"
+              className="relative aspect-2/3 cursor-pointer hover:scale-105 transition-transform"
               onClick={() => setSelectedImage(index)}
             >
               <Image

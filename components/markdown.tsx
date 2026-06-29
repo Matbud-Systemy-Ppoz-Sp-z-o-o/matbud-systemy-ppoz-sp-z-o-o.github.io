@@ -100,7 +100,7 @@ export function Markdown({ content }: { content: string }) {
           ),
           blockquote: ({ ...props }) => (
             <blockquote 
-              className="border-l-4 border-primary bg-gradient-to-r from-primary/5 to-transparent py-6 px-8 my-10 italic text-xl text-muted-foreground font-medium leading-relaxed relative" 
+              className="border-l-4 border-primary bg-linear-to-r from-primary/5 to-transparent py-6 px-8 my-10 italic text-xl text-muted-foreground font-medium leading-relaxed relative" 
               {...props} 
             />
           ),
@@ -113,7 +113,7 @@ export function Markdown({ content }: { content: string }) {
                 {children}
               </code>
             ) : (
-              <pre className="bg-muted/50 border border-border rounded-xl p-6 overflow-x-auto my-8 shadow-sm">
+              <pre className="bg-muted/50 border border-border rounded-xl p-6 overflow-x-auto my-8 shadow-xs">
                 <code 
                   className="text-sm font-mono text-foreground leading-relaxed" 
                   {...props}
@@ -146,7 +146,7 @@ export function Markdown({ content }: { content: string }) {
             </figure>
           ),
           table: ({ ...props }) => (
-            <div className="overflow-x-auto my-10 border border-border rounded-xl shadow-sm">
+            <div className="overflow-x-auto my-10 border border-border rounded-xl shadow-xs">
               <table 
                 className="w-full border-collapse" 
                 {...props} 

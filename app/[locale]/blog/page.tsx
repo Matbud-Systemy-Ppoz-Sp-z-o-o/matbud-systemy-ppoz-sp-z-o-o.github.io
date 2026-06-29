@@ -71,7 +71,7 @@ export default async function BlogPage({ params }: PageProps) {
                 </CardTitle>
                 <CardDescription>{formatDate(post.date, locale)}</CardDescription>
               </CardHeader>
-              <CardContent className="flex-grow">
+              <CardContent className="grow">
                 <p className="line-clamp-3">{post.excerpt}</p>
               </CardContent>
               <CardFooter>

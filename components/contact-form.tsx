@@ -129,7 +129,7 @@ export default function ContactForm({ dictionary, className = "" }: ContactFormP
   }
 
   return (
-    <div className={`bg-card rounded-lg p-6 shadow-sm ${className}`}>
+    <div className={`bg-card rounded-lg p-6 shadow-xs ${className}`}>
       <h3 className="text-2xl font-bold mb-6">{dictionary.title}</h3>
 
       <Form {...form}>

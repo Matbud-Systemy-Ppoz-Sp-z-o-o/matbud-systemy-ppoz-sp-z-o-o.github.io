@@ -168,7 +168,7 @@ export default function Gallery({ dictionary }: { dictionary: DictionaryType }) 
             {galleryImages.map((image, index) => (
               <article
                 key={index}
-                className="relative aspect-[4/3] cursor-pointer overflow-hidden rounded-lg group"
+                className="relative aspect-4/3 cursor-pointer overflow-hidden rounded-lg group"
                 onClick={() => setSelectedImage(index)}
                 itemScope
                 itemType="https://schema.org/Service"
@@ -185,7 +185,7 @@ export default function Gallery({ dictionary }: { dictionary: DictionaryType }) 
                   quality={index < 1 ? 35 : 30}
                   decoding="async"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
                   <h3 className="text-white font-semibold text-lg mb-2" itemProp="name">{image.title}</h3>
                   <p className="text-white/90 text-sm line-clamp-2" itemProp="description">{image.description}</p>
                   <div className="mt-2 flex items-center text-white/80 text-sm">
@@ -226,7 +226,7 @@ export default function Gallery({ dictionary }: { dictionary: DictionaryType }) 
               <Card className="border-0 shadow-none">
                 <div className="grid md:grid-cols-2 gap-0">
                   {/* Image Section - Left Side */}
-                  <div className="relative h-64 md:h-[500px] bg-gradient-to-br from-muted/50 to-muted overflow-hidden">
+                  <div className="relative h-64 md:h-[500px] bg-linear-to-br from-muted/50 to-muted overflow-hidden">
                     <Image
                       src={currentImageData.src || "https://matbud.net/placeholder.svg"}
                       alt={currentImageData.alt}
@@ -242,7 +242,7 @@ export default function Gallery({ dictionary }: { dictionary: DictionaryType }) 
                     <Button
                       variant="ghost"
                       size="icon"
-                      className="absolute left-3 top-1/2 -translate-y-1/2 bg-background/95 hover:bg-background border border-border shadow-lg z-10 backdrop-blur-sm"
+                      className="absolute left-3 top-1/2 -translate-y-1/2 bg-background/95 hover:bg-background border border-border shadow-lg z-10 backdrop-blur-xs"
                       onClick={(e) => {
                         e.stopPropagation()
                         handlePrevious()
@@ -255,7 +255,7 @@ export default function Gallery({ dictionary }: { dictionary: DictionaryType }) 
                     <Button
                       variant="ghost"
                       size="icon"
-                      className="absolute right-3 top-1/2 -translate-y-1/2 bg-background/95 hover:bg-background border border-border shadow-lg z-10 backdrop-blur-sm"
+                      className="absolute right-3 top-1/2 -translate-y-1/2 bg-background/95 hover:bg-background border border-border shadow-lg z-10 backdrop-blur-xs"
                       onClick={(e) => {
                         e.stopPropagation()
                         handleNext()
@@ -279,11 +279,11 @@ export default function Gallery({ dictionary }: { dictionary: DictionaryType }) 
                     </div>
 
                     {/* Tabs Navigation */}
-                    <div className="flex gap-2 mb-4 border-b border-border flex-shrink-0">
+                    <div className="flex gap-2 mb-4 border-b border-border shrink-0">
                       {currentImageData.data.features && currentImageData.data.features.length > 0 && (
                         <button
                           onClick={() => setActiveTab('features')}
-                          className={`px-4 py-2 text-sm font-medium transition-colors border-b-2 -mb-[1px] ${
+                          className={`px-4 py-2 text-sm font-medium transition-colors border-b-2 -mb-px ${
                             activeTab === 'features'
                               ? 'border-primary text-primary'
                               : 'border-transparent text-muted-foreground hover:text-foreground'
@@ -296,7 +296,7 @@ export default function Gallery({ dictionary }: { dictionary: DictionaryType }) 
                       {currentImageData.data.benefits && currentImageData.data.benefits.length > 0 && (
                         <button
                           onClick={() => setActiveTab('benefits')}
-                          className={`px-4 py-2 text-sm font-medium transition-colors border-b-2 -mb-[1px] ${
+                          className={`px-4 py-2 text-sm font-medium transition-colors border-b-2 -mb-px ${
                             activeTab === 'benefits'
                               ? 'border-primary text-primary'
                               : 'border-transparent text-muted-foreground hover:text-foreground'
@@ -309,7 +309,7 @@ export default function Gallery({ dictionary }: { dictionary: DictionaryType }) 
                       {currentImageData.data.applications && currentImageData.data.applications.length > 0 && (
                         <button
                           onClick={() => setActiveTab('applications')}
-                          className={`px-4 py-2 text-sm font-medium transition-colors border-b-2 -mb-[1px] ${
+                          className={`px-4 py-2 text-sm font-medium transition-colors border-b-2 -mb-px ${
                             activeTab === 'applications'
                               ? 'border-primary text-primary'
                               : 'border-transparent text-muted-foreground hover:text-foreground'
@@ -327,7 +327,7 @@ export default function Gallery({ dictionary }: { dictionary: DictionaryType }) 
                         <ul className="space-y-2.5">
                           {currentImageData.data.features.map((feature, idx) => (
                             <li key={idx} className="flex items-start gap-2.5">
-                              <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                              <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 shrink-0" />
                               <span className="text-sm text-foreground/80 leading-relaxed">{feature}</span>
                             </li>
                           ))}
@@ -338,7 +338,7 @@ export default function Gallery({ dictionary }: { dictionary: DictionaryType }) 
                         <ul className="space-y-2.5">
                           {currentImageData.data.benefits.map((benefit, idx) => (
                             <li key={idx} className="flex items-start gap-2.5">
-                              <Zap className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                              <Zap className="h-4 w-4 text-primary mt-0.5 shrink-0" />
                               <span className="text-sm text-foreground/80 leading-relaxed">{benefit}</span>
                             </li>
                           ))}

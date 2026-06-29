@@ -46,7 +46,7 @@ export default async function CareersPage({ params }: PageProps) {
         ]}
       />
       {/* Hero Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-primary/5 to-primary/10">
+      <section className="py-16 md:py-24 bg-linear-to-br from-primary/5 to-primary/10">
         <div className="container">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-6 text-foreground">

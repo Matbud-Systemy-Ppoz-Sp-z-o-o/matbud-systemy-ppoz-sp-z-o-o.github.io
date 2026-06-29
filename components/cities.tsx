@@ -50,7 +50,7 @@ export default function Cities({ cities, locale, dictionary }: CitiesProps) {
                           href={`/${locale}/${city.slug}`}
                           className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors group"
                         >
-                          <MapPin className="h-4 w-4 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                          <MapPin className="h-4 w-4 shrink-0 group-hover:scale-110 transition-transform" />
                           <span>{city.name}</span>
                         </Link>
                       </li>

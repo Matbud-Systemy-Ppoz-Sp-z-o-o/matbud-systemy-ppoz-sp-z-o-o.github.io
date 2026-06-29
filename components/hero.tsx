@@ -28,7 +28,7 @@ export default function Hero({ dictionary }: { dictionary: HeroDictionary }) {
           quality={25}
           decoding="sync"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40 z-10" />
+        <div className="absolute inset-0 bg-linear-to-r from-black/70 to-black/40 z-10" />
       </div>
       <div className="container hero-content text-white flex flex-col items-center justify-center min-h-[600px] py-12 relative z-20">
         <div className="flex flex-col items-center w-full max-w-4xl">

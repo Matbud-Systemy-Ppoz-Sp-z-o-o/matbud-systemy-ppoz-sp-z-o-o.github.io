@@ -224,7 +224,7 @@ export default function GoogleMaps({ className = "" }: GoogleMapsProps) {
   // If no API key or error, use iframe (may show CORS warnings but map should work)
   if (mapError || !apiKey) {
     return (
-      <div className={`bg-card rounded-lg shadow-sm overflow-hidden h-full flex flex-col ${className}`}>
+      <div className={`bg-card rounded-lg shadow-xs overflow-hidden h-full flex flex-col ${className}`}>
         <iframe
           src={iframeUrl}
           width="100%"
@@ -242,7 +242,7 @@ export default function GoogleMaps({ className = "" }: GoogleMapsProps) {
 
   // Interactive Google Maps using JavaScript API (no CORS issues)
   return (
-    <div className={`bg-card rounded-lg shadow-sm overflow-hidden h-full flex flex-col ${className}`}>
+    <div className={`bg-card rounded-lg shadow-xs overflow-hidden h-full flex flex-col ${className}`}>
       <div
         ref={mapContainerRef}
         className="w-full flex-1"

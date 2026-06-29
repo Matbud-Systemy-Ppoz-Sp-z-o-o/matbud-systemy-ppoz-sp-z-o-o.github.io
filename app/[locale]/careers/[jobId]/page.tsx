@@ -154,7 +154,7 @@ export default async function JobPage({
               <ul className="space-y-3">
                 {job.requirements.map((requirement, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-primary mt-0.5 shrink-0" />
                     <span className="text-foreground/80">{requirement}</span>
                   </li>
                 ))}
@@ -173,7 +173,7 @@ export default async function JobPage({
               <ul className="space-y-3">
                 {job.responsibilities.map((responsibility, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-primary mt-0.5 shrink-0" />
                     <span className="text-foreground/80">{responsibility}</span>
                   </li>
                 ))}
@@ -193,7 +193,7 @@ export default async function JobPage({
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {job.benefits.map((benefit, index) => (
                 <div key={index} className="flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-primary shrink-0" />
                   <span className="text-foreground/80">{benefit}</span>
                 </div>
               ))}
@@ -202,7 +202,7 @@ export default async function JobPage({
         </Card>
 
         {/* Apply Section */}
-        <div className="text-center bg-gradient-to-r from-primary/5 to-primary/10 rounded-lg p-8">
+        <div className="text-center bg-linear-to-r from-primary/5 to-primary/10 rounded-lg p-8">
           <h2 className="text-2xl font-bold mb-4 text-foreground">
             {dict.careers.interestedTitle}
           </h2>

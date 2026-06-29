@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 interface ApplyButtonProps {
   jobTitle: string
   children: React.ReactNode
-  variant?: "default" | "outline"
+  variant?: "default" | "outline-solid"
   size?: "default" | "sm" | "lg"
   className?: string
 }

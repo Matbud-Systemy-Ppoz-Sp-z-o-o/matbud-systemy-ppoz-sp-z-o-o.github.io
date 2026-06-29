@@ -117,7 +117,7 @@ export default async function CityPage({ params }: PageProps) {
           { name: cityBreadcrumb, url: cityUrl },
         ]}
       />
-      <section className="bg-gradient-to-r from-primary-dark to-primary dark:from-black/70 dark:via-black/50 dark:to-black/30 py-16 md:py-24 text-white">
+      <section className="bg-linear-to-r from-primary-dark to-primary dark:from-black/70 dark:via-black/50 dark:to-black/30 py-16 md:py-24 text-white">
         <div className="container">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div className="space-y-6">
@@ -173,7 +173,7 @@ export default async function CityPage({ params }: PageProps) {
 
               return (
                 <Card key={index} className="border-2 border-muted hover:border-primary/50 transition-colors h-full flex flex-col">
-                  <CardHeader className="flex-shrink-0">
+                  <CardHeader className="shrink-0">
                     <div className="mb-4">{serviceIcons[index].icon}</div>
                     <CardTitle className="text-lg">{service.title}</CardTitle>
                     <CardDescription className="text-sm">{service.description}</CardDescription>
@@ -207,21 +207,21 @@ export default async function CityPage({ params }: PageProps) {
              <p className="text-lg mb-12 text-muted-foreground">{replaceCity(dict.cityPage?.whyChooseDescription)}</p>
 
              <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-12">
-                <div className="bg-card p-6 rounded-lg shadow-sm text-center border">
+                <div className="bg-card p-6 rounded-lg shadow-xs text-center border">
                   <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-primary/20">
                     <span className="text-primary text-2xl font-bold">{dict.aboutUs?.stats?.[0]?.value ?? '25+'}</span>
                   </div>
                   <h3 className="font-semibold mb-1">{dict.aboutUs?.stats?.[0]?.label ?? 'Lat Doświadczenia'}</h3>
                 </div>
 
-                <div className="bg-card p-6 rounded-lg shadow-sm text-center border">
+                <div className="bg-card p-6 rounded-lg shadow-xs text-center border">
                    <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-primary/20">
                      <span className="text-primary text-xl font-bold">5,000+</span>
                    </div>
                    <h3 className="font-semibold mb-1">{dict.aboutUs?.stats?.[1]?.label || ''}</h3>
                  </div>
 
-                <div className="bg-card p-6 rounded-lg shadow-sm text-center border">
+                <div className="bg-card p-6 rounded-lg shadow-xs text-center border">
                    <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-primary/20">
                       <span className="text-primary text-2xl font-bold">24/7</span>
                    </div>
@@ -248,7 +248,7 @@ export default async function CityPage({ params }: PageProps) {
 
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
-                    <MapPin className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                    <MapPin className="h-6 w-6 text-primary shrink-0 mt-1" />
                     <div>
                       <h4 className="font-medium">{dict.contact?.contactInfo?.addressTitle ?? 'Adres Biura'}</h4>
                       <address className="not-italic text-muted-foreground">
@@ -259,7 +259,7 @@ export default async function CityPage({ params }: PageProps) {
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <Phone className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                    <Phone className="h-6 w-6 text-primary shrink-0 mt-1" />
                     <div>
                        <h4 className="font-medium">{dict.contact?.contactInfo?.phoneTitle ?? 'Telefon'}</h4>
                        <p className="text-muted-foreground">
@@ -271,7 +271,7 @@ export default async function CityPage({ params }: PageProps) {
                    </div>
 
                   <div className="flex items-start gap-4">
-                    <Mail className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                    <Mail className="h-6 w-6 text-primary shrink-0 mt-1" />
                     <div>
                       <h4 className="font-medium">{dict.contact?.contactInfo?.emailTitle ?? 'Email'}</h4>
                       <p className="text-muted-foreground">

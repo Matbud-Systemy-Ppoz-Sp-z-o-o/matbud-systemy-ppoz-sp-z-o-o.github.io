@@ -62,7 +62,7 @@ export default async function LatestBlogs({ locale, dictionary }: LatestBlogsPro
                   </Link>
                 </CardTitle>
               </CardHeader>
-              <CardContent className="flex-grow">
+              <CardContent className="grow">
                 <p className="line-clamp-3 text-foreground/70">{post.excerpt}</p>
               </CardContent>
               <CardFooter>
