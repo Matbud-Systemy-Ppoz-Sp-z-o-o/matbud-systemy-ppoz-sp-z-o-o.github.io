@@ -34,7 +34,7 @@ export function generateMetadata(config: SEOConfig): Metadata {
     nofollow = false,
   } = config
 
-  const url = `${baseUrl}/${locale}${path ? `/${path}` : ""}`.replace(/\/+/g, "/")
+  const url = `${baseUrl}/${locale}${path ? `/${path}` : ""}`.replace(/([^:]\/)\/+/g, "$1")
   const ogImage = image || `${baseUrl}/logo_pelne_tlo_w_tarczy.svg`
 
   // Generate alternate language URLs
@@ -43,7 +43,7 @@ export function generateMetadata(config: SEOConfig): Metadata {
     alternates.languages = {}
     i18n.locales.forEach((loc) => {
       const altPath = path ? `/${path}` : ""
-      alternates.languages![loc] = `${baseUrl}/${loc}${altPath}`.replace(/\/+/g, "/")
+      alternates.languages![loc] = `${baseUrl}/${loc}${altPath}`.replace(/([^:]\/)\/+/g, "$1")
     })
   }
 
