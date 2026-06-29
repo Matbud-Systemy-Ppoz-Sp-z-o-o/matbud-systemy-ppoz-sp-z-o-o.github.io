@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[6868,["8500","static/chunks/8500-eac4c275593e60b4.js","4345","static/chunks/app/not-found-69198c8b68fc9943.js"],"NotFoundLink"]
+3:I[484,[],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"flex flex-col items-center justify-center min-h-[70vh] text-center px-4","children":[["$","h1",null,{"className":"text-6xl font-bold text-primary mb-6","children":"404"}],["$","h2",null,{"className":"text-3xl font-semibold mb-4","children":"Strona nie znaleziona"}],["$","p",null,{"className":"text-xl text-muted-foreground mb-8 max-w-md","children":"Przepraszamy, nie mogliśmy znaleźć strony, której szukasz. Mogła zostać przeniesiona lub usunięta."}],["$","$L2",null,{"fallbackLocale":"pl","className":"bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-md font-medium transition-colors","children":"Powrót do strony głównej"}]]}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"RjVn5KD4Qy_jzv4IE81uN"}
+5:null

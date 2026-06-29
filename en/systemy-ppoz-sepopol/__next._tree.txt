@@ -1,0 +1,4 @@
+:HL["/_next/static/css/e6a980bdaa4274a9.css","style"]
+:HL["https://matbud.net/images/gallery/hero.webp","image",{"fetchPriority":"high"}]
+:HL["/logo_pelne_tlo_w_tarczy.svg","image",{"fetchPriority":"high"}]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"locale","param":{"type":"d","key":"en","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"city","param":{"type":"d","key":"systemy-ppoz-sepopol","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"RjVn5KD4Qy_jzv4IE81uN"}
