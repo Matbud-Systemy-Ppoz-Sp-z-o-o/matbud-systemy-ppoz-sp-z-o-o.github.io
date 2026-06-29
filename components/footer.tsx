@@ -77,17 +77,8 @@ export function Footer({
               </Link>
             </li>
             <li>
-              <Link 
-                href={`/${locale}#clients`} 
-                className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label={dictionary.navigation.clients}
-              >
-                {dictionary.navigation.clients}
-              </Link>
-            </li>
-            <li>
-              <Link 
-                href={`/${locale}/careers`} 
+              <Link
+                href={`/${locale}/careers`}
                 className="text-muted-foreground hover:text-primary transition-colors"
                 aria-label={dictionary.navigation.careers}
               >
