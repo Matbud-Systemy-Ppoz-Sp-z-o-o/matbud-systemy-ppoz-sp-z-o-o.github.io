@@ -18,12 +18,14 @@ async function generateBlogPages() {
   const i18nConfigPath = path.join(process.cwd(), 'lib', 'i18n-config.ts');
   const i18nConfigContent = fs.readFileSync(i18nConfigPath, 'utf8');
   
-  // Extract locales array from the TypeScript file
-  const localesMatch = i18nConfigContent.match(/locales:\s*\[([^\]]+)\]/);
-  const locales = localesMatch 
+  // Extract locales array from the TypeScript file (strip block comments first
+  // so commented-out locales like ["pl"/*, "en"*/] don't leak into the match)
+  const i18nConfigWithoutComments = i18nConfigContent.replace(/\/\*[\s\S]*?\*\//g, '');
+  const localesMatch = i18nConfigWithoutComments.match(/locales:\s*\[([^\]]+)\]/);
+  const locales = localesMatch
     ? localesMatch[1]
         .split(',')
-        .map(l => l.trim().replace(/['"]/g, '').replace(/\/\*.*?\*\//g, '').trim())
+        .map(l => l.trim().replace(/['"]/g, '').trim())
         .filter(l => l.length > 0)
     : ['pl']; // fallback to ['pl'] if parsing fails
   
@@ -171,45 +173,6 @@ function generatePostHTML(post, locale, dict, baseUrl) {
   // but since we can't use dynamic routes, we'll create a static HTML page
   // that includes the content and uses Next.js for styling/hydration
   
-  // Read a template from the out directory if it exists, or create a minimal one
-  const templatePath = path.join(outDir, locale, 'index.html');
-  let baseHTML = '';
-  
-  if (fs.existsSync(templatePath)) {
-    baseHTML = fs.readFileSync(templatePath, 'utf8');
-  } else {
-    // Fallback minimal template
-    baseHTML = `<!DOCTYPE html>
-<html lang="${locale}">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${escapeHtml(post.title)}</title>
-</head>
-<body>
-  <div id="__next"></div>
-</body>
-</html>`;
-  }
-  
-  // Inject post data as JSON for client-side rendering
-  const postData = JSON.stringify({
-    slug: post.slug,
-    title: post.title,
-    date: post.date,
-    excerpt: post.excerpt,
-    coverImage: post.coverImage,
-    content: post.content,
-    locale,
-    dict: {
-      blog: dict.blog,
-      breadcrumbs: dict.breadcrumbs,
-      common: dict.common
-    }
-  });
-  
-  // For now, create a simple redirect page that will be handled by Next.js
-  // Or create a full static page. Let's create a minimal working version:
   return `<!DOCTYPE html>
 <html lang="${locale}">
 <head>
