@@ -30,12 +30,13 @@ export default async function LatestBlogs({ locale, dictionary }: LatestBlogsPro
   return (
     <section id="blog" className="py-16 md:py-24 bg-muted/30 border-t border-border">
       <div className="container">
-        <div className="flex flex-col md:flex-row justify-between items-center mb-12">
+        <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-6 mb-12">
           <div>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4 text-foreground">{dictionary.title}</h2>
-            <p className="text-xl text-foreground/80 max-w-2xl">{dictionary.subtitle}</p>
+            <span aria-hidden="true" className="flame-bar block h-1 w-12 rounded-full" />
+            <h2 className="mt-5 text-3xl font-bold tracking-tight sm:text-4xl md:text-[2.75rem] md:leading-[1.08] text-foreground">{dictionary.title}</h2>
+            <p className="mt-4 text-lg sm:text-xl text-foreground/80 max-w-2xl">{dictionary.subtitle}</p>
           </div>
-          <Button asChild className="mt-4 md:mt-0 bg-primary hover:bg-primary-dark">
+          <Button asChild size="lg" className="shrink-0 bg-primary hover:bg-primary-dark">
             <Link href={`/${locale}/blog`} className="flex items-center gap-2">
               {dictionary.viewAllButton}
               <ArrowRight className="h-4 w-4" />
@@ -45,13 +46,13 @@ export default async function LatestBlogs({ locale, dictionary }: LatestBlogsPro
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {latestPosts.map((post) => (
-            <Card key={post.slug} className="overflow-hidden flex flex-col h-full hover:shadow-lg transition-shadow border border-border">
-              <div className="relative h-48 w-full">
+            <Card key={post.slug} className="group overflow-hidden flex flex-col h-full hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg border border-border">
+              <div className="relative h-48 w-full overflow-hidden">
                 <Image
                   src={post.coverImage || "https://matbud.net/placeholder.svg?height=200&width=400"}
                   alt={post.title}
                   fill
-                  className="object-cover"
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
               <CardHeader>

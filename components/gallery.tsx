@@ -168,7 +168,7 @@ export default function Gallery({ dictionary }: { dictionary: DictionaryType }) 
             {galleryImages.map((image, index) => (
               <article
                 key={index}
-                className="relative aspect-4/3 cursor-pointer overflow-hidden rounded-lg group"
+                className="relative aspect-4/3 cursor-pointer overflow-hidden rounded-xl ring-1 ring-border transition-shadow duration-300 hover:shadow-lg group"
                 onClick={() => setSelectedImage(index)}
                 itemScope
                 itemType="https://schema.org/Service"

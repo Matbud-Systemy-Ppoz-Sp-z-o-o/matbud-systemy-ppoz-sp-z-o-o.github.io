@@ -45,12 +45,13 @@ export function Footer({
   const footerCities = cities?.slice(0, 5) || []
 
   return (
-    <footer className="bg-muted py-12 border-t">
+    <footer className="relative bg-muted py-12 border-t border-border">
+      <div aria-hidden="true" className="flame-bar absolute inset-x-0 top-0 h-1" />
       <div className="container grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         <div>
           <Link href={`/${locale}`} className="flex items-center gap-2 mb-4">
             <Image src="/logo.svg" alt={dictionary.footer.companyLogoAlt} width={37} height={40} priority />
-            <span className="font-bold text-xl">{dictionary.common.companyNameShort}</span>
+            <span className="font-display font-bold text-xl tracking-tight">{dictionary.common.companyNameShort}</span>
           </Link>
           <p className="text-muted-foreground">{dictionary.footer.description}</p>
         </div>

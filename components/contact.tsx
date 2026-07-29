@@ -59,8 +59,11 @@ export default function Contact({ dictionary }: { dictionary: Dictionary }) {
 
         <div className="grid md:grid-cols-2 gap-12">
           <div className="h-full">
-            <div className="bg-card rounded-lg p-6 shadow-xs border border-border h-full flex flex-col">
-              <h3 className="text-2xl font-bold mb-6">{dictionary.contactInfo.title}</h3>
+            <div className="bg-card rounded-xl p-6 md:p-8 shadow-sm border border-border h-full flex flex-col">
+              <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
+                <span aria-hidden="true" className="flame-bar block h-6 w-1 rounded-full" />
+                {dictionary.contactInfo.title}
+              </h3>
 
               <div className="space-y-6">
                 <ContactInfoItem icon={MapPin} title={dictionary.contactInfo.addressTitle}>

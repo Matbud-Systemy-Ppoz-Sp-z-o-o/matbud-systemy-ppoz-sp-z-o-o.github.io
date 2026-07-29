@@ -27,13 +27,13 @@ export default function AboutUs({ dictionary }: { dictionary: Dictionary }) {
         <SectionHeader title={dictionary.title} subtitle={dictionary.subtitle} />
 
         <div className="grid md:grid-cols-2 gap-12 items-stretch">
-          <div className="relative min-h-[500px] md:min-h-[600px]">
+          <div className="relative min-h-[500px] md:min-h-[600px] overflow-hidden rounded-xl ring-1 ring-border shadow-sm">
             <Image
               src="https://matbud.net/images/gallery/ONas.webp"
               alt={dictionary.aboutImageAlt}
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, (max-width: 1400px) 50vw, 650px"
-              className="object-cover rounded-lg"
+              className="object-cover"
               style={{ objectPosition: '66% center' }}
               loading="lazy"
               quality={30}
@@ -62,13 +62,19 @@ export default function AboutUs({ dictionary }: { dictionary: Dictionary }) {
           </div>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center max-w-3xl mx-auto">
-          {dictionary.stats.map((stat: StatItem, index: number) => (
-            <div key={index} className="space-y-2">
-              <p className="text-4xl font-bold text-primary">{stat.value}</p>
-              <p className="text-muted-foreground">{stat.label}</p>
-            </div>
-          ))}
+        <div className="mt-16 rounded-2xl border border-border bg-muted/40 p-8 md:p-10">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 sm:divide-x sm:divide-border">
+            {dictionary.stats.map((stat: StatItem, index: number) => (
+              <div key={index} className="text-center sm:px-6">
+                <p className="font-display text-5xl font-extrabold tracking-tight text-primary md:text-6xl">
+                  {stat.value}
+                </p>
+                <p className="mt-2 text-sm font-medium uppercase tracking-wide text-muted-foreground md:text-base">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
