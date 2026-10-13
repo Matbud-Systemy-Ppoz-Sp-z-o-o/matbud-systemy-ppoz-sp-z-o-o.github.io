@@ -2,7 +2,10 @@
 :HL["/_next/static/media/23d669af23d19c95-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/8e9860b6e62d6359-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/e4af272ccee01ff0-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/_next/static/css/0c5c46e6696de847.css","style"]
+:HL["/_next/static/css/b80cc892c24d16f2.css","style"]
 :HL["https://matbud.net/images/gallery/hero.webp","image",{"fetchPriority":"high"}]
 :HL["/logo_pelne_tlo_w_tarczy.svg","image",{"fetchPriority":"high"}]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"locale","param":{"type":"d","key":"en","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"city","param":{"type":"d","key":"systemy-ppoz-pila","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"5HTb8GvdmSTsNOyCambYc"}
+3:[["children",{"s":"__PAGE__","h":160}]]
+2:[["children",{"s":{"n":"city","t":"d","k":"systemy-ppoz-pila","s":["blog","careers","privacy-policy","terms-of-service"]},"h":65632,"c":"$Q3"}]]
+1:[["children",{"s":{"n":"locale","t":"d","k":"en","s":["_not-found","_global-error"]},"h":196704,"c":"$Q2"}]]
+0:{"b":"5Fi0ejGcVhzAVdpqyZIGb","t":{"t":{"s":"","h":131152,"c":"$Q1"}}}
