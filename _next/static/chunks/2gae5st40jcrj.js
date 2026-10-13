@@ -1,0 +1,1 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,67927,function(t){"use strict";var e=t.i(56420),o={name:"chevron-right",size:24,node:[["path",{d:"m9 18 6-6-6-6",key:"mthhwq"}]]};o.node;var n=(0,e.f)(o);t.s(["f",0,n],67927)},18566,function(t,e,o){e.exports=t.r(76562)}]);

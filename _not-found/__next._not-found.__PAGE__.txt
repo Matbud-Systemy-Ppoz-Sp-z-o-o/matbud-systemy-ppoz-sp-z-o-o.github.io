@@ -1,54 +1,55 @@
 1:"$Sreact.fragment"
-2:I[7121,[],""]
-3:I[4581,[],""]
-4:"static/chunks/8500-c9add70d845981a4.js"
-5:"static/chunks/app/not-found-f511878367254bbc.js"
-6:I[6868,["8500","$4","4345","$5"],"NotFoundLink"]
-d:I[484,[],"OutletBoundary"]
-e:"$Sreact.suspense"
-11:"ViewportBoundary"
-12:I[484,[],"$11"]
-13:"MetadataBoundary"
-14:I[484,[],"$13"]
-:HL["/_next/static/css/b80cc892c24d16f2.css","style"]
-:HL["https://matbud.net/images/gallery/hero.webp","image",{"fetchPriority":"high"}]
-:HL["/logo_pelne_tlo_w_tarczy.svg","image",{"fetchPriority":"high"}]
+2:"/_next/static/chunks/26o_31v1_k8bt.js"
+3:I[39756,["$2"],"default"]
+4:I[37457,["$2"],"default"]
+5:"/_next/static/chunks/0yt0ofpf7kr44.js"
+6:I[97831,["$2","$5"],"NotFoundLink"]
+10:"ViewportBoundary"
+11:I[97367,["$2"],"$10"]
+12:"MetadataBoundary"
+13:I[97367,["$2"],"$12"]
+14:"$Sreact.suspense"
+:HL["/_next/static/chunks/26hlp7hhkch0n.css","style"]
 8:X
 b:X
 b:C
-c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$1","c",{"children":[["$","div",null,{"className":"flex flex-col items-center justify-center min-h-[70vh] text-center px-4","children":[["$","h1",null,{"className":"text-6xl font-bold text-primary mb-6","children":"404"}],["$","h2",null,{"className":"text-3xl font-semibold mb-4","children":"Strona nie znaleziona"}],["$","p",null,{"className":"text-xl text-muted-foreground mb-8 max-w-md","children":"Przepraszamy, nie mogliśmy znaleźć strony, której szukasz. Mogła zostać przeniesiona lub usunięta."}],["$","$L6",null,{"fallbackLocale":"pl","className":"bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-md font-medium transition-colors","children":"Powrót do strony głównej"}]]}],null,["$","$Ld",null,{"children":["$","$e",null,{"name":"Next.MetadataOutlet","children":"$@f"}]}]]}],"p":"$@10","v":null,"s":"$8"}}]]
-9:[["children",{"s":"_not-found","h":96,"d":{"r":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"p":"$@a","v":"$b","s":"$8"},"c":"$Qc"}]]
-0:{"t":{"t":{"s":"","h":80,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/b80cc892c24d16f2.css","precedence":"next"}]],["$","html",null,{"lang":"pl","className":"__variable_98553d __variable_65423c","data-scroll-behavior":"smooth","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","link",null,{"rel":"dns-prefetch","href":"https://matbud.net"}],["$","link",null,{"rel":"dns-prefetch","href":"https://maps.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://matbud.net","crossOrigin":"anonymous"}],["$","link",null,{"rel":"preload","href":"https://matbud.net/images/gallery/hero.webp","as":"image","fetchPriority":"high"}],["$","link",null,{"rel":"preload","href":"/logo_pelne_tlo_w_tarczy.svg","as":"image","fetchPriority":"high"}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"Matbud Systemy Ppoż. Sp. z o.o.\",\"alternateName\":\"Matbud Systemy Ppoż.\",\"url\":\"https://matbud.net\",\"logo\":\"https://matbud.net/logo_pelne_tlo_w_tarczy.svg\",\"description\":\"Profesjonalne systemy przeciwpożarowe, instalacja SSP, oddymianie, oświetlenie awaryjne. Serwis, konserwacja i audyty PPOŻ w całej Polsce.\",\"address\":{\"@type\":\"PostalAddress\",\"streetAddress\":\"Słocin 36F\",\"addressLocality\":\"Grodzisk Wielkopolski\",\"postalCode\":\"62-065\",\"addressCountry\":\"PL\"},\"contactPoint\":{\"@type\":\"ContactPoint\",\"telephone\":\"+48-61-448-10-28\",\"contactType\":\"customer service\",\"email\":\"matbud@m-so.pl\",\"areaServed\":\"PL\",\"availableLanguage\":[\"Polish\"]},\"sameAs\":[],\"foundingDate\":\"1993\",\"numberOfEmployees\":{\"@type\":\"QuantitativeValue\",\"value\":\"10-50\"}}"}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"name\":\"Matbud - Systemy Ppoż Sp. z o.o.\",\"url\":\"https://matbud.net\",\"potentialAction\":{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://matbud.net/search?q={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}}"}}]]}],["$","body",null,{"children":["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}],"notFound":[["$","div",null,{"className":"flex flex-col items-center justify-center min-h-[70vh] text-center px-4","children":[["$","h1",null,{"className":"text-6xl font-bold text-primary mb-6","children":"404"}],["$","h2",null,{"className":"text-3xl font-semibold mb-4","children":"Strona nie znaleziona"}],["$","p",null,{"className":"text-xl text-muted-foreground mb-8 max-w-md","children":"Przepraszamy, nie mogliśmy znaleźć strony, której szukasz. Mogła zostać przeniesiona lub usunięta."}],["$","$L6",null,{"fallbackLocale":"pl","className":"bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-md font-medium transition-colors","children":"Powrót do strony głównej"}]]}],[]]}]}]]}]]}],"p":"$@7","v":null,"s":"$8"},"c":"$Q9"},"h":{"r":["$","$1","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$L12",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L14",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$e",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Matbud - Systemy Ppoż Sp. z o.o. | Systemy Przeciwpożarowe"}],["$","meta","1",{"name":"description","content":"Matbud Systemy Ppoż - profesjonalne systemy przeciwpożarowe, instalacja SSP, oddymianie, oświetlenie awaryjne. Serwis, konserwacja i audyty PPOŻ w całej Polsce. Ponad 30 lat doświadczenia, 5000+ zrealizowanych projektów. Certyfikowani technicy, serwis 24/7."}],["$","meta","2",{"name":"author","content":"Matbud Systemy Ppoż. Sp. z o.o."}],["$","meta","3",{"name":"keywords","content":"systemy przeciwpożarowe, ochrona przeciwpożarowa, instalacje ppoż, zabezpieczenia przeciwpożarowe, systemy sygnalizacji pożarowej SSP, systemy oddymiania, projektowanie systemów ppoż, konserwacja systemów ppoż, audyt przeciwpożarowy, czujki pożarowe, klapy dymowe oddymiające, oświetlenie awaryjne, centrale pożarowe CSP, wentylatory oddymiające, znaki ewakuacyjne, certyfikat CNBOP, badania techniczne, przepisy przeciwpożarowe, instrukcja bezpieczeństwa pożarowego, normy ppoż, ocena zagrożenia wybuchem, matbud systemy ppoż, ochrona ppoż, instalacje przeciwpożarowe, przeglądy ppoż, bezpieczeństwo pożarowe, systemy ppoż Polska, oddymianie cała Polska, serwis ppoż ogólnopolski, serwis, projektowanie, montaż, DSO, SAP, dźwiękowe systemy ostrzegawcze, systemy alarmu pożarowego, przepompownie pożarowe, hydranty"}],"$L15","$L16","$L17","$L18","$L19","$L1a","$L1b","$L1c","$L1d","$L1e","$L1f","$L20","$L21","$L22","$L23","$L24","$L25","$L26","$L27","$L28","$L29","$L2a"]}]}],null]}],"$L2b"]}],"p":"$@2c","v":null,"s":"$8"}},"a":"$@2d","u":"$@2e","b":"5Fi0ejGcVhzAVdpqyZIGb"}
-2f:I[6869,[],"IconMark"]
-f:null
-15:["$","meta","4",{"name":"creator","content":"Matbud Systemy Ppoż. Sp. z o.o."}]
-16:["$","meta","5",{"name":"robots","content":"index, follow"}]
-17:["$","meta","6",{"name":"googlebot","content":"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}]
-18:["$","link","7",{"rel":"canonical","href":"https://matbud.net/pl/"}]
-19:["$","meta","8",{"property":"og:title","content":"Matbud - Systemy Ppoż Sp. z o.o. | Systemy Przeciwpożarowe"}]
-1a:["$","meta","9",{"property":"og:description","content":"Matbud Systemy Ppoż - profesjonalne systemy przeciwpożarowe, instalacja SSP, oddymianie, oświetlenie awaryjne. Serwis, konserwacja i audyty PPOŻ w całej Polsce. Ponad 30 lat doświadczenia, 5000+ zrealizowanych projektów. Certyfikowani technicy, serwis 24/7."}]
-1b:["$","meta","10",{"property":"og:url","content":"https://matbud.net/pl/"}]
-1c:["$","meta","11",{"property":"og:site_name","content":"Matbud - Systemy Ppoż Sp. z o.o."}]
-1d:["$","meta","12",{"property":"og:locale","content":"pl_PL"}]
-1e:["$","meta","13",{"property":"og:image","content":"https://matbud.net/logo_pelne_tlo_w_tarczy.svg"}]
-1f:["$","meta","14",{"property":"og:image:width","content":"1200"}]
-20:["$","meta","15",{"property":"og:image:height","content":"630"}]
-21:["$","meta","16",{"property":"og:image:alt","content":"Matbud - Systemy Ppoż Sp. z o.o. | Systemy Przeciwpożarowe"}]
-22:["$","meta","17",{"property":"og:type","content":"website"}]
-23:["$","meta","18",{"name":"twitter:card","content":"summary_large_image"}]
-24:["$","meta","19",{"name":"twitter:title","content":"Matbud - Systemy Ppoż Sp. z o.o. | Systemy Przeciwpożarowe"}]
-25:["$","meta","20",{"name":"twitter:description","content":"Matbud Systemy Ppoż - profesjonalne systemy przeciwpożarowe, instalacja SSP, oddymianie, oświetlenie awaryjne. Serwis, konserwacja i audyty PPOŻ w całej Polsce. Ponad 30 lat doświadczenia, 5000+ zrealizowanych projektów. Certyfikowani technicy, serwis 24/7."}]
-26:["$","meta","21",{"name":"twitter:image","content":"https://matbud.net/logo_pelne_tlo_w_tarczy.svg"}]
-27:["$","link","22",{"rel":"shortcut icon","href":"/favicon-16x16.png"}]
-28:["$","link","23",{"rel":"icon","href":"/favicon.ico"}]
-29:["$","link","24",{"rel":"apple-touch-icon","href":"/apple-touch-icon.png"}]
-2a:["$","$L2f","25",{}]
-2b:["$","meta",null,{"name":"next-size-adjust","content":""}]
+c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$1","c",{"children":[["$","div",null,{"className":"flex flex-col items-center justify-center min-h-[70vh] text-center px-4","children":[["$","h1",null,{"className":"text-6xl font-bold text-primary mb-6","children":"404"}],["$","h2",null,{"className":"text-3xl font-semibold mb-4","children":"Strona nie znaleziona"}],["$","p",null,{"className":"text-xl text-muted-foreground mb-8 max-w-md","children":"Przepraszamy, nie mogliśmy znaleźć strony, której szukasz. Mogła zostać przeniesiona lub usunięta."}],["$","$L6",null,{"fallbackLocale":"pl","className":"bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-md font-medium transition-colors","children":"Powrót do strony głównej"}]]}],["$Ld"],"$Le"]}],"p":"$@f","v":null,"s":"$8"}}]]
+9:[["children",{"s":"/_not-found","h":96,"d":{"r":["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","template":["$","$L4",null,{}]}]]}],"p":"$@a","v":"$b","s":"$8"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":80,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/26hlp7hhkch0n.css","precedence":"next"}],["$","script","script-0",{"src":"/_next/static/chunks/26o_31v1_k8bt.js","async":true}]],["$","html",null,{"lang":"pl","className":"YtTo7a_variable bYvC1W_variable","data-scroll-behavior":"smooth","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"try{var t=localStorage.getItem(\"theme\");document.documentElement.classList.add(t===\"light\"?\"light\":t===\"system\"&&!matchMedia(\"(prefers-color-scheme: dark)\").matches?\"light\":\"dark\")}catch(e){document.documentElement.classList.add(\"dark\")}"}}],["$","link",null,{"rel":"dns-prefetch","href":"https://matbud.net"}],["$","link",null,{"rel":"dns-prefetch","href":"https://maps.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://matbud.net"}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"Matbud Systemy Ppoż. Sp. z o.o.\",\"alternateName\":\"Matbud Systemy Ppoż.\",\"url\":\"https://matbud.net\",\"logo\":\"https://matbud.net/logo_pelne_tlo_w_tarczy.svg\",\"description\":\"Profesjonalne systemy przeciwpożarowe, instalacja SSP, oddymianie, oświetlenie awaryjne. Serwis, konserwacja i audyty PPOŻ w całej Polsce.\",\"address\":{\"@type\":\"PostalAddress\",\"streetAddress\":\"Słocin 36F\",\"addressLocality\":\"Grodzisk Wielkopolski\",\"postalCode\":\"62-065\",\"addressCountry\":\"PL\"},\"contactPoint\":{\"@type\":\"ContactPoint\",\"telephone\":\"+48-61-448-10-28\",\"contactType\":\"customer service\",\"email\":\"matbud@m-so.pl\",\"areaServed\":\"PL\",\"availableLanguage\":[\"Polish\"]},\"sameAs\":[],\"foundingDate\":\"1993\",\"numberOfEmployees\":{\"@type\":\"QuantitativeValue\",\"value\":\"10-50\"}}"}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"name\":\"Matbud - Systemy Ppoż Sp. z o.o.\",\"url\":\"https://matbud.net\",\"potentialAction\":{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://matbud.net/search?q={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}}"}}]]}],["$","body",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","template":["$","$L4",null,{}],"notFound":[["$","div",null,{"className":"flex flex-col items-center justify-center min-h-[70vh] text-center px-4","children":[["$","h1",null,{"className":"text-6xl font-bold text-primary mb-6","children":"404"}],["$","h2",null,{"className":"text-3xl font-semibold mb-4","children":"Strona nie znaleziona"}],["$","p",null,{"className":"text-xl text-muted-foreground mb-8 max-w-md","children":"Przepraszamy, nie mogliśmy znaleźć strony, której szukasz. Mogła zostać przeniesiona lub usunięta."}],["$","$L6",null,{"fallbackLocale":"pl","className":"bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-md font-medium transition-colors","children":"Powrót do strony głównej"}]]}],[]]}]}]]}]]}],"p":"$@7","v":null,"s":"$8"},"c":"$Q9"},"h":{"r":["$","$1","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$L11",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L13",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$14",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Matbud - Systemy Ppoż Sp. z o.o. | Systemy Przeciwpożarowe"}],["$","meta","1",{"name":"description","content":"Matbud Systemy Ppoż - profesjonalne systemy przeciwpożarowe, instalacja SSP, oddymianie, oświetlenie awaryjne. Serwis, konserwacja i audyty PPOŻ w całej Polsce. Ponad 30 lat doświadczenia, 5000+ zrealizowanych projektów. Certyfikowani technicy, serwis 24/7."}],["$","meta","2",{"name":"author","content":"Matbud Systemy Ppoż. Sp. z o.o."}],"$L15","$L16","$L17","$L18","$L19","$L1a","$L1b","$L1c","$L1d","$L1e","$L1f","$L20","$L21","$L22","$L23","$L24","$L25","$L26","$L27","$L28","$L29","$L2a","$L2b"]}]}],null]}],"$L2c"]}],"p":"$@2d","v":null,"s":"$8"}},"a":"$@2e","u":"$@2f","b":"_MG1z7rTRASeb-MGHGg8A"}
+30:I[97367,["$2"],"OutletBoundary"]
+32:I[27201,["$2"],"IconMark"]
+d:["$","script","script-0",{"src":"/_next/static/chunks/0yt0ofpf7kr44.js","async":true}]
+e:["$","$L30",null,{"children":["$","$14",null,{"name":"Next.MetadataOutlet","children":"$@31"}]}]
+15:["$","meta","3",{"name":"keywords","content":"systemy przeciwpożarowe, ochrona przeciwpożarowa, instalacje ppoż, zabezpieczenia przeciwpożarowe, systemy sygnalizacji pożarowej SSP, systemy oddymiania, projektowanie systemów ppoż, konserwacja systemów ppoż, audyt przeciwpożarowy, czujki pożarowe, klapy dymowe oddymiające, oświetlenie awaryjne, centrale pożarowe CSP, wentylatory oddymiające, znaki ewakuacyjne, certyfikat CNBOP, badania techniczne, przepisy przeciwpożarowe, instrukcja bezpieczeństwa pożarowego, normy ppoż, ocena zagrożenia wybuchem, matbud systemy ppoż, ochrona ppoż, instalacje przeciwpożarowe, przeglądy ppoż, bezpieczeństwo pożarowe, systemy ppoż Polska, oddymianie cała Polska, serwis ppoż ogólnopolski, serwis, projektowanie, montaż, DSO, SAP, dźwiękowe systemy ostrzegawcze, systemy alarmu pożarowego, przepompownie pożarowe, hydranty"}]
+16:["$","meta","4",{"name":"creator","content":"Matbud Systemy Ppoż. Sp. z o.o."}]
+17:["$","meta","5",{"name":"robots","content":"index, follow"}]
+18:["$","meta","6",{"name":"googlebot","content":"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}]
+19:["$","link","7",{"rel":"canonical","href":"https://matbud.net/pl/"}]
+1a:["$","meta","8",{"property":"og:title","content":"Matbud - Systemy Ppoż Sp. z o.o. | Systemy Przeciwpożarowe"}]
+1b:["$","meta","9",{"property":"og:description","content":"Matbud Systemy Ppoż - profesjonalne systemy przeciwpożarowe, instalacja SSP, oddymianie, oświetlenie awaryjne. Serwis, konserwacja i audyty PPOŻ w całej Polsce. Ponad 30 lat doświadczenia, 5000+ zrealizowanych projektów. Certyfikowani technicy, serwis 24/7."}]
+1c:["$","meta","10",{"property":"og:url","content":"https://matbud.net/pl/"}]
+1d:["$","meta","11",{"property":"og:site_name","content":"Matbud - Systemy Ppoż Sp. z o.o."}]
+1e:["$","meta","12",{"property":"og:locale","content":"pl_PL"}]
+1f:["$","meta","13",{"property":"og:image","content":"https://matbud.net/logo_pelne_tlo_w_tarczy.svg"}]
+20:["$","meta","14",{"property":"og:image:width","content":"1200"}]
+21:["$","meta","15",{"property":"og:image:height","content":"630"}]
+22:["$","meta","16",{"property":"og:image:alt","content":"Matbud - Systemy Ppoż Sp. z o.o. | Systemy Przeciwpożarowe"}]
+23:["$","meta","17",{"property":"og:type","content":"website"}]
+24:["$","meta","18",{"name":"twitter:card","content":"summary_large_image"}]
+25:["$","meta","19",{"name":"twitter:title","content":"Matbud - Systemy Ppoż Sp. z o.o. | Systemy Przeciwpożarowe"}]
+26:["$","meta","20",{"name":"twitter:description","content":"Matbud Systemy Ppoż - profesjonalne systemy przeciwpożarowe, instalacja SSP, oddymianie, oświetlenie awaryjne. Serwis, konserwacja i audyty PPOŻ w całej Polsce. Ponad 30 lat doświadczenia, 5000+ zrealizowanych projektów. Certyfikowani technicy, serwis 24/7."}]
+27:["$","meta","21",{"name":"twitter:image","content":"https://matbud.net/logo_pelne_tlo_w_tarczy.svg"}]
+28:["$","link","22",{"rel":"shortcut icon","href":"/favicon-16x16.png"}]
+29:["$","link","23",{"rel":"icon","href":"/favicon.ico"}]
+2a:["$","link","24",{"rel":"apple-touch-icon","href":"/apple-touch-icon.png"}]
+2b:["$","$L32","25",{}]
+2c:["$","meta",null,{"name":"next-size-adjust","content":""}]
 8:300
-2e:true
+31:null
+2f:true
 8:C
-2d:0
+2e:0
 a:"$undefined"
 7:"$undefined"
-10:"$undefined"
-2c:"$undefined"
+f:"$undefined"
+2d:"$undefined"
