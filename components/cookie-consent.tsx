@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { X } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button-variants"
 
 interface Dictionary {
   title: string;
@@ -41,15 +41,17 @@ export function CookieConsent({ dictionary }: { dictionary: Dictionary }) {
           <p className="text-muted-foreground">{dictionary.description}</p>
         </div>
 
-        <Button
-          variant="ghost"
-          size="icon"
-          className="absolute right-4 top-4 md:relative md:right-0 md:top-0"
+        <button
+          className={buttonVariants({
+            variant: "ghost",
+            size: "icon",
+            className: "absolute right-4 top-4 md:relative md:right-0 md:top-0",
+          })}
           onClick={acceptNecessary}
         >
           <X className="h-4 w-4" />
           <span className="sr-only">{dictionary.close}</span>
-        </Button>
+        </button>
       </div>
     </div>
   )

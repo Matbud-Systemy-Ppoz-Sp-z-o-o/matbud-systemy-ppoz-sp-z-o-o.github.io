@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { useToast } from "@/hooks/use-toast"
+import { Toaster } from "@/components/ui/toaster"
 
 interface ContactFormDictionary {
   title: string;
@@ -207,6 +208,8 @@ export default function ContactForm({ dictionary, className = "" }: ContactFormP
           </Button>
         </form>
       </Form>
+      {/* Toasts are only raised by this form, so the toast UI ships with it rather than on every page. */}
+      <Toaster />
     </div>
   )
 }

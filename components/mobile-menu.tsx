@@ -1,11 +1,17 @@
 "use client"
 
-import Link from "next/link"
+import { useRef, useState } from "react"
+import dynamic from "next/dynamic"
 import { Menu } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
+import { buttonVariants } from "@/components/ui/button-variants"
 
-interface Dictionary {
+const loadMobileMenuSheet = () => import("@/components/mobile-menu-sheet")
+
+// The trigger is server-rendered (no layout shift); the Sheet and its Radix Dialog dependency
+// are only downloaded when the menu is about to be opened.
+const MobileMenuSheet = dynamic(loadMobileMenuSheet, { ssr: false })
+
+export interface MobileMenuDictionary {
   navigation: {
     services: string;
     about: string;
@@ -18,36 +24,37 @@ interface Dictionary {
   };
 }
 
-export default function MobileMenu({ locale, dictionary }: { locale: string; dictionary: Dictionary }) {
+export default function MobileMenu({ locale, dictionary }: { locale: string; dictionary: MobileMenuDictionary }) {
+  const [open, setOpen] = useState(false)
+  const [sheetMounted, setSheetMounted] = useState(false)
+  const triggerRef = useRef<HTMLButtonElement>(null)
+
   return (
-    <Sheet>
-      <SheetTrigger asChild className="md:hidden">
-        <Button variant="outline" size="icon" aria-label={dictionary.common.menu}>
-          <Menu className="h-5 w-5" />
-        </Button>
-      </SheetTrigger>
-      <SheetContent side="right">
-        <SheetTitle className="sr-only">
-          {dictionary.common.menu}
-        </SheetTitle>
-        <div className="flex flex-col gap-6 mt-8">
-          <Link href={`/${locale}#services`} className="text-lg font-medium transition-colors hover:text-primary">
-            {dictionary.navigation.services}
-          </Link>
-          <Link href={`/${locale}#about`} className="text-lg font-medium transition-colors hover:text-primary">
-            {dictionary.navigation.about}
-          </Link>
-          <Link href={`/${locale}/blog`} className="text-lg font-medium transition-colors hover:text-primary">
-            {dictionary.navigation.blog}
-          </Link>
-          <Link href={`/${locale}/careers`} className="text-lg font-medium transition-colors hover:text-primary">
-            {dictionary.navigation.careers}
-          </Link>
-          <Link href={`/${locale}#contact`} className="text-lg font-medium transition-colors hover:text-primary">
-            {dictionary.navigation.contact}
-          </Link>
-        </div>
-      </SheetContent>
-    </Sheet>
+    <>
+      <button
+        ref={triggerRef}
+        className={buttonVariants({ variant: "outline", size: "icon", className: "md:hidden" })}
+        aria-label={dictionary.common.menu}
+        aria-haspopup="dialog"
+        aria-expanded={open}
+        onPointerEnter={loadMobileMenuSheet}
+        onTouchStart={loadMobileMenuSheet}
+        onClick={() => {
+          setSheetMounted(true)
+          setOpen(true)
+        }}
+      >
+        <Menu className="h-5 w-5" />
+      </button>
+      {sheetMounted && (
+        <MobileMenuSheet
+          locale={locale}
+          dictionary={dictionary}
+          open={open}
+          onOpenChange={setOpen}
+          triggerRef={triggerRef}
+        />
+      )}
+    </>
   )
 }

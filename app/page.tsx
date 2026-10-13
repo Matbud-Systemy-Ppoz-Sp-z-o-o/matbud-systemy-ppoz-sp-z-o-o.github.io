@@ -6,7 +6,6 @@ import { StructuredData } from "@/components/structured-data"
 import { i18n } from "@/lib/i18n-config"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Header } from "@/components/header"
-import { Toaster } from "@/components/ui/toaster"
 import Hero from "@/components/hero"
 import Services from "@/components/services"
 import AboutUs from "@/components/about-us"
@@ -75,7 +74,6 @@ export default async function RootPage() {
       </main>
       <Footer locale={locale} dictionary={dict} cities={cities} />
       <CookieConsent dictionary={dict.cookieConsent} />
-      <Toaster />
     </ThemeProvider>
   )
 }

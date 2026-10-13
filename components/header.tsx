@@ -2,14 +2,9 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import dynamic from "next/dynamic"
 import { LanguageSwitcher } from "@/components/language-switcher"
 import { ThemeToggle } from "@/components/theme-toggle"
-
-const MobileMenu = dynamic(() => import("@/components/mobile-menu"), {
-  ssr: false,
-  loading: () => null,
-})
+import MobileMenu from "@/components/mobile-menu"
 
 interface Dictionary {
   navigation: {

@@ -2,6 +2,9 @@ import { Metadata } from "next"
 import { i18n } from "./i18n-config"
 
 export const baseUrl = "https://matbud.net"
+export const defaultOgImage = `${baseUrl}/images/gallery/hero.webp`
+const organizationId = `${baseUrl}/#organization`
+const websiteId = `${baseUrl}/#website`
 
 export interface SEOConfig {
   title: string
@@ -35,7 +38,8 @@ export function generateMetadata(config: SEOConfig): Metadata {
   } = config
 
   const url = `${baseUrl}/${locale}${path ? `/${path}` : ""}`.replace(/([^:]\/)\/+/g, "$1")
-  const ogImage = image || `${baseUrl}/logo_pelne_tlo_w_tarczy.svg`
+  // Social networks don't render SVG previews, so fall back to the hero photo.
+  const ogImage = image || defaultOgImage
 
   // Generate alternate language URLs
   const alternates: { languages?: Record<string, string> } = {}
@@ -48,7 +52,8 @@ export function generateMetadata(config: SEOConfig): Metadata {
   }
 
   const metadata: Metadata = {
-    title,
+    // Titles that already name the company skip the layout's "| Matbud ..." template, so the brand isn't repeated.
+    title: title.includes("Matbud") ? { absolute: title } : title,
     description,
     keywords: Array.isArray(keywords) ? keywords.join(", ") : keywords,
     alternates: {
@@ -65,8 +70,6 @@ export function generateMetadata(config: SEOConfig): Metadata {
       images: [
         {
           url: ogImage,
-          width: 1200,
-          height: 630,
           alt: title,
         },
       ],
@@ -93,12 +96,6 @@ export function generateMetadata(config: SEOConfig): Metadata {
         "max-snippet": -1,
       },
     },
-    verification: {
-      // Add verification codes here when available
-      // google: "your-google-verification-code",
-      // yandex: "your-yandex-verification-code",
-      // bing: "your-bing-verification-code",
-    },
   }
 
   return metadata
@@ -109,6 +106,7 @@ export function generateOrganizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": organizationId,
     name: "Matbud Systemy Ppoż. Sp. z o.o.",
     alternateName: "Matbud Systemy Ppoż.",
     url: baseUrl,
@@ -130,15 +128,11 @@ export function generateOrganizationSchema() {
       areaServed: "PL",
       availableLanguage: ["Polish"],
     },
-    sameAs: [
-      // Add social media profiles when available
-      // "https://www.facebook.com/matbud",
-      // "https://www.linkedin.com/company/matbud",
-    ],
     foundingDate: "1993",
     numberOfEmployees: {
       "@type": "QuantitativeValue",
-      value: "10-50",
+      minValue: 10,
+      maxValue: 50,
     },
   }
 }
@@ -147,7 +141,8 @@ export function generateLocalBusinessSchema(locale: string = "pl") {
   return {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": `${baseUrl}/#organization`,
+    "@id": `${baseUrl}/#localbusiness`,
+    parentOrganization: { "@id": organizationId },
     name: "Matbud Systemy Ppoż. Sp. z o.o.",
     image: `${baseUrl}/logo_pelne_tlo_w_tarczy.svg`,
     description:
@@ -239,7 +234,8 @@ export function generateBreadcrumbSchema(items: Array<{ name: string; url: strin
       "@type": "ListItem",
       position: index + 1,
       name: item.name,
-      item: item.url,
+      // Match the canonical (trailing-slash) URLs.
+      item: item.url.endsWith("/") ? item.url : `${item.url}/`,
     })),
   }
 }
@@ -285,15 +281,10 @@ export function generateWebSiteSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": websiteId,
     name: "Matbud - Systemy Ppoż Sp. z o.o.",
     url: baseUrl,
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: `${baseUrl}/search?q={search_term_string}`,
-      },
-      "query-input": "required name=search_term_string",
-    },
+    inLanguage: "pl-PL",
+    publisher: { "@id": organizationId },
   }
 }

@@ -2,7 +2,6 @@ import type { ReactNode } from "react"
 import { notFound } from "next/navigation"
 import dynamic from "next/dynamic"
 import { ThemeProvider } from "@/components/theme-provider"
-import { Toaster } from "@/components/ui/toaster"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { i18n } from "@/lib/i18n-config"
@@ -55,7 +54,6 @@ export default async function LocaleLayout({
       <main>{children}</main>
       <Footer locale={locale} dictionary={dict} cities={cities} />
       <CookieConsent dictionary={dict.cookieConsent} />
-      <Toaster />
     </ThemeProvider>
   )
 }
