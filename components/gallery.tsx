@@ -181,7 +181,7 @@ export default function Gallery({ dictionary }: { dictionary: DictionaryType }) 
                   className="object-cover transition-transform duration-300 group-hover:scale-110"
                   style={image.src?.includes('sound.webp') ? { objectPosition: '100% center' } : {}}
                   itemProp="image"
-                  loading={index < 1 ? "eager" : "lazy"}
+                  loading="lazy"
                   decoding="async"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">

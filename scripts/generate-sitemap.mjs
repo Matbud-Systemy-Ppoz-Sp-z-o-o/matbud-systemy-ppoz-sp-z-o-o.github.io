@@ -8,6 +8,7 @@ import { createRequire } from 'module';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const require = createRequire(import.meta.url);
+const { getActiveLocales } = require('./active-locales.js');
 
 const matter = require('gray-matter');
 
@@ -113,7 +114,8 @@ async function getAllPosts(locale) {
 }
 
 const baseUrl = 'https://matbud.net';
-const locales = ['pl', 'en'];
+// Only active locales are listed; inactive ones are redirects (see scripts/active-locales.js)
+const locales = getActiveLocales();
 
 async function generateSitemap() {
   const urls = [];

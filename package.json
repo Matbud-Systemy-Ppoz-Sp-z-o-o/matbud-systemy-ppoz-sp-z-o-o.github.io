@@ -6,8 +6,8 @@
     "generate-sitemap": "node scripts/generate-sitemap.mjs",
     "dev": "next dev --turbopack",
     "prebuild": "npm run generate-sitemap",
-    "build": "next build --webpack",
-    "postbuild": "node scripts/generate-404-pages.js && node scripts/generate-blog-pages.js && node scripts/copy-cache-headers.js",
+    "build": "next build",
+    "postbuild": "node scripts/generate-404-pages.js && node scripts/generate-blog-pages.js && node scripts/generate-locale-redirects.js && node scripts/copy-cache-headers.js",
     "deploy": "node deploy.js",
     "start": "next start",
     "lint": "next lint"

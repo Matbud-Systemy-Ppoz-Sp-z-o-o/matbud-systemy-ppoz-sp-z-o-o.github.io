@@ -48,4 +48,3 @@ Crawl-delay: 1
 
 # Allow indexing of all city pages
 Allow: /pl/systemy-ppoz-*
-Allow: /en/systemy-ppoz-*

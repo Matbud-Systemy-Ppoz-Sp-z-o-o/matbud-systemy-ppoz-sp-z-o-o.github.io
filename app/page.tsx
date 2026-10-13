@@ -8,39 +8,13 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { Header } from "@/components/header"
 import { Toaster } from "@/components/ui/toaster"
 import Hero from "@/components/hero"
+import Services from "@/components/services"
+import AboutUs from "@/components/about-us"
+import Gallery from "@/components/gallery"
+import Contact from "@/components/contact"
+import { Footer } from "@/components/footer"
 import { getCities } from "@/lib/cities"
 
-// Shared loading component to reduce bundle size
-const SectionLoader = () => (
-  <div className="py-16 md:py-24">
-    <div className="container">
-      <div className="animate-pulse h-64 bg-muted rounded-lg" />
-    </div>
-  </div>
-)
-
-// Dynamically import below-the-fold components to reduce initial bundle size
-const Services = dynamic(() => import("@/components/services"), {
-  loading: SectionLoader,
-})
-const AboutUs = dynamic(() => import("@/components/about-us"), {
-  loading: SectionLoader,
-})
-const Gallery = dynamic(() => import("@/components/gallery"), {
-  loading: SectionLoader,
-})
-const Contact = dynamic(() => import("@/components/contact"), {
-  loading: SectionLoader,
-})
-const Footer = dynamic(() => import("@/components/footer").then(mod => ({ default: mod.Footer })), {
-  loading: () => (
-    <footer className="bg-muted py-12 border-t">
-      <div className="container">
-        <div className="animate-pulse h-32 bg-muted rounded" />
-      </div>
-    </footer>
-  ),
-})
 const CookieConsent = dynamic(() => import("@/components/cookie-consent").then(mod => ({ default: mod.CookieConsent })), {
   loading: () => null,
 })
@@ -79,7 +53,19 @@ export default async function RootPage() {
           { name: dict.breadcrumbs.home, url: `https://matbud.net/${locale}` },
         ]}
       />
-      <Header locale={locale} dictionary={dict} />
+      <Header
+        locale={locale}
+        dictionary={{
+          // Header is a client component: pass only what it renders, not the whole dictionary.
+          navigation: dict.navigation,
+          common: {
+            companyName: dict.common.companyName,
+            companyNameShort: dict.common.companyNameShort,
+            themeToggle: dict.common.themeToggle,
+            menu: dict.common.menu,
+          },
+        }}
+      />
       <main>
         <Hero dictionary={dict.hero} />
         <Services dictionary={dict.services} />

@@ -1,4 +1,6 @@
 import type { NextConfig } from "next";
+import { PHASE_DEVELOPMENT_SERVER } from "next/constants";
+import { KNOWN_LOCALES, getActiveLocales, getDefaultLocale } from "./scripts/active-locales.js";
 
 const nextConfig: NextConfig = {
   typescript: {
@@ -28,121 +30,27 @@ const nextConfig: NextConfig = {
   },
   compress: true,
   poweredByHeader: false,
-  productionBrowserSourceMaps: true,
   compiler: {
     removeConsole: true,
   },
-  webpack: (config, { isServer, dev }) => {
-    if (!isServer) {
-      config.resolve.fallback = {
-        ...config.resolve.fallback,
-        fs: false,
-        net: false,
-        tls: false,
-      };
-      
-      const webpack = require('webpack');
-      if (!config.plugins) {
-        config.plugins = [];
-      }
-      
-      config.plugins.push(
-        new webpack.IgnorePlugin({
-          resourceRegExp: /^core-js\/modules\/es\.(array\.(at|flat|flat-map)|object\.(from-entries|has-own)|string\.(trim-end|trim-start))$/,
-        }),
-        // Replace Next.js polyfill module with empty stub for modern browsers (ES2022+)
-        new webpack.NormalModuleReplacementPlugin(
-          /next\/dist\/build\/polyfills\/polyfill-module\.js/,
-          require.resolve('./lib/polyfill-stub.js')
-        )
-      );
-      
-      config.resolve.alias = {
-        ...config.resolve.alias,
-        'core-js/modules/es.array.at': false,
-        'core-js/modules/es.array.flat': false,
-        'core-js/modules/es.array.flat-map': false,
-        'core-js/modules/es.object.from-entries': false,
-        'core-js/modules/es.object.has-own': false,
-        'core-js/modules/es.string.trim-end': false,
-        'core-js/modules/es.string.trim-start': false,
-      };
-      if (!dev) {
-        config.devtool = 'source-map';
-        config.target = ['web', 'es2022'];
-        config.optimization = {
-          ...config.optimization,
-          moduleIds: 'deterministic',
-          runtimeChunk: 'single',
-          usedExports: true,
-          sideEffects: false,
-          // Better deduplication
-          removeAvailableModules: true,
-          removeEmptyChunks: true,
-          mergeDuplicateChunks: true,
-          splitChunks: {
-            chunks: 'all',
-            maxInitialRequests: 5, // Increased to allow more parallel chunk loading
-            minSize: 20000,
-            maxSize: 100000, // Reduced to force smaller, more focused chunks
-            cacheGroups: {
-              default: {
-                minChunks: 2,
-                priority: -20,
-                reuseExistingChunk: true,
-              },
-              vendors: {
-                test: /[\\/]node_modules[\\/]/,
-                priority: -10,
-                reuseExistingChunk: true,
-              },
-              react: {
-                name: 'react',
-                test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
-                priority: 20,
-                chunks: 'all',
-                minSize: 20000,
-                reuseExistingChunk: true,
-              },
-              radix: {
-                name: 'radix',
-                test: /[\\/]node_modules[\\/]@radix-ui[\\/]/,
-                priority: 15,
-                chunks: 'async',
-                enforce: true,
-                reuseExistingChunk: true,
-              },
-              markdown: {
-                name: 'markdown',
-                test: /[\\/]node_modules[\\/](react-markdown|remark|rehype)[\\/]/,
-                priority: 10,
-                chunks: 'async',
-                enforce: true,
-                reuseExistingChunk: true,
-              },
-              form: {
-                name: 'form',
-                test: /[\\/]node_modules[\\/](react-hook-form|zod|@hookform)[\\/]/,
-                priority: 10,
-                chunks: 'async',
-                enforce: true,
-                reuseExistingChunk: true,
-              },
-              lucide: {
-                name: 'lucide',
-                test: /[\\/]node_modules[\\/]lucide-react[\\/]/,
-                priority: 5,
-                chunks: 'async',
-                enforce: true,
-                reuseExistingChunk: true,
-              },
-            },
-          },
-        };
-      }
-    }
-    return config;
-  },
 };
 
-export default nextConfig;
+export default function config(phase: string): NextConfig {
+  if (phase !== PHASE_DEVELOPMENT_SERVER) return nextConfig;
+
+  // In production, inactive locales are redirect pages written by scripts/generate-locale-redirects.js
+  // (static export can't do server redirects). Mirror them in `next dev` so /en/... behaves the same.
+  const activeLocales = getActiveLocales();
+  const defaultLocale = getDefaultLocale();
+  const inactiveLocales = KNOWN_LOCALES.filter((l: string) => !activeLocales.includes(l));
+
+  return {
+    ...nextConfig,
+    async redirects() {
+      return inactiveLocales.flatMap((locale: string) => [
+        { source: `/${locale}`, destination: `/${defaultLocale}/`, permanent: true },
+        { source: `/${locale}/:path*`, destination: `/${defaultLocale}/:path*`, permanent: true },
+      ]);
+    },
+  };
+}

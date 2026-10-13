@@ -1,15 +1,39 @@
-# llms.txt for Matbud Systemy Ppoż. Sp. z o.o.
+# Matbud Systemy Ppoż. Sp. z o.o.
 
-# Basic Information
-Name: Matbud Systemy Ppoż. Sp. z o.o.
-Description: Profesjonalne systemy przeciwpożarowe, instalacja SSP, oddymianie, oświetlenie awaryjne. Serwis, konserwacja i audyty PPOŻ w całej Polsce. Ponad 30 lat doświadczenia, 5000+ zrealizowanych projektów. Usługi przeciwpożarowe dostępne we wszystkich województwach i miastach Polski.
-URL: https://matbud.net
-Language: pl, en
-Industry: Fire Safety Systems, Fire Protection, PPOŻ Systems
-Country: Poland (Polska)
-Service Coverage: Cała Polska (All of Poland)
+> Profesjonalne systemy przeciwpożarowe, instalacja SSP, oddymianie, oświetlenie awaryjne. Serwis, konserwacja i audyty PPOŻ w całej Polsce. Ponad 30 lat doświadczenia, 5000+ zrealizowanych projektów. Usługi przeciwpożarowe dostępne we wszystkich województwach i miastach Polski.
 
-# Services
+## Main Pages
+
+- [Strona główna (Home)](https://matbud.net/pl/): Company overview, services, gallery and contact details
+- [Usługi (Services)](https://matbud.net/pl/#services): Fire alarm (SSP/SAP), smoke extraction, emergency lighting, design and maintenance
+- [O nas (About Us)](https://matbud.net/pl/#about): Company history, mission and values
+- [Kontakt (Contact)](https://matbud.net/pl/#contact): Address, phone, email and opening hours
+- [Kariera (Careers)](https://matbud.net/pl/careers/): Current job openings
+- [Blog](https://matbud.net/pl/blog/): Articles about fire safety systems
+- [Sitemap](https://matbud.net/sitemap.xml): Full list of pages, including all city pages
+
+## City Pages
+
+- [Systemy ppoż. Warszawa](https://matbud.net/pl/systemy-ppoz-warszawa/)
+- [Systemy ppoż. Kraków](https://matbud.net/pl/systemy-ppoz-krakow/)
+- [Systemy ppoż. Wrocław](https://matbud.net/pl/systemy-ppoz-wroclaw/)
+- [Systemy ppoż. Poznań](https://matbud.net/pl/systemy-ppoz-poznan/)
+- [Systemy ppoż. Gdańsk](https://matbud.net/pl/systemy-ppoz-gdansk/)
+- [Systemy ppoż. Łódź](https://matbud.net/pl/systemy-ppoz-lodz/)
+- [Systemy ppoż. Katowice](https://matbud.net/pl/systemy-ppoz-katowice/)
+- [Systemy ppoż. Szczecin](https://matbud.net/pl/systemy-ppoz-szczecin/)
+- All city pages follow the pattern https://matbud.net/pl/systemy-ppoz-[city-slug]/ and are listed in the [sitemap](https://matbud.net/sitemap.xml)
+
+## Basic Information
+
+- Name: Matbud Systemy Ppoż. Sp. z o.o.
+- URL: [https://matbud.net](https://matbud.net)
+- Language: pl
+- Industry: Fire Safety Systems, Fire Protection, PPOŻ Systems
+- Country: Poland (Polska)
+- Service Coverage: Cała Polska (All of Poland)
+
+## Services
 Services:
 - Instalacja i konserwacja systemów sygnalizacji pożaru (SSP/SAP)
 - Systemy oddymiania naturalnego i mechanicznego
@@ -21,7 +45,7 @@ Services:
 - Montaż systemów PPOŻ
 - Certyfikacja systemów przeciwpożarowych
 
-# Company Details
+## Company Details
 Founded: 1993
 Experience: 30+ years
 Projects Completed: 5000+
@@ -29,14 +53,14 @@ Service Area: Cała Polska (All of Poland) - wszystkie województwa
 Certifications: CNBOP, PN-EN standards, MSWiA compliance
 Headquarters: Grodzisk Wielkopolski, Wielkopolska, Poland
 
-# Contact Information
+## Contact Information
 Address: Słocin 36F, 62-065 Grodzisk Wielkopolski, Poland
-Phone: +48 61 448 10 28
-Email: matbud@m-so.pl
+Phone: [+48 61 448 10 28](tel:+48614481028)
+Email: [matbud@m-so.pl](mailto:matbud@m-so.pl)
 Service Hours: 24/7 emergency support available
 Service Radius: Cała Polska (nationwide coverage)
 
-# Geographic Coverage - All Voivodeships (Województwa)
+## Geographic Coverage - All Voivodeships (Województwa)
 Service Available In All 16 Polish Voivodeships:
 - Wielkopolskie (Greater Poland) - Grodzisk Wielkopolski, Poznań, Kalisz, Konin, Ostrów Wielkopolski, Piła, Leszno, Gniezno, Śrem, Wągrowiec, Kościan, Rawicz, Jarocin, Września, Środa Wielkopolska, Nowy Tomyśl, Wolsztyn, Krotoszyn, Luboń, Swarzędz, Mosina, Kórnik, Kostrzyn, Puszczykowo, Stęszew, Buk, Opalenica, Lwówek, Rakoniewice, Wielichowo, Szamotuły, Oborniki, Trzcianka, Czarnków, Chodzież, Złotów, Jastrowie, Wronki, Rogoźno, Międzychód, Sieraków, Krajenka, Zbąszyń, Ostrzeszów, Syców, Turek, Kłodawa, Dąbie, Słupca, Golina, Kleczew, Sompolno, Rychwał, Skulsk, Grabów nad Prosną, Kobylin, Zduny, Mikstat, Raszków, Odolanów, Przygodzice, Sośnie, Kępno
 - Mazowieckie (Masovian) - Warszawa, Radom, Płock, Pruszków, Legionowo, Otwock, Piaseczno, Wołomin, Marki, Ząbki, Kobyłka, Józefów, Sulejówek, Zielonka, Grodzisk Mazowiecki, Żyrardów, Skierniewice, Kutno, Zduńska Wola
@@ -55,7 +79,7 @@ Service Available In All 16 Polish Voivodeships:
 - Lubuskie (Lubusz) - Zielona Góra, Gorzów Wielkopolski, Nowa Sól, Żagań, Żary, Lubań
 - Świętokrzyskie (Świętokrzyskie) - Kielce, Ostrowiec Świętokrzyski
 
-# Key Locations - Major Cities and Industrial Regions
+## Key Locations - Major Cities and Industrial Regions
 Primary Service Areas:
 - Wielkopolska Region: Grodzisk Wielkopolski (headquarters), Poznań, Kalisz, Konin, Ostrów Wielkopolski, Piła, Leszno, Gniezno, Śrem, Wągrowiec, Kościan, Rawicz, Jarocin, Września, Środa Wielkopolska, Nowy Tomyśl, Wolsztyn, Krotoszyn, Luboń, Swarzędz, Mosina, Kórnik, Kostrzyn, Puszczykowo, Stęszew, Buk, Opalenica, Lwówek, Rakoniewice, Wielichowo
 - Silesia Industrial Region: Katowice, Gliwice, Zabrze, Bytom, Chorzów, Rybnik, Sosnowiec, Dąbrowa Górnicza, Mysłowice, Siemianowice Śląskie, Żory, Pszczyna, Wodzisław Śląski, Mikołów, Tarnowskie Góry, Będzin, Czeladź, Knurów, Orzesze, Łaziska Górne, Piekary Śląskie, Świętochłowice, Zawiercie, Żywiec, Andrychów, Wadowice, Oświęcim, Chrzanów, Trzebinia, Olkusz, Jaworzno, Jastrzębie-Zdrój, Tychy, Ruda Śląska, Bielsko-Biała, Racibórz
@@ -66,7 +90,7 @@ Primary Service Areas:
 - Southern Poland: Kraków, Tarnów, Nowy Sącz, Oświęcim, Chrzanów, Trzebinia, Olkusz, Andrychów, Wadowice, Częstochowa
 - Western Poland: Wrocław, Wałbrzych, Legnica, Głogów, Zielona Góra, Gorzów Wielkopolski, Opole, Kędzierzyn-Koźle
 
-# Service Coverage Details
+## Service Coverage Details
 Geographic Reach: 
 - Nationwide coverage across all 16 voivodeships
 - Over 200 cities and towns served throughout Poland
@@ -75,7 +99,7 @@ Geographic Reach:
 - Regular maintenance routes covering all major industrial regions
 - Comprehensive coverage from major metropolitan areas to smaller towns
 
-# Industrial Regions Served
+## Industrial Regions Served
 Major Industrial Areas:
 - Upper Silesian Industrial Region (Górnośląski Okręg Przemysłowy)
 - Warsaw Industrial Region
@@ -89,7 +113,7 @@ Major Industrial Areas:
 - Manufacturing facilities nationwide
 - Commercial and residential buildings across Poland
 
-# Content Structure
+## Content Structure
 Main Pages:
 - Home: https://matbud.net/pl
 - Services: https://matbud.net/pl#services
@@ -109,7 +133,7 @@ systemy przeciwpożarowe w Polsce, ochrona przeciwpożarowa cała Polska, instal
 City-Specific Keywords:
 systemy przeciwpożarowe Warszawa, systemy przeciwpożarowe Kraków, systemy przeciwpożarowe Wrocław, systemy przeciwpożarowe Poznań, systemy przeciwpożarowe Gdańsk, systemy przeciwpożarowe Katowice, systemy przeciwpożarowe Łódź, systemy przeciwpożarowe Szczecin, systemy przeciwpożarowe Bydgoszcz, systemy przeciwpożarowe Lublin, systemy przeciwpożarowe Białystok, systemy przeciwpożarowe Grodzisk Wielkopolski, serwis ppoż cała Polska, instalacje przeciwpożarowe wszystkie miasta
 
-# Target Audience
+## Target Audience
 Primary Customers:
 - Businesses and commercial facilities across Poland
 - Industrial facilities and manufacturing plants
@@ -123,7 +147,7 @@ Primary Customers:
 - Educational institutions
 - All property owners requiring fire safety compliance
 
-# Service Availability
+## Service Availability
 Availability: 
 - Nationwide service coverage
 - Local technicians in all major regions

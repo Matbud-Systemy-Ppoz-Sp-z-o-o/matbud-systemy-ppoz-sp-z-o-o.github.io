@@ -1,35 +1,13 @@
 import type { Metadata } from "next"
-import dynamic from "next/dynamic"
 import { getDictionary } from "@/lib/dictionaries"
 import { generateMetadata as generateSEOMetadata } from "@/lib/seo"
 import { StructuredData } from "@/components/structured-data"
 import Hero from "@/components/hero"
-
-// Shared loading component to reduce bundle size
-const SectionLoader = () => (
-  <div className="py-16 md:py-24">
-    <div className="container">
-      <div className="animate-pulse h-64 bg-muted rounded-lg" />
-    </div>
-  </div>
-)
-
-// Dynamically import below-the-fold components to reduce initial bundle size
-const Services = dynamic(() => import("@/components/services"), {
-  loading: SectionLoader,
-})
-const AboutUs = dynamic(() => import("@/components/about-us"), {
-  loading: SectionLoader,
-})
-const Gallery = dynamic(() => import("@/components/gallery"), {
-  loading: SectionLoader,
-})
-const LatestBlogs = dynamic(() => import("@/components/latest-blogs"), {
-  loading: SectionLoader,
-})
-const Contact = dynamic(() => import("@/components/contact"), {
-  loading: SectionLoader,
-})
+import Services from "@/components/services"
+import AboutUs from "@/components/about-us"
+import Gallery from "@/components/gallery"
+import Contact from "@/components/contact"
+import LatestBlogs from "@/components/latest-blogs"
 
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const resolvedParams = await Promise.resolve(params)

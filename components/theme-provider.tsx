@@ -27,20 +27,13 @@ export function ThemeProvider({
   attribute = "class",
   ...props
 }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(defaultTheme)
-  const [mounted, setMounted] = useState(false)
-
-  // Initialize theme from localStorage on mount
-  useEffect(() => {
+  // Read the stored theme synchronously on the client. No markup depends on
+  // `theme` (the toggle uses `dark:` classes), so this can't cause a hydration mismatch.
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window === "undefined") return defaultTheme
     const storedTheme = localStorage.getItem("theme") as Theme
-    if (storedTheme && ["light", "dark", "system"].includes(storedTheme)) {
-      setTheme(storedTheme)
-    } else {
-      // Default to dark if no stored theme
-      setTheme("dark")
-    }
-    setMounted(true)
-  }, [])
+    return storedTheme && ["light", "dark", "system"].includes(storedTheme) ? storedTheme : "dark"
+  })
 
   useEffect(() => {
     // Use requestAnimationFrame to batch DOM updates and avoid forced reflows
@@ -74,11 +67,6 @@ export function ThemeProvider({
       // Persist theme to localStorage
       localStorage.setItem("theme", newTheme)
     },
-  }
-
-  // Prevent hydration mismatch by not rendering until mounted
-  if (!mounted) {
-    return <div style={{ visibility: "hidden" }}>{children}</div>
   }
 
   return (

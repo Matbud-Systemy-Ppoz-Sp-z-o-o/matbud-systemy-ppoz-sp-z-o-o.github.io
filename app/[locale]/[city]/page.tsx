@@ -10,6 +10,7 @@ import { Shield, Bell, Droplets, FileCheck, Wrench, Building, MapPin, Phone, Mai
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import GoogleMapsClient from "@/components/google-maps-client";
+import { i18n } from "@/lib/i18n-config";
 
 // Type definition for the specific route parameters
 type CityParams = {
@@ -28,7 +29,8 @@ export const dynamicParams = false;
 // Generates static paths for all city pages during the build
 export async function generateStaticParams(): Promise<CityParams[]> {
   const cities = await getCities();
-  const locales = ["pl", "en"];
+  // Only active locales get pages; inactive ones get redirects (scripts/generate-locale-redirects.js)
+  const locales = i18n.locales;
 
   // Handle case where cities might be undefined or empty
   if (!cities || cities.length === 0) {

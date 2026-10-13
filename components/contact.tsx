@@ -1,14 +1,7 @@
-"use client"
-
-import dynamic from "next/dynamic"
 import { MapPin, Phone, Mail } from "lucide-react"
 import { SectionHeader } from "@/components/ui/section-header"
 import { ContactInfoItem } from "@/components/ui/contact-info-item"
-
-const GoogleMaps = dynamic(() => import("@/components/google-maps"), {
-  loading: () => <div className="bg-card rounded-lg shadow-xs h-full min-h-[450px] animate-pulse" />,
-  ssr: false,
-})
+import GoogleMaps from "@/components/google-maps-client"
 
 interface Dictionary {
   title: string;

@@ -60,21 +60,15 @@ export default function RootLayout({
   return (
     <html lang="pl" className={`${archivo.variable} ${inter.variable}`} data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
+        {/* Apply the saved theme before first paint so there's no flash of the wrong theme. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var t=localStorage.getItem("theme");document.documentElement.classList.add(t==="light"?"light":t==="system"&&!matchMedia("(prefers-color-scheme: dark)").matches?"light":"dark")}catch(e){document.documentElement.classList.add("dark")}`,
+          }}
+        />
         <link rel="dns-prefetch" href="https://matbud.net" />
         <link rel="dns-prefetch" href="https://maps.googleapis.com" />
-        <link rel="preconnect" href="https://matbud.net" crossOrigin="anonymous" />
-        <link
-          rel="preload"
-          href="https://matbud.net/images/gallery/hero.webp"
-          as="image"
-          fetchPriority="high"
-        />
-        <link
-          rel="preload"
-          href="/logo_pelne_tlo_w_tarczy.svg"
-          as="image"
-          fetchPriority="high"
-        />
+        <link rel="preconnect" href="https://matbud.net" />
         <StructuredData type="organization" />
         <StructuredData type="website" />
       </head>

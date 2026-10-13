@@ -4,20 +4,12 @@ import dynamic from "next/dynamic"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@/components/ui/toaster"
 import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
 import { i18n } from "@/lib/i18n-config"
 import { getDictionary } from "@/lib/dictionaries"
 import { getCities } from "@/lib/cities"
 import { StructuredData } from "@/components/structured-data"
 
-const Footer = dynamic(() => import("@/components/footer").then(mod => ({ default: mod.Footer })), {
-  loading: () => (
-    <footer className="bg-muted py-12 border-t">
-      <div className="container">
-        <div className="animate-pulse h-32 bg-muted rounded" />
-      </div>
-    </footer>
-  ),
-})
 const CookieConsent = dynamic(() => import("@/components/cookie-consent").then(mod => ({ default: mod.CookieConsent })), {
   loading: () => null,
 })
@@ -47,7 +39,19 @@ export default async function LocaleLayout({
   return (
     <ThemeProvider attribute="class" defaultTheme="dark">
       <StructuredData type="localBusiness" locale={locale} />
-      <Header locale={locale} dictionary={dict} />
+      <Header
+        locale={locale}
+        dictionary={{
+          // Header is a client component: pass only what it renders, not the whole dictionary.
+          navigation: dict.navigation,
+          common: {
+            companyName: dict.common.companyName,
+            companyNameShort: dict.common.companyNameShort,
+            themeToggle: dict.common.themeToggle,
+            menu: dict.common.menu,
+          },
+        }}
+      />
       <main>{children}</main>
       <Footer locale={locale} dictionary={dict} cities={cities} />
       <CookieConsent dictionary={dict.cookieConsent} />
